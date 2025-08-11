@@ -1,5 +1,5 @@
 raft_state.json
 aliases
 collections
-env
+.env
 __pycache__
