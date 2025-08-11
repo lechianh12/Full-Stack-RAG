@@ -39,10 +39,10 @@ class LLM():
 
 
 
-# if __name__ == "__main__":
-#     gemini = Gemini().init_gemini()
-#     output = gemini.invoke(
-#         "Hello, how are you?",
-#         stream=True)
-#     print("Output:", output.content)
+if __name__ == "__main__":
+    gemini = Gemini().init_gemini()
+    output = gemini.invoke(
+        "Ban biet gi ve fastapi khong?",
+        stream=True)
+    print("Output:", output.content)
     
