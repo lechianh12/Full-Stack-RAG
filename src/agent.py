@@ -2,11 +2,12 @@ import getpass
 import os
 from config.config import Config
 from langchain.chat_models import init_chat_model
-from llm.llm import Gemini
+from llm.llm import LLM
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
 
-llm = Gemini().init_gemini()
+llm = LLM().init_llm()
+print("LLM initialized successfully.")
 
 embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 
