@@ -2,4 +2,4 @@ raft_state.json
 aliases
 collections
 env
-.vscode
+__pycache__
