@@ -63,8 +63,9 @@ texts_2 = ["""
 
 
 class Ingest:
-    def __init__(self, documents, url = qdrant_config.QDRANT_URL, 
+    def __init__(self, documents, 
                  collection_name=qdrant_config.COLLECTION_NAME,
+                 url = qdrant_config.QDRANT_URL, 
                  qdrant_model_name=qdrant_config.QDRANT_MODEL_NAME,
                  ollama_embeddings_model=ollama_config.OLLAMA_EMBEDDINGS_MODEL):
         self.documents = documents
@@ -91,7 +92,7 @@ class Ingest:
         return doc_splits
 
 
-    def process(self) -> None:
+    def process(self):
         sparse_embeddings = FastEmbedSparse(model_name=self.qdrant_model_name)
         embeddings = OllamaEmbeddings(model=self.ollama_embeddings_model)
 
@@ -107,9 +108,11 @@ class Ingest:
             retrieval_mode=RetrievalMode.HYBRID,
         )
 
-        retriever = vectorstore.similarity_search(query)
+        return vectorstore
 
-        return retriever
+        # retriever = vectorstore.similarity_search(query)
+
+        # return retriever
     
 
 

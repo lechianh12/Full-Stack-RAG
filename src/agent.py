@@ -1,6 +1,6 @@
 from llm import llm
 from langgraph.prebuilt import create_react_agent
-from tools import rag_tool, list_collections
+from src.tools import rag_tool, list_collections
 from config.config import Config
 
 

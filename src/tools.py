@@ -1,6 +1,6 @@
 from langchain_core.tools import tool
 from langchain_ollama import OllamaEmbeddings
-from ingest import Ingest
+from src.ingest import Ingest
 from langchain_core.tools import tool
 from config.config import QDRantConfig
 from config.config import OllamaConfig
