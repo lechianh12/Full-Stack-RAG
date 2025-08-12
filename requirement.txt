@@ -8,3 +8,8 @@ langchain-google-genai
 langchain-qdrant
 python-docx
 PyPDF2
+langchain_ollama
+fastembed
+tiktoken
+langchain-community
+python-multipart

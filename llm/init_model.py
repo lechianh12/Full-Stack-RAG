@@ -3,9 +3,13 @@ from config.config import Config
 import sys
 import os
 from langchain.chat_models import init_chat_model
+from langchain_core.messages import SystemMessage
+
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 config = Config()
+
+
 
 class Gemini():
     def __init__(self, api_key=config.GEMINI_API_KEY, model=config.MODEL):
@@ -16,7 +20,7 @@ class Gemini():
     def init_gemini(self):
         return init_chat_model(
             model = self.model,
-            model_provider="google_genai"
+            model_provider="google_genai",
         )
     
 class Ollama():
@@ -26,7 +30,7 @@ class Ollama():
     def init_ollama(self):
         return init_chat_model(
             model=self.model,
-            model_provider="ollama"
+            model_provider="ollama",
         )
     
 

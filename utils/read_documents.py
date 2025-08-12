@@ -1,44 +1,43 @@
 import csv
-from typing import List
-from pathlib import Path
+from typing import Union
 import docx
 import PyPDF2
+from fastapi import UploadFile
+import io
 
 class DocumentExtractor:
     @staticmethod
-    def extract_text_from_pdf(file_path: str) -> str:
+    async def extract_text_from_pdf(file: UploadFile) -> str:
         text = ""
-        with open(file_path, "rb") as file:
-            reader = PyPDF2.PdfReader(file)
-            for page in reader.pages:
-                text += page.extract_text() or ""
+        pdf_bytes = await file.read()
+        reader = PyPDF2.PdfReader(io.BytesIO(pdf_bytes))
+        for page in reader.pages:
+            text += page.extract_text() or ""
         return text
 
     @staticmethod
-    def extract_text_from_csv(file_path: str) -> str:
-        lines = []
-        with open(file_path, newline='', encoding='utf-8') as csvfile:
-            reader = csv.reader(csvfile)
-            for row in reader:
-                lines.append(', '.join(row))
-        return '\n'.join(lines)
+    async def extract_text_from_csv(file: UploadFile) -> str:
+        contents = await file.read()
+        decoded = contents.decode("utf-8")
+        reader = csv.reader(io.StringIO(decoded))
+        lines = [", ".join(row) for row in reader]
+        return "\n".join(lines)
 
     @staticmethod
-    def extract_text_from_docx(file_path: str) -> str:
-        doc = docx.Document(file_path)
-        return '\n'.join([para.text for para in doc.paragraphs])
+    async def extract_text_from_docx(file: UploadFile) -> str:
+        contents = await file.read()
+        doc = docx.Document(io.BytesIO(contents))
+        return "\n".join([para.text for para in doc.paragraphs])
 
     @staticmethod
-    def extract_text(file_path: str) -> str:
-        ext = Path(file_path).suffix.lower()
-        if ext == '.pdf':
-            return DocumentExtractor.extract_text_from_pdf(file_path)
-        elif ext == '.csv':
-            return DocumentExtractor.extract_text_from_csv(file_path)
-        elif ext == '.docx':
-            return DocumentExtractor.extract_text_from_docx(file_path)
+    async def extract_text(file: UploadFile) -> str:
+        ext = file.filename.split(".")[-1].lower()
+
+        if ext == "pdf":
+            return await DocumentExtractor.extract_text_from_pdf(file)
+        elif ext == "csv":
+            return await DocumentExtractor.extract_text_from_csv(file)
+        elif ext == "docx":
+            return await DocumentExtractor.extract_text_from_docx(file)
         else:
             raise ValueError(f"Unsupported file extension: {ext}")
-        
-
-

@@ -1,0 +1,1 @@
+sudo docker run -p 6333:6333 -v .:/qdrant/storage qdrant/qdrant
