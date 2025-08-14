@@ -1,0 +1,51 @@
+2025-08-14 21:25:50,827 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG/backend']
+2025-08-14 21:25:50,828 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-08-14 21:25:50,828 [INFO] uvicorn.error: Started reloader process [87086] using StatReload
+2025-08-14 21:25:53,792 [INFO] uvicorn.error: Started server process [87127]
+2025-08-14 21:25:53,792 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 21:25:53,792 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-14 21:25:53,809 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 21:25:53,809 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 21:26:14,593 [INFO] uvicorn.error: Shutting down
+2025-08-14 21:26:14,695 [INFO] uvicorn.error: Finished server process [87127]
+2025-08-14 21:26:14,711 [INFO] uvicorn.error: Stopping reloader process [87086]
+2025-08-14 21:26:32,914 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG/backend']
+2025-08-14 21:26:32,914 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-08-14 21:26:32,914 [INFO] uvicorn.error: Started reloader process [87356] using StatReload
+2025-08-14 21:26:35,472 [INFO] uvicorn.error: Started server process [87396]
+2025-08-14 21:26:35,472 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 21:26:35,473 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-14 21:26:35,487 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 21:26:35,487 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 21:27:28,902 [INFO] uvicorn.error: Shutting down
+2025-08-14 21:27:29,003 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 21:27:29,004 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 21:27:29,004 [INFO] uvicorn.error: Finished server process [87396]
+2025-08-14 21:27:29,051 [INFO] uvicorn.error: Stopping reloader process [87356]
+2025-08-14 21:27:32,927 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG/backend']
+2025-08-14 21:27:32,927 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-08-14 21:27:32,928 [INFO] uvicorn.error: Started reloader process [87610] using StatReload
+2025-08-14 21:27:35,731 [INFO] uvicorn.error: Started server process [87654]
+2025-08-14 21:27:35,732 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 21:27:35,732 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-14 21:27:35,745 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 21:27:35,745 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 21:28:50,490 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/app.py'. Reloading...
+2025-08-14 21:28:50,541 [INFO] uvicorn.error: Shutting down
+2025-08-14 21:28:50,642 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 21:28:50,643 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 21:28:50,644 [INFO] uvicorn.error: Finished server process [87654]
+2025-08-14 21:28:52,993 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/app.py'. Reloading...
+2025-08-14 21:28:54,178 [INFO] uvicorn.error: Stopping reloader process [87610]
+2025-08-14 21:28:57,557 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG/backend']
+2025-08-14 21:28:57,557 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-08-14 21:28:57,557 [INFO] uvicorn.error: Started reloader process [87924] using StatReload
+2025-08-14 21:29:15,655 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/app.py'. Reloading...
+2025-08-14 21:29:19,095 [INFO] uvicorn.error: Started server process [88093]
+2025-08-14 21:29:19,095 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 21:29:19,096 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-14 21:29:19,109 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 21:29:19,109 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 21:29:25,934 [INFO] uvicorn.error: Shutting down
+2025-08-14 21:29:26,035 [INFO] uvicorn.error: Finished server process [88093]
+2025-08-14 21:29:26,055 [INFO] uvicorn.error: Stopping reloader process [87924]

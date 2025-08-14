@@ -10,7 +10,7 @@ from log.logging_setup import setup_logging
 import logging
 from fastapi.middleware.cors import CORSMiddleware
 
-log_config = setup_logging("/home/le-chi-anh/Documents/Full-Stack-RAG/log/app.log")
+log_config = setup_logging("./Full-Stack-RAG/backend/log/app.log")
 
 logger = logging.getLogger(__file__)
 

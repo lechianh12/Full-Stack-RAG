@@ -1,4 +1,0 @@
-2025-08-14 21:06:08,807 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG/backend']
-2025-08-14 21:06:08,808 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-2025-08-14 21:06:08,808 [INFO] uvicorn.error: Started reloader process [81878] using StatReload
-2025-08-14 21:06:10,516 [INFO] uvicorn.error: Stopping reloader process [81878]
