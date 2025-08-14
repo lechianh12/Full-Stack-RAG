@@ -8,6 +8,7 @@ from src.api.routers.authen_router import authen_router
 from db.mongo_db import init_db
 from log.logging_setup import setup_logging
 import logging
+from fastapi.middleware.cors import CORSMiddleware
 
 log_config = setup_logging("/home/le-chi-anh/Documents/Full-Stack-RAG/log/app.log")
 
@@ -23,6 +24,19 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+origins = [
+    "http://localhost",
+    "http://localhost:3000", 
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"], # Cho phép tất cả các method (GET, POST, etc.)
+    allow_headers=["*"], # Cho phép tất cả các header
+)
+
 
 app.include_router(ingest_router, prefix="/api/ingest", tags=["Ingest"])
 app.include_router(chat_router, prefix="/api/chat", tags=["Chat"])
@@ -31,4 +45,4 @@ app.include_router(authen_router, prefix="/api/auth", tags=["Authentication"])
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("src.api.app:app", host="0.0.0.0", port=8000, reload=True, log_config=log_config)
+    uvicorn.run("src.api.app:app", host="0.0.0.0", port=8000, reload=True)

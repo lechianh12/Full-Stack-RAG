@@ -32,26 +32,35 @@ async def create_session(current_user: str = Depends(get_current_user)):
     logger.info(f"Session created for user {current_user} with session ID {request_data.session_id}")
 
     return {
-        "message": "Session created successfully",
+        "id": request_data.id,
+        "username": request_data.username,
+        "collection": request_data.collection,
+        "session_id": request_data.session_id,
     }
 
 @session_router.get('/get_all_sessions', response_model=List[SessionRequest])
 async def get_all_sessions(current_user: str = Depends(get_current_user)):
     if not current_user:
         return None
-    return await SessionRequest.find_all().to_list()
+    return await SessionRequest.find(SessionRequest.username == current_user).to_list()
 
-@session_router.delete('/delete_session/{_id}', status_code=204)
-async def delete_session(_id: PydanticObjectId, current_user: str = Depends(get_current_user)):
+
+@session_router.delete('/delete_session/{session_id}', status_code=204)
+async def delete_session(session_id: str, current_user: str = Depends(get_current_user)):
     if not current_user:
         return None
 
-    session_to_delete = await SessionRequest.find_one(SessionRequest.id == _id)
+    session_to_delete = await SessionRequest.find_one(SessionRequest.session_id == session_id)
+    
+
+    if not session_to_delete or session_to_delete.username != current_user:
+        raise HTTPException(status_code=404, detail="Session not found or you don't have permission to delete it")
 
     await session_to_delete.delete()
 
-    logger.info(f"Session with ID {_id} deleted successfully")
-    return {"message": "Session deleted successfully"}
+
+    logger.info(f"Session with session_id {session_id} deleted successfully")
+    return None
 
 
 @session_router.get("/get_current_session/{session_id}")

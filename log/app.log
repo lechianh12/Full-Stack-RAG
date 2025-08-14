@@ -396,3 +396,491 @@
 2025-08-14 18:19:41,027 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
 2025-08-14 18:19:41,042 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
 2025-08-14 18:19:41,042 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 19:39:32,934 [INFO] uvicorn.error: Shutting down
+2025-08-14 19:39:33,035 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 19:39:33,036 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 19:39:33,036 [INFO] uvicorn.error: Finished server process [47832]
+2025-08-14 19:39:33,055 [INFO] uvicorn.error: Stopping reloader process [47018]
+2025-08-14 19:56:12,966 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG']
+2025-08-14 19:56:12,966 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-08-14 19:56:12,966 [INFO] uvicorn.error: Started reloader process [63957] using StatReload
+2025-08-14 19:56:16,022 [INFO] uvicorn.error: Started server process [63996]
+2025-08-14 19:56:16,022 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 19:56:16,023 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 19:56:16,036 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 19:56:16,036 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:02:03,067 [INFO] uvicorn.access: 127.0.0.1:44478 - "OPTIONS /api/session/create_session HTTP/1.1" 405
+2025-08-14 20:02:03,070 [INFO] uvicorn.access: 127.0.0.1:44488 - "OPTIONS /api/session/create_session HTTP/1.1" 405
+2025-08-14 20:02:57,504 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:02:57,605 [INFO] uvicorn.error: Finished server process [63996]
+2025-08-14 20:02:57,610 [ERROR] uvicorn.error: Traceback (most recent call last):
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/server.py", line 70, in serve
+    with self.capture_signals():
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/server.py", line 331, in capture_signals
+    signal.raise_signal(captured_signal)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/asyncio/runners.py", line 157, in _on_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 701, in lifespan
+    await receive()
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/lifespan/on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/asyncio/queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+2025-08-14 20:03:09,503 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG']
+2025-08-14 20:03:09,503 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-08-14 20:03:09,504 [INFO] uvicorn.error: Started reloader process [66114] using StatReload
+2025-08-14 20:03:12,332 [INFO] uvicorn.error: Started server process [66150]
+2025-08-14 20:03:12,333 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:03:12,333 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:03:12,349 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:03:12,350 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:04:48,762 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/app.py'. Reloading...
+2025-08-14 20:04:48,856 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:04:48,958 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:04:48,959 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:04:48,959 [INFO] uvicorn.error: Finished server process [66150]
+2025-08-14 20:04:59,454 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/app.py'. Reloading...
+2025-08-14 20:05:02,493 [INFO] uvicorn.error: Started server process [66398]
+2025-08-14 20:05:02,493 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:05:02,494 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:05:02,508 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:05:02,508 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:05:14,950 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:05:15,050 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:05:15,051 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:05:15,052 [INFO] uvicorn.error: Finished server process [66398]
+2025-08-14 20:05:15,093 [INFO] uvicorn.error: Stopping reloader process [66114]
+2025-08-14 20:07:00,456 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG']
+2025-08-14 20:07:00,456 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-08-14 20:07:00,456 [INFO] uvicorn.error: Started reloader process [66857] using StatReload
+2025-08-14 20:07:03,224 [INFO] uvicorn.error: Started server process [66910]
+2025-08-14 20:07:03,224 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:07:03,224 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:07:03,236 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:07:03,237 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:07:23,551 [INFO] uvicorn.access: 127.0.0.1:42330 - "OPTIONS /api/auth/login HTTP/1.1" 200
+2025-08-14 20:07:23,558 [INFO] uvicorn.access: 127.0.0.1:42340 - "POST /api/auth/login HTTP/1.1" 200
+2025-08-14 20:07:23,584 [INFO] uvicorn.access: 127.0.0.1:42340 - "OPTIONS /api/session/create_session HTTP/1.1" 200
+2025-08-14 20:07:23,585 [INFO] uvicorn.access: 127.0.0.1:42330 - "OPTIONS /api/session/create_session HTTP/1.1" 200
+2025-08-14 20:07:23,594 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID f5ed5d77-5f93-4ea5-bc91-ca33d6498835
+2025-08-14 20:07:23,597 [INFO] uvicorn.access: 127.0.0.1:42350 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-14 20:07:23,600 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID 609db7eb-5971-4441-b75d-f2295f8ee5f6
+2025-08-14 20:07:23,600 [INFO] uvicorn.access: 127.0.0.1:42366 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-14 20:09:00,580 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:09:00,606 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:09:00,707 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:09:00,707 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:09:00,707 [INFO] uvicorn.error: Finished server process [66910]
+2025-08-14 20:09:03,934 [INFO] uvicorn.error: Started server process [67438]
+2025-08-14 20:09:03,934 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:09:03,934 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:09:03,947 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:09:03,948 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:09:05,682 [INFO] uvicorn.access: 127.0.0.1:43634 - "POST /api/auth/login HTTP/1.1" 200
+2025-08-14 20:09:05,694 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:09:05,694 [INFO] uvicorn.access: 127.0.0.1:43634 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-14 20:09:05,695 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID ffad0b0f-1676-45ae-a9db-933db33e7f67
+2025-08-14 20:09:05,696 [INFO] uvicorn.access: 127.0.0.1:43644 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-14 20:09:05,703 [INFO] uvicorn.access: 127.0.0.1:43644 - "OPTIONS /api/chat/get_all_messages/ffad0b0f-1676-45ae-a9db-933db33e7f67 HTTP/1.1" 200
+2025-08-14 20:09:05,709 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session ffad0b0f-1676-45ae-a9db-933db33e7f67
+2025-08-14 20:09:05,709 [INFO] uvicorn.access: 127.0.0.1:43646 - "GET /api/chat/get_all_messages/ffad0b0f-1676-45ae-a9db-933db33e7f67 HTTP/1.1" 200
+2025-08-14 20:09:05,738 [INFO] uvicorn.access: 127.0.0.1:43634 - "OPTIONS /api/chat/get_all_messages/c8afe8bb-5f3b-43be-b3f6-bb985772175f HTTP/1.1" 200
+2025-08-14 20:09:05,743 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:09:05,744 [INFO] uvicorn.access: 127.0.0.1:43646 - "GET /api/chat/get_all_messages/c8afe8bb-5f3b-43be-b3f6-bb985772175f HTTP/1.1" 200
+2025-08-14 20:09:10,357 [INFO] uvicorn.access: 127.0.0.1:43646 - "OPTIONS /api/chat/send_message/c8afe8bb-5f3b-43be-b3f6-bb985772175f?message=xin%20chao HTTP/1.1" 200
+2025-08-14 20:09:11,734 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Message sent: xin chao | Response: Chào bạn, tôi có thể giúp gì được cho bạn? Bạn có câu hỏi nào liên quan đến collection d37a5260-9082-4c73-9a8e-fe43e2a4aa08 không?
+2025-08-14 20:09:11,735 [INFO] uvicorn.access: 127.0.0.1:43634 - "POST /api/chat/send_message/c8afe8bb-5f3b-43be-b3f6-bb985772175f?message=xin%20chao HTTP/1.1" 200
+2025-08-14 20:09:26,883 [INFO] uvicorn.access: 127.0.0.1:34666 - "OPTIONS /api/chat/send_message/c8afe8bb-5f3b-43be-b3f6-bb985772175f?message=ban%20biet%20thong%20tin%20gi%20ve%20tai%20lieu%20nay HTTP/1.1" 200
+2025-08-14 20:09:27,954 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Message sent: ban biet thong tin gi ve tai lieu nay | Response: Để trả lời câu hỏi của bạn, tôi cần biết bạn muốn biết thông tin gì về tài liệu này. Vui lòng cho tôi biết câu hỏi cụ thể của bạn.
+2025-08-14 20:09:27,954 [INFO] uvicorn.access: 127.0.0.1:34668 - "POST /api/chat/send_message/c8afe8bb-5f3b-43be-b3f6-bb985772175f?message=ban%20biet%20thong%20tin%20gi%20ve%20tai%20lieu%20nay HTTP/1.1" 200
+2025-08-14 20:12:10,326 [INFO] uvicorn.access: 127.0.0.1:56114 - "OPTIONS /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:12:10,333 [INFO] uvicorn.access: 127.0.0.1:56116 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:12:10,361 [INFO] uvicorn.access: 127.0.0.1:56114 - "OPTIONS /api/chat/get_all_messages/5769 HTTP/1.1" 200
+2025-08-14 20:12:10,364 [INFO] uvicorn.access: 127.0.0.1:56116 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:12:10,367 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 5769
+2025-08-14 20:12:10,367 [INFO] uvicorn.access: 127.0.0.1:56122 - "GET /api/chat/get_all_messages/5769 HTTP/1.1" 200
+2025-08-14 20:12:30,393 [INFO] uvicorn.access: 127.0.0.1:40928 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:12:30,397 [INFO] uvicorn.access: 127.0.0.1:40928 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:12:30,418 [INFO] uvicorn.access: 127.0.0.1:40942 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:12:30,420 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 5769
+2025-08-14 20:12:30,420 [INFO] uvicorn.access: 127.0.0.1:40956 - "GET /api/chat/get_all_messages/5769 HTTP/1.1" 200
+2025-08-14 20:12:35,574 [INFO] uvicorn.access: 127.0.0.1:40964 - "OPTIONS /api/session/delete_session/undefined HTTP/1.1" 200
+2025-08-14 20:12:35,578 [INFO] uvicorn.access: 127.0.0.1:40980 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 422
+2025-08-14 20:12:37,357 [INFO] uvicorn.access: 127.0.0.1:40980 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 422
+2025-08-14 20:12:39,206 [INFO] uvicorn.access: 127.0.0.1:40980 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 422
+2025-08-14 20:12:41,221 [INFO] uvicorn.access: 127.0.0.1:40980 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 422
+2025-08-14 20:12:49,487 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID f10117b3-c703-4eb6-8764-2ed1a26d3f82
+2025-08-14 20:12:49,488 [INFO] uvicorn.access: 127.0.0.1:54598 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-14 20:12:49,507 [INFO] uvicorn.access: 127.0.0.1:54598 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:12:49,522 [INFO] uvicorn.access: 127.0.0.1:54616 - "OPTIONS /api/chat/get_all_messages/f10117b3-c703-4eb6-8764-2ed1a26d3f82 HTTP/1.1" 200
+2025-08-14 20:12:49,525 [INFO] uvicorn.access: 127.0.0.1:54612 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:12:49,533 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session f10117b3-c703-4eb6-8764-2ed1a26d3f82
+2025-08-14 20:12:49,533 [INFO] uvicorn.access: 127.0.0.1:54624 - "GET /api/chat/get_all_messages/f10117b3-c703-4eb6-8764-2ed1a26d3f82 HTTP/1.1" 200
+2025-08-14 20:12:54,340 [INFO] uvicorn.access: 127.0.0.1:54598 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 422
+2025-08-14 20:12:55,172 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID 516c455d-5a23-4dda-8591-4dbc330f288f
+2025-08-14 20:12:55,173 [INFO] uvicorn.access: 127.0.0.1:54598 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-14 20:12:55,191 [INFO] uvicorn.access: 127.0.0.1:54598 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:12:55,206 [INFO] uvicorn.access: 127.0.0.1:54634 - "OPTIONS /api/chat/get_all_messages/516c455d-5a23-4dda-8591-4dbc330f288f HTTP/1.1" 200
+2025-08-14 20:12:55,212 [INFO] uvicorn.access: 127.0.0.1:54630 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:12:55,218 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 516c455d-5a23-4dda-8591-4dbc330f288f
+2025-08-14 20:12:55,218 [INFO] uvicorn.access: 127.0.0.1:54636 - "GET /api/chat/get_all_messages/516c455d-5a23-4dda-8591-4dbc330f288f HTTP/1.1" 200
+2025-08-14 20:13:13,191 [INFO] uvicorn.access: 127.0.0.1:52434 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:13:13,196 [INFO] uvicorn.access: 127.0.0.1:52434 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:13:13,207 [INFO] uvicorn.access: 127.0.0.1:52438 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:13:13,208 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 5769
+2025-08-14 20:13:13,208 [INFO] uvicorn.access: 127.0.0.1:52446 - "GET /api/chat/get_all_messages/5769 HTTP/1.1" 200
+2025-08-14 20:13:15,171 [INFO] uvicorn.access: 127.0.0.1:52434 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 422
+2025-08-14 20:13:53,324 [INFO] uvicorn.access: 127.0.0.1:37042 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:13:53,327 [INFO] uvicorn.access: 127.0.0.1:37042 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:13:53,339 [INFO] uvicorn.access: 127.0.0.1:37050 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:13:53,340 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 5769
+2025-08-14 20:13:53,340 [INFO] uvicorn.access: 127.0.0.1:37064 - "GET /api/chat/get_all_messages/5769 HTTP/1.1" 200
+2025-08-14 20:14:32,218 [INFO] uvicorn.access: 127.0.0.1:60176 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:14:32,224 [INFO] uvicorn.access: 127.0.0.1:60176 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:14:32,234 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 5769
+2025-08-14 20:14:32,234 [INFO] uvicorn.access: 127.0.0.1:60184 - "GET /api/chat/get_all_messages/5769 HTTP/1.1" 200
+2025-08-14 20:14:34,012 [INFO] uvicorn.access: 127.0.0.1:60176 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 422
+2025-08-14 20:14:36,939 [INFO] uvicorn.access: 127.0.0.1:60176 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 422
+2025-08-14 20:14:50,914 [INFO] uvicorn.access: 127.0.0.1:57328 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 422
+2025-08-14 20:14:54,882 [INFO] uvicorn.access: 127.0.0.1:57328 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 422
+2025-08-14 20:15:36,466 [INFO] uvicorn.access: 127.0.0.1:59156 - "OPTIONS /api/ingest/ingest?session_id=5769 HTTP/1.1" 200
+2025-08-14 20:15:37,991 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-14 20:15:37,993 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/6445/exists "HTTP/1.1 200 OK"
+2025-08-14 20:15:38,808 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-14 20:15:38,901 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/6445 "HTTP/1.1 200 OK"
+2025-08-14 20:15:38,952 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-14 20:15:38,959 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/6445/points?wait=true "HTTP/1.1 200 OK"
+2025-08-14 20:15:38,960 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/ingest_router.py: File DAY-LA-FILE-MAU-PDF.pdf ingested successfully into collection 6445
+2025-08-14 20:15:38,966 [INFO] uvicorn.access: 127.0.0.1:59156 - "POST /api/ingest/ingest?session_id=5769 HTTP/1.1" 200
+2025-08-14 20:15:49,642 [INFO] uvicorn.access: 127.0.0.1:34290 - "OPTIONS /api/chat/send_message/5769?message=tai%20lieu%20nay%20noi%20ve%20gi HTTP/1.1" 200
+2025-08-14 20:15:51,108 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-14 20:15:51,159 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-14 20:15:51,163 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/6445/points/search "HTTP/1.1 200 OK"
+2025-08-14 20:15:52,056 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Message sent: tai lieu nay noi ve gi | Response: Tài liệu này nói về một file mẫu PDF.
+2025-08-14 20:15:52,056 [INFO] uvicorn.access: 127.0.0.1:34296 - "POST /api/chat/send_message/5769?message=tai%20lieu%20nay%20noi%20ve%20gi HTTP/1.1" 200
+2025-08-14 20:17:22,556 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:17:22,648 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:17:22,752 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:17:22,752 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:17:22,752 [INFO] uvicorn.error: Finished server process [67438]
+2025-08-14 20:17:23,897 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:17:26,796 [INFO] uvicorn.error: Started server process [69777]
+2025-08-14 20:17:26,796 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:17:26,797 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:17:26,810 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:17:26,811 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:17:47,817 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:17:47,877 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:17:47,979 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:17:47,979 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:17:47,979 [INFO] uvicorn.error: Finished server process [69777]
+2025-08-14 20:17:51,593 [INFO] uvicorn.error: Started server process [69878]
+2025-08-14 20:17:51,593 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:17:51,593 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:17:51,609 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:17:51,609 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:17:52,176 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:17:52,212 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:17:52,312 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:17:52,312 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:17:52,313 [INFO] uvicorn.error: Finished server process [69878]
+2025-08-14 20:17:56,197 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:17:59,092 [INFO] uvicorn.error: Started server process [69986]
+2025-08-14 20:17:59,092 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:17:59,093 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:17:59,107 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:17:59,108 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:19:05,616 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:19:05,622 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:19:05,723 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:19:05,723 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:19:05,723 [INFO] uvicorn.error: Finished server process [69986]
+2025-08-14 20:19:08,609 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:19:12,190 [INFO] uvicorn.error: Started server process [70207]
+2025-08-14 20:19:12,190 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:19:12,190 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:19:12,208 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:19:12,208 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:19:12,390 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:19:12,409 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:19:12,510 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:19:12,510 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:19:12,511 [INFO] uvicorn.error: Finished server process [70207]
+2025-08-14 20:19:14,848 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:19:16,780 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:19:18,188 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:19:20,091 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:19:23,339 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:19:25,252 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:19:28,508 [INFO] uvicorn.error: Started server process [70391]
+2025-08-14 20:19:28,508 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:19:28,509 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:19:28,526 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:19:28,527 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:19:28,852 [INFO] uvicorn.access: 127.0.0.1:60482 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 404
+2025-08-14 20:19:31,210 [INFO] uvicorn.access: 127.0.0.1:60482 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 404
+2025-08-14 20:19:37,595 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:19:37,657 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:19:37,757 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:19:37,758 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:19:37,758 [INFO] uvicorn.error: Finished server process [70391]
+2025-08-14 20:19:41,239 [INFO] uvicorn.error: Started server process [70511]
+2025-08-14 20:19:41,240 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:19:41,240 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:19:41,254 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:19:41,254 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:20:56,271 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:20:56,290 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:20:56,390 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:20:56,391 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:20:56,391 [INFO] uvicorn.error: Finished server process [70511]
+2025-08-14 20:20:58,686 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:21:02,371 [INFO] uvicorn.error: Started server process [70815]
+2025-08-14 20:21:02,372 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:21:02,372 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:21:02,388 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:21:02,389 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:21:03,944 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:21:03,994 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:21:04,095 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:21:04,096 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:21:04,097 [INFO] uvicorn.error: Finished server process [70815]
+2025-08-14 20:21:07,231 [INFO] uvicorn.error: Started server process [70874]
+2025-08-14 20:21:07,231 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:21:07,231 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:21:07,247 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:21:07,247 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:21:07,696 [INFO] uvicorn.access: 127.0.0.1:34428 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 404
+2025-08-14 20:21:12,612 [INFO] uvicorn.access: 127.0.0.1:34428 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 404
+2025-08-14 20:21:31,420 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:21:31,426 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:21:31,527 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:21:31,528 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:21:31,528 [INFO] uvicorn.error: Finished server process [70874]
+2025-08-14 20:21:34,780 [INFO] uvicorn.error: Started server process [71015]
+2025-08-14 20:21:34,781 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:21:34,781 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:21:34,796 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:21:34,797 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:21:36,600 [INFO] uvicorn.access: 127.0.0.1:50344 - "DELETE /api/session/delete_session/undefined HTTP/1.1" 404
+2025-08-14 20:23:21,172 [INFO] uvicorn.access: 127.0.0.1:41282 - "OPTIONS /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:23:21,178 [INFO] uvicorn.access: 127.0.0.1:41284 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:23:21,183 [INFO] uvicorn.access: 127.0.0.1:41284 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:23:21,202 [INFO] uvicorn.access: 127.0.0.1:41282 - "OPTIONS /api/chat/get_all_messages/5769 HTTP/1.1" 200
+2025-08-14 20:23:21,206 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 1 messages for session 5769
+2025-08-14 20:23:21,207 [INFO] uvicorn.access: 127.0.0.1:41294 - "GET /api/chat/get_all_messages/5769 HTTP/1.1" 200
+2025-08-14 20:23:23,487 [INFO] uvicorn.access: 127.0.0.1:41282 - "OPTIONS /api/session/delete_session/5769 HTTP/1.1" 200
+2025-08-14 20:23:23,491 [INFO] uvicorn.access: 127.0.0.1:41284 - "DELETE /api/session/delete_session/5769 HTTP/1.1" 404
+2025-08-14 20:23:25,315 [INFO] uvicorn.access: 127.0.0.1:41284 - "OPTIONS /api/session/delete_session/5838 HTTP/1.1" 200
+2025-08-14 20:23:25,320 [INFO] uvicorn.access: 127.0.0.1:41282 - "DELETE /api/session/delete_session/5838 HTTP/1.1" 404
+2025-08-14 20:24:07,811 [INFO] uvicorn.access: 127.0.0.1:39410 - "GET / HTTP/1.1" 404
+2025-08-14 20:24:07,863 [INFO] uvicorn.access: 127.0.0.1:39410 - "GET /favicon.ico HTTP/1.1" 404
+2025-08-14 20:24:10,839 [INFO] uvicorn.access: 127.0.0.1:39410 - "GET /docs HTTP/1.1" 200
+2025-08-14 20:24:11,296 [INFO] uvicorn.access: 127.0.0.1:39410 - "GET /openapi.json HTTP/1.1" 200
+2025-08-14 20:24:23,853 [INFO] uvicorn.access: 127.0.0.1:39426 - "POST /api/auth/login HTTP/1.1" 200
+2025-08-14 20:24:36,774 [INFO] uvicorn.access: 127.0.0.1:57776 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-14 20:24:51,822 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Retrieved session for user chianh with session ID 516c455d-5a23-4dda-8591-4dbc330f288f
+2025-08-14 20:24:51,822 [INFO] uvicorn.access: 127.0.0.1:45338 - "GET /api/session/get_current_session/516c455d-5a23-4dda-8591-4dbc330f288f HTTP/1.1" 200
+2025-08-14 20:24:58,299 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id 516c455d-5a23-4dda-8591-4dbc330f288f deleted successfully
+2025-08-14 20:24:58,299 [INFO] uvicorn.access: 127.0.0.1:44134 - "DELETE /api/session/delete_session/516c455d-5a23-4dda-8591-4dbc330f288f HTTP/1.1" 204
+2025-08-14 20:25:04,276 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Retrieved session for user chianh with session ID 516c455d-5a23-4dda-8591-4dbc330f288f
+2025-08-14 20:25:04,276 [INFO] uvicorn.access: 127.0.0.1:44148 - "GET /api/session/get_current_session/516c455d-5a23-4dda-8591-4dbc330f288f HTTP/1.1" 200
+2025-08-14 20:26:13,168 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/routers/session_router.py'. Reloading...
+2025-08-14 20:26:13,257 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:26:13,358 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:26:13,358 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:26:13,359 [INFO] uvicorn.error: Finished server process [71015]
+2025-08-14 20:26:16,828 [INFO] uvicorn.error: Started server process [72273]
+2025-08-14 20:26:16,828 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-14 20:26:16,829 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:26:16,846 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:26:16,847 [INFO] uvicorn.error: Application startup complete.
+2025-08-14 20:26:20,215 [INFO] uvicorn.access: 127.0.0.1:50690 - "DELETE /api/session/delete_session/5769 HTTP/1.1" 404
+2025-08-14 20:26:22,995 [INFO] uvicorn.access: 127.0.0.1:50690 - "DELETE /api/session/delete_session/5769 HTTP/1.1" 404
+2025-08-14 20:26:44,794 [WARNING] uvicorn.error: StatReload detected changes in 'src/api/app.py'. Reloading...
+2025-08-14 20:26:44,838 [INFO] uvicorn.error: Shutting down
+2025-08-14 20:26:44,939 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-14 20:26:44,940 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-14 20:26:44,941 [INFO] uvicorn.error: Finished server process [72273]
+2025-08-14 20:26:46,920 [INFO] uvicorn.error: Stopping reloader process [66857]
+2025-08-14 20:26:53,138 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:26:53,155 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:28:41,226 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:28:41,240 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:29:00,279 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:29:00,294 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:29:02,799 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session f71a573b-8a4f-41a5-a53f-4cd71eb4a54e
+2025-08-14 20:29:04,687 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id f71a573b-8a4f-41a5-a53f-4cd71eb4a54e deleted successfully
+2025-08-14 20:29:06,247 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID dcb83fcb-0f6e-462e-aebb-892b35fc3325
+2025-08-14 20:29:06,262 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session dcb83fcb-0f6e-462e-aebb-892b35fc3325
+2025-08-14 20:29:07,449 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID 7ed5ce6a-4beb-4ca5-a0ac-5d2c8a6b6daf
+2025-08-14 20:29:07,460 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 7ed5ce6a-4beb-4ca5-a0ac-5d2c8a6b6daf
+2025-08-14 20:29:07,618 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID cde4a624-a4f8-4911-9b6c-ed8591ae2e26
+2025-08-14 20:29:07,628 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session cde4a624-a4f8-4911-9b6c-ed8591ae2e26
+2025-08-14 20:29:07,837 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID 163fcfcb-97a0-4e72-abb1-ab502e390244
+2025-08-14 20:29:07,872 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 163fcfcb-97a0-4e72-abb1-ab502e390244
+2025-08-14 20:29:08,006 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID a2ac2872-c6e2-4436-a69b-dff87210d8c4
+2025-08-14 20:29:08,015 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session a2ac2872-c6e2-4436-a69b-dff87210d8c4
+2025-08-14 20:29:09,477 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id a2ac2872-c6e2-4436-a69b-dff87210d8c4 deleted successfully
+2025-08-14 20:29:09,487 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 163fcfcb-97a0-4e72-abb1-ab502e390244
+2025-08-14 20:29:12,589 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id 163fcfcb-97a0-4e72-abb1-ab502e390244 deleted successfully
+2025-08-14 20:29:12,599 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session cde4a624-a4f8-4911-9b6c-ed8591ae2e26
+2025-08-14 20:29:14,581 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id cde4a624-a4f8-4911-9b6c-ed8591ae2e26 deleted successfully
+2025-08-14 20:29:14,595 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 7ed5ce6a-4beb-4ca5-a0ac-5d2c8a6b6daf
+2025-08-14 20:29:16,359 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id 7ed5ce6a-4beb-4ca5-a0ac-5d2c8a6b6daf deleted successfully
+2025-08-14 20:29:16,370 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session dcb83fcb-0f6e-462e-aebb-892b35fc3325
+2025-08-14 20:29:17,634 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 3c831b33-af1d-4bcc-9c59-253e9a341d6f
+2025-08-14 20:29:20,870 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id 3c831b33-af1d-4bcc-9c59-253e9a341d6f deleted successfully
+2025-08-14 20:29:22,464 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 2 messages for session cce1ecc2-86eb-44dc-aa72-a5e7ff92cf49
+2025-08-14 20:29:27,810 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 609db7eb-5971-4441-b75d-f2295f8ee5f6
+2025-08-14 20:29:30,079 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id 609db7eb-5971-4441-b75d-f2295f8ee5f6 deleted successfully
+2025-08-14 20:29:34,920 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-14 20:29:34,959 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-14 20:29:36,092 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 2 messages for session cce1ecc2-86eb-44dc-aa72-a5e7ff92cf49
+2025-08-14 20:29:38,066 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id cce1ecc2-86eb-44dc-aa72-a5e7ff92cf49 deleted successfully
+2025-08-14 20:29:47,183 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:29:47,201 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:29:47,233 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session a6398139-977b-42aa-b9bd-6315921ee2ae
+2025-08-14 20:29:49,220 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id a6398139-977b-42aa-b9bd-6315921ee2ae deleted successfully
+2025-08-14 20:29:50,113 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID dca36f00-91bf-4088-81ed-d94bf4f7857a
+2025-08-14 20:29:50,123 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session dca36f00-91bf-4088-81ed-d94bf4f7857a
+2025-08-14 20:29:53,066 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id dca36f00-91bf-4088-81ed-d94bf4f7857a deleted successfully
+2025-08-14 20:29:54,042 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session f5ed5d77-5f93-4ea5-bc91-ca33d6498835
+2025-08-14 20:29:55,780 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id f5ed5d77-5f93-4ea5-bc91-ca33d6498835 deleted successfully
+2025-08-14 20:30:29,242 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session created for user chianh with session ID e8b38c51-9326-4dca-b993-51ccf8dd134e
+2025-08-14 20:30:29,254 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session e8b38c51-9326-4dca-b993-51ccf8dd134e
+2025-08-14 20:30:30,207 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 2 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:30:31,721 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 2 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:30:32,293 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 2 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:30:34,642 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id e8b38c51-9326-4dca-b993-51ccf8dd134e deleted successfully
+2025-08-14 20:30:35,828 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 2 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:32:00,005 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 2 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:32:02,328 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id ffad0b0f-1676-45ae-a9db-933db33e7f67 deleted successfully
+2025-08-14 20:32:04,416 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id f10117b3-c703-4eb6-8764-2ed1a26d3f82 deleted successfully
+2025-08-14 20:32:06,277 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/session_router.py: Session with session_id dcb83fcb-0f6e-462e-aebb-892b35fc3325 deleted successfully
+2025-08-14 20:34:44,146 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 2 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:36:05,220 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connecting to MongoDB...
+2025-08-14 20:36:05,241 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py: Connected to MongoDB successfully.
+2025-08-14 20:37:25,126 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 2 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:39:53,230 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/ingest_router.py: Processing file: DAY-LA-FILE-MAU-PDF.pdf for collection d37a5260-9082-4c73-9a8e-fe43e2a4aa08
+2025-08-14 20:39:54,728 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-14 20:39:54,730 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/d37a5260-9082-4c73-9a8e-fe43e2a4aa08/exists "HTTP/1.1 200 OK"
+2025-08-14 20:39:55,244 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-14 20:39:55,340 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/d37a5260-9082-4c73-9a8e-fe43e2a4aa08 "HTTP/1.1 200 OK"
+2025-08-14 20:39:55,393 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-14 20:39:55,400 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/d37a5260-9082-4c73-9a8e-fe43e2a4aa08/points?wait=true "HTTP/1.1 200 OK"
+2025-08-14 20:39:55,403 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/ingest_router.py: File DAY-LA-FILE-MAU-PDF.pdf ingested successfully into collection d37a5260-9082-4c73-9a8e-fe43e2a4aa08
+2025-08-14 20:39:55,403 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/ingest_router.py: Processing file: 🛠 MÔ TẢ CHI TIẾT VỀ AN TOÀN LAO ĐỘNG.docx for collection d37a5260-9082-4c73-9a8e-fe43e2a4aa08
+2025-08-14 20:39:56,666 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-14 20:39:56,668 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/d37a5260-9082-4c73-9a8e-fe43e2a4aa08/exists "HTTP/1.1 200 OK"
+2025-08-14 20:39:56,670 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/d37a5260-9082-4c73-9a8e-fe43e2a4aa08 "HTTP/1.1 200 OK"
+2025-08-14 20:39:56,720 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-14 20:39:56,722 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/d37a5260-9082-4c73-9a8e-fe43e2a4aa08 "HTTP/1.1 200 OK"
+2025-08-14 20:39:57,148 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-14 20:39:57,162 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/d37a5260-9082-4c73-9a8e-fe43e2a4aa08/points?wait=true "HTTP/1.1 200 OK"
+2025-08-14 20:39:57,164 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/ingest_router.py: File 🛠 MÔ TẢ CHI TIẾT VỀ AN TOÀN LAO ĐỘNG.docx ingested successfully into collection d37a5260-9082-4c73-9a8e-fe43e2a4aa08
+2025-08-14 20:40:07,448 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-14 20:40:07,498 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-14 20:40:07,501 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/d37a5260-9082-4c73-9a8e-fe43e2a4aa08/points/search "HTTP/1.1 200 OK"
+2025-08-14 20:40:09,964 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Message sent: cho toi biet luat an toan lao dong | Response: Luật an toàn lao động bao gồm các nội dung sau:
+
+1.  **Tổng quan và nhận thức về an toàn lao động:** Xây dựng ý thức và trách nhiệm của mỗi cá nhân, ban hành quy định rõ ràng, tổ chức huấn luyện định kỳ và thường xuyên kiểm tra, đánh giá rủi ro.
+2.  **An toàn tại công trường xây dựng:** Sử dụng trang bị bảo hộ lao động, giám sát chặt chẽ công việc, có người hướng dẫn trực tiếp và tuân thủ sơ đồ tổ chức thi công an toàn.
+3.  **Biển báo và quy trình làm việc an toàn:** Tuân thủ quy định về màu sắc, hình dạng và ký hiệu trên biển báo. Chuẩn hóa quy trình làm việc thành văn bản.
+4.  **Huấn luyện và đào tạo an toàn định kỳ:** Huấn luyện khi người lao động mới vào làm, khi thay đổi vị trí công việc hoặc sau một sự cố. Nội dung bao gồm hướng dẫn sử dụng thiết bị, xử lý tình huống khẩn cấp, sơ cứu, thoát hiểm.
+5.  **An toàn trong văn phòng làm việc:** Đảm bảo bàn ghế đúng ergonomic, màn hình đặt ngang tầm mắt, khu vực làm việc thông thoáng, đủ ánh sáng, có lịch nghỉ ngắn, vận động nhẹ.
+2025-08-14 20:40:22,863 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-14 20:40:22,911 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-14 20:40:22,914 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/d37a5260-9082-4c73-9a8e-fe43e2a4aa08/points/search "HTTP/1.1 200 OK"
+2025-08-14 20:40:25,629 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Message sent: co link youtube nao khong | Response: Có một số link YouTube được tìm thấy trong collection này, bao gồm:
+
+*   An toàn trong văn phòng làm việc: [https://www.youtube.com/watch?v=5P3T\_h3BBlI](https://www.youtube.com/watch?v=5P3T_h3BBlI)
+*   An toàn tại công trường xây dựng: [https://www.youtube.com/watch?v=\_-sYo2Sdf14](https://www.youtube.com/watch?v=_-sYo2Sdf14)
+*   Huấn luyện và đào tạo an toàn định kỳ: [https://www.youtube.com/watch?v=qbKwihzFt3E](https://www.youtube.com/watch?v=qbKwihzFt3E)
+*   Tổng quan và nhận thức về an toàn lao động: [https://www.youtube.com/watch?v=3S-9yScDBN4](https://www.youtube.com/watch?v=3S-9yScDBN4)
+*   Biển báo và quy trình làm việc an toàn: [https://www.youtube.com/watch?v=bknGAYIWlnU](https://www.youtube.com/watch?v=bknGAYIWlnU)
+2025-08-14 20:41:19,198 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-14 20:41:19,260 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-14 20:41:19,263 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/d37a5260-9082-4c73-9a8e-fe43e2a4aa08/points/search "HTTP/1.1 200 OK"
+2025-08-14 20:41:20,930 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Message sent: Cho toi biet luat an toan lao dong | Response: Theo nội dung tìm được, an toàn lao động bao gồm: xây dựng ý thức và trách nhiệm của mỗi cá nhân, huấn luyện và đào tạo an toàn định kỳ, an toàn tại công trường xây dựng, an toàn trong văn phòng làm việc, biển báo và quy trình làm việc an toàn.
+2025-08-14 20:41:34,332 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-14 20:41:34,381 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-14 20:41:34,385 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/d37a5260-9082-4c73-9a8e-fe43e2a4aa08/points/search "HTTP/1.1 200 OK"
+2025-08-14 20:41:38,034 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Message sent: co link youtube nao khong | Response: Có một số link YouTube liên quan đến an toàn lao động:
+
+*   An toàn trong văn phòng làm việc: [https://www.youtube.com/watch?v=5P3T\_h3BBlI](https://www.youtube.com/watch?v=5P3T_h3BBlI)
+*   An toàn tại công trường xây dựng: [https://www.youtube.com/watch?v=\_-sYo2Sdf14](https://www.youtube.com/watch?v=_-sYo2Sdf14)
+*   Huấn luyện và đào tạo an toàn định kỳ: [https://www.youtube.com/watch?v=qbKwihzFt3E](https://www.youtube.com/watch?v=qbKwihzFt3E)
+*   Tổng quan và nhận thức về an toàn lao động: [https://www.youtube.com/watch?v=3S-9yScDBN4](https://www.youtube.com/watch?v=3S-9yScDBN4)
+*   Biển báo và quy trình làm việc an toàn: [https://www.youtube.com/watch?v=bknGAYIWlnU](https://www.youtube.com/watch?v=bknGAYIWlnU)
+2025-08-14 20:43:04,416 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 6 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:43:24,364 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 6 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:46:22,832 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 6 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:46:34,846 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-14 20:46:35,639 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-14 20:46:35,642 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/d37a5260-9082-4c73-9a8e-fe43e2a4aa08/points/search "HTTP/1.1 200 OK"
+2025-08-14 20:46:40,326 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Message sent: cho toi biet ve tai lieu mau | Response: Tôi đã tìm thấy thông tin về tài liệu mẫu trong collection. Kết quả như sau:
+
+3. Biển báo và quy trình làm việc an toàn
+📎 Link tham khảo:
+https://www.youtube.com/watch?v=bknGAYIWlnU
+Nội dung mô tả:
+Biển báo đóng vai trò cảnh báo và chỉ dẫn trong môi trường làm việc. Màu sắc, hình dạng và ký hiệu trên biển báo cần tuân thủ quy định quốc gia (TCVN hoặc ISO). Ngoài ra, mọi quy trình làm việc cần được chuẩn hóa thành văn bản, quy định rõ từng bước thao tác để người lao động dễ nhớ, dễ tuân thủ và hạn chế rủi ro.
+
+2. An toàn tại công trường xây dựng
+📎 Link tham khảo:
+https://www.youtube.com/watch?v=_-sYo2Sdf14
+Nội dung mô tả:
+Tại công trường, người lao động đối mặt với nhiều nguy cơ: té ngã, sập giàn giáo, điện giật hoặc tai nạn do thiết bị hư hỏng. Việc sử dụng trang bị bảo hộ lao động như mũ, giày, dây an toàn là bắt buộc. Ngoài ra, công việc cần được giám sát chặt chẽ, có người hướng dẫn trực tiếp và tuân thủ sơ đồ tổ chức thi công an toàn.
+
+🛠 MÔ TẢ CHI TIẾT VỀ AN TOÀN LAO ĐỘNG
+
+1. Tổng quan và nhận thức về an toàn lao động
+📎 Link tham khảo:
+https://www.youtube.com/watch?v=3S-9yScDBN4
+Nội dung mô tả:
+An toàn lao động bắt đầu từ việc xây dựng ý thức và trách nhiệm của mỗi cá nhân. Mọi thành viên trong tổ chức – từ lãnh đạo đến công nhân – cần hiểu rõ vai trò của mình trong việc phòng ngừa tai nạn. Ban quản lý cần ban hành quy định rõ ràng, tổ chức huấn luyện định kỳ và thường xuyên kiểm tra, đánh giá rủi ro để kịp thời khắc phục.
+
+5. An toàn trong văn phòng làm việc
+📎 Link tham khảo:
+https://www.youtube.com/watch?v=5P3T_h3BBlI
+Nội dung mô tả:
+Môi trường văn phòng tưởng chừng ít rủi ro nhưng lại tiềm ẩn nguy cơ từ tư thế làm việc sai, thiết bị sắp xếp bất hợp lý hoặc áp lực công việc kéo dài. Doanh nghiệp cần đảm bảo:
+Bàn ghế đúng ergonomic
+Màn hình đặt ngang tầm mắt
+Khu vực làm việc thông thoáng, đủ ánh sáng
+Có lịch nghỉ ngắn, vận động nhẹ giúp nhân viên duy trì sức khỏe lâu dài
+
+4. Huấn luyện và đào tạo an toàn định kỳ
+📎 Link tham khảo:
+https://www.youtube.com/watch?v=qbKwihzFt3E
+Nội dung mô tả:
+Huấn luyện là hoạt động bắt buộc khi người lao động mới vào làm, khi thay đổi vị trí công việc hoặc sau một sự cố. Nội dung bao gồm: hướng dẫn sử dụng thiết bị, xử lý tình huống khẩn cấp, sơ cứu, thoát hiểm. Doanh nghiệp cần lưu trữ hồ sơ huấn luyện, tổ chức kiểm tra đánh giá để bảo đảm hiệu quả và tuân thủ pháp luật.
+2025-08-14 20:52:11,071 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 7 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:52:11,681 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 0 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-14 20:52:12,148 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Retrieved 7 messages for session c8afe8bb-5f3b-43be-b3f6-bb985772175f
+2025-08-14 20:52:18,104 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/src/api/routers/chat_router.py: Message sent: xin chhao | Response: Chào bạn, bạn muốn hỏi gì về collection d37a5260-9082-4c73-9a8e-fe43e2a4aa08?
