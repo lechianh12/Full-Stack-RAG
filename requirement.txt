@@ -13,3 +13,4 @@ fastembed
 tiktoken
 langchain-community
 python-multipart
+beanie

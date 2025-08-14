@@ -1,6 +1,6 @@
 from llm import llm
 from langgraph.prebuilt import create_react_agent
-from src.tools import rag_tool, list_collections
+from agent_core.tools import rag_tool, list_collections
 from config.config import Config
 
 
@@ -8,6 +8,7 @@ config = Config()
 
 class Agent:
     def __init__(self, 
+                 collections: str = None,
                  llm = llm, 
                  tools = [rag_tool, list_collections], 
                  system_prompt = config.SYSTEM_MESSAGE):
@@ -15,7 +16,7 @@ class Agent:
         self.tools = tools
         self.system_prompt = system_prompt
 
-        
+        self.collections = collections
         self.agent = create_react_agent(
             model=self.llm,
             tools=self.tools,
@@ -35,11 +36,11 @@ class Agent:
         ):
             step["messages"][-1].pretty_print()
 
-agent = Agent()
+# agent = Agent()
 
-question = "FastAPI là gì?"
-response = agent.run(question)
-print("Response:", response)
+# question = "FastAPI là gì?"
+# response = agent.run(question)
+# print("Response:", response)
 
 
 

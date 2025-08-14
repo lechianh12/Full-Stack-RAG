@@ -1,11 +1,11 @@
 from langchain_core.tools import tool
 from langchain_ollama import OllamaEmbeddings
-from src.ingest import Ingest
+from agent_core.ingest import Ingest
 from langchain_core.tools import tool
 from config.config import QDRantConfig
 from config.config import OllamaConfig
 from qdrant_client import QdrantClient
-from langchain.vectorstores import Qdrant
+from langchain_community.vectorstores import Qdrant
 
 qdrant_config = QDRantConfig()
 ollama_config = OllamaConfig()
@@ -50,13 +50,13 @@ def list_collections() -> str:
     return "Các collection hiện có: " + ", ".join(collection_names)
 
 
-if __name__ == "__main__":
-    # Ví dụ sử dụng rag_tool
-    query = "Flask là gì?"
-    collection_name = "api"  # Thay bằng tên collection thực tế của bạn
-    result = rag_tool(query=query, collection_name=collection_name)
-    print("Kết quả tìm kiếm:", result)
+# if __name__ == "__main__":
+#     # Ví dụ sử dụng rag_tool
+#     query = "Flask là gì?"
+#     collection_name = "api"  # Thay bằng tên collection thực tế của bạn
+#     result = rag_tool(query=query, collection_name=collection_name)
+#     print("Kết quả tìm kiếm:", result)
 
-    # Ví dụ sử dụng list_collections
-    collections = list_collections()
-    print(collections)
+#     # Ví dụ sử dụng list_collections
+#     collections = list_collections()
+#     print(collections)
