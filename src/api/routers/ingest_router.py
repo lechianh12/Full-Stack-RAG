@@ -1,3 +1,4 @@
+import logging
 from fastapi import APIRouter, Depends, UploadFile, File, HTTPException
 from src.agent_core.ingest import Ingest
 from pydantic import BaseModel
@@ -8,11 +9,14 @@ import os
 from src.api.routers.authen_router import get_current_user
 from src.api.routers.session_router import SessionRequest
 from module.ingest_schema import QueryData
+import logging
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('..'))))
 
 ingest_router = APIRouter()
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__file__)
 
 
 
@@ -32,6 +36,8 @@ async def ingest_data(session_id: str, file: UploadFile = File(...), current_use
         collection_name= collection_id.collection,
         ).process()
 
+
+    logger.info(f"File {file.filename} ingested successfully into collection {collection_id.collection}")
     return {
         "filename": file.filename,
         "text_preview": text[:300],
@@ -43,6 +49,7 @@ async def ingest_data(session_id: str, file: UploadFile = File(...), current_use
 @ingest_router.post("/query", tags=["Ingest"])
 def query_data(query_data: QueryData, current_user: str = Depends(get_current_user)):
     results = rag_tool(query_data.query, query_data.collection_name)
+    logging.info(f"Query executed: {query_data.query} | Collection: {query_data.collection_name}")
     return {"results": results}
 
 

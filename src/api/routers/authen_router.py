@@ -10,6 +10,7 @@ from beanie import Document, PydanticObjectId
 from pydantic import Field
 from bson.objectid import ObjectId
 from module.authen_schema import Authen, LoginRequest, TokenResponse
+import logging
 
 
 
@@ -18,7 +19,7 @@ from module.authen_schema import Authen, LoginRequest, TokenResponse
 
 security = HTTPBearer()
 
-
+logger = logging.getLogger(__file__)
 
 authen_router = APIRouter()
 
@@ -52,21 +53,24 @@ async def login(request_data: LoginRequest):
         token = generate_token(request_data.username)
         return TokenResponse(access_token=token)
     
-    raise HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
-        detail="Invalid username or password"
-    )
+    logger.info("Da dang nhap thanh cong")
+    return request_data
 
+    
 @authen_router.get("/get_all_account", response_model=List[Authen])
 async def get_all_accounts(current_user: Optional[str] = Depends(get_current_user)):
     if not current_user:
         return None
+    
+    logger.info("Fetching all accounts failed")
     return await Authen.find_all().to_list()
 
 @authen_router.post("/register", status_code=201)
 async def create_account(account: Authen):
     account.id = None
     await account.create()
+
+    logger.info("Da dang ky thanh cong")
     return {"message": "Account created successfully"}
 
 @authen_router.put("/update/{_id}", status_code=200)
@@ -88,6 +92,8 @@ async def update_account(
     user_to_update.password = password
     user_to_update.email = email
     await user_to_update.save()
+
+    logger.info("Da update thanh cong")
     return user_to_update
 
 @authen_router.delete("/delete/{_id}", status_code=204)
@@ -100,4 +106,5 @@ async def delete_account(_id: PydanticObjectId, current_user: Optional[str] = De
         return None
     
     await user_to_delete.delete()
+    logger.info("Da xoa thanh cong")
     return {"message": "Account deleted successfully"}

@@ -6,13 +6,18 @@ from src.api.routers.chat_router import chat_router
 from src.api.routers.session_router import session_router
 from src.api.routers.authen_router import authen_router
 from db.mongo_db import init_db
+from log.logging_setup import setup_logging
+import logging
 
+log_config = setup_logging("/home/le-chi-anh/Documents/Full-Stack-RAG/log/app.log")
+
+logger = logging.getLogger(__file__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    print("Connecting to MongoDB...")
+    logger.info("Connecting to MongoDB...")
     await init_db()
-    print("Connect Successful!")
+    logger.info("Connected to MongoDB successfully.")
     yield
 
 
@@ -26,4 +31,4 @@ app.include_router(authen_router, prefix="/api/auth", tags=["Authentication"])
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("src.api.api:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("src.api.app:app", host="0.0.0.0", port=8000, reload=True, log_config=log_config)

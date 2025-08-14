@@ -9,10 +9,13 @@ import random
 from beanie import Document, PydanticObjectId
 import uuid
 from module.session_schema import SessionRequest
+import logging
 
 
 session_router = APIRouter()
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__file__)
 
 
 
@@ -25,6 +28,8 @@ async def create_session(current_user: str = Depends(get_current_user)):
     )
 
     await request_data.create()
+
+    logger.info(f"Session created for user {current_user} with session ID {request_data.session_id}")
 
     return {
         "message": "Session created successfully",
@@ -45,6 +50,7 @@ async def delete_session(_id: PydanticObjectId, current_user: str = Depends(get_
 
     await session_to_delete.delete()
 
+    logger.info(f"Session with ID {_id} deleted successfully")
     return {"message": "Session deleted successfully"}
 
 
@@ -54,5 +60,7 @@ async def get_current_session(session_id: str, current_user: str = Depends(get_c
         SessionRequest.session_id == session_id,
         SessionRequest.username == current_user
     )
+
+    logger.info(f"Retrieved session for user {current_user} with session ID {session_id}")
     return session
 

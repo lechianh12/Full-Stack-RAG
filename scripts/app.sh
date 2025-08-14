@@ -1,0 +1,1 @@
+python '/home/le-chi-anh/Documents/Full-Stack-RAG/src/api/app.py'
