@@ -2987,3 +2987,440 @@ https://www.youtube.com/watch?v=_-sYo2Sdf14
 2025-08-16 00:14:22,700 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/50636923-5342-4c25-8fb8-620e7c22102b "HTTP/1.1 404 Not Found"
 2025-08-16 00:14:24,624 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin chi tiet ve C# | Response: Tôi rất tiếc, tôi không tìm thấy thông tin chi tiết về C# trong tài liệu được cung cấp. Tuy nhiên, C# là một ngôn ngữ lập trình đa năng, hướng đối tượng được phát triển bởi Microsoft, thường được sử dụng để xây dựng các ứng dụng Windows, ứng dụng web và trò chơi.
 2025-08-16 00:14:24,625 [INFO] uvicorn.access: 127.0.0.1:50534 - "POST /api/chat/send_message/17650450-03b0-474b-8101-522ad921fa8a?message=Cho%20toi%20thong%20tin%20chi%20tiet%20ve%20C%23 HTTP/1.1" 200
+2025-08-16 00:14:59,654 [INFO] uvicorn.error: Shutting down
+2025-08-16 00:14:59,756 [INFO] uvicorn.error: Finished server process [61497]
+2025-08-16 00:14:59,788 [INFO] uvicorn.error: Stopping reloader process [61460]
+2025-08-16 00:22:34,686 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG/backend']
+2025-08-16 00:22:34,687 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-08-16 00:22:34,687 [INFO] uvicorn.error: Started reloader process [63650] using StatReload
+2025-08-16 00:22:37,907 [INFO] uvicorn.error: Started server process [63690]
+2025-08-16 00:22:37,907 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 00:22:37,908 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 00:22:37,925 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 00:22:37,925 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 00:22:38,142 [INFO] uvicorn.access: 127.0.0.1:58138 - "OPTIONS /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:22:38,145 [INFO] uvicorn.access: 127.0.0.1:58150 - "OPTIONS /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:22:38,154 [INFO] uvicorn.access: 127.0.0.1:58150 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:22:38,160 [INFO] uvicorn.access: 127.0.0.1:58138 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:22:38,214 [INFO] uvicorn.access: 127.0.0.1:58138 - "OPTIONS /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:22:38,219 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 14 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 00:22:38,220 [INFO] uvicorn.access: 127.0.0.1:58150 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:22:43,732 [INFO] uvicorn.access: 127.0.0.1:58162 - "OPTIONS /api/chat/get_all_messages/578c6cab-2465-476c-a8f5-fe3adc5e5667 HTTP/1.1" 200
+2025-08-16 00:22:43,739 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 3 messages for session 578c6cab-2465-476c-a8f5-fe3adc5e5667
+2025-08-16 00:22:43,740 [INFO] uvicorn.access: 127.0.0.1:58162 - "GET /api/chat/get_all_messages/578c6cab-2465-476c-a8f5-fe3adc5e5667 HTTP/1.1" 200
+2025-08-16 00:22:44,846 [INFO] uvicorn.access: 127.0.0.1:58162 - "OPTIONS /api/chat/get_all_messages/4abddf3e-6d73-4e0b-8e94-d9fd6296718a HTTP/1.1" 200
+2025-08-16 00:22:44,854 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 4abddf3e-6d73-4e0b-8e94-d9fd6296718a
+2025-08-16 00:22:44,854 [INFO] uvicorn.access: 127.0.0.1:58162 - "GET /api/chat/get_all_messages/4abddf3e-6d73-4e0b-8e94-d9fd6296718a HTTP/1.1" 200
+2025-08-16 00:22:46,223 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 3 messages for session 578c6cab-2465-476c-a8f5-fe3adc5e5667
+2025-08-16 00:22:46,223 [INFO] uvicorn.access: 127.0.0.1:58162 - "GET /api/chat/get_all_messages/578c6cab-2465-476c-a8f5-fe3adc5e5667 HTTP/1.1" 200
+2025-08-16 00:22:46,729 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 14 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 00:22:46,730 [INFO] uvicorn.access: 127.0.0.1:58162 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:22:53,698 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 3 messages for session 578c6cab-2465-476c-a8f5-fe3adc5e5667
+2025-08-16 00:22:53,699 [INFO] uvicorn.access: 127.0.0.1:52462 - "GET /api/chat/get_all_messages/578c6cab-2465-476c-a8f5-fe3adc5e5667 HTTP/1.1" 200
+2025-08-16 00:22:54,195 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 4abddf3e-6d73-4e0b-8e94-d9fd6296718a
+2025-08-16 00:22:54,195 [INFO] uvicorn.access: 127.0.0.1:52462 - "GET /api/chat/get_all_messages/4abddf3e-6d73-4e0b-8e94-d9fd6296718a HTTP/1.1" 200
+2025-08-16 00:22:54,775 [INFO] uvicorn.access: 127.0.0.1:52462 - "OPTIONS /api/chat/get_all_messages/f4fcc269-3993-4a3d-b3bc-72e2136341d6 HTTP/1.1" 200
+2025-08-16 00:22:54,786 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session f4fcc269-3993-4a3d-b3bc-72e2136341d6
+2025-08-16 00:22:54,787 [INFO] uvicorn.access: 127.0.0.1:52462 - "GET /api/chat/get_all_messages/f4fcc269-3993-4a3d-b3bc-72e2136341d6 HTTP/1.1" 200
+2025-08-16 00:22:56,022 [INFO] uvicorn.access: 127.0.0.1:52462 - "OPTIONS /api/chat/get_all_messages/75b38ae6-2825-45b7-a2c7-50dbf25b5411 HTTP/1.1" 200
+2025-08-16 00:22:56,026 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 75b38ae6-2825-45b7-a2c7-50dbf25b5411
+2025-08-16 00:22:56,026 [INFO] uvicorn.access: 127.0.0.1:52462 - "GET /api/chat/get_all_messages/75b38ae6-2825-45b7-a2c7-50dbf25b5411 HTTP/1.1" 200
+2025-08-16 00:22:57,729 [INFO] uvicorn.access: 127.0.0.1:52462 - "OPTIONS /api/session/delete_session/75b38ae6-2825-45b7-a2c7-50dbf25b5411 HTTP/1.1" 200
+2025-08-16 00:22:57,743 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session with session_id 75b38ae6-2825-45b7-a2c7-50dbf25b5411 deleted successfully
+2025-08-16 00:22:57,744 [INFO] uvicorn.access: 127.0.0.1:52462 - "DELETE /api/session/delete_session/75b38ae6-2825-45b7-a2c7-50dbf25b5411 HTTP/1.1" 204
+2025-08-16 00:22:57,753 [INFO] uvicorn.access: 127.0.0.1:52462 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:23:00,981 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 14 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 00:23:00,982 [INFO] uvicorn.access: 127.0.0.1:52462 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:23:06,102 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 4abddf3e-6d73-4e0b-8e94-d9fd6296718a
+2025-08-16 00:23:06,103 [INFO] uvicorn.access: 127.0.0.1:60070 - "GET /api/chat/get_all_messages/4abddf3e-6d73-4e0b-8e94-d9fd6296718a HTTP/1.1" 200
+2025-08-16 00:23:08,798 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session created for user chianh with session ID 0f716c45-f6f4-4e08-a563-9ccb5f8c9bc3
+2025-08-16 00:23:08,799 [INFO] uvicorn.access: 127.0.0.1:60070 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-16 00:23:08,818 [INFO] uvicorn.access: 127.0.0.1:60070 - "OPTIONS /api/chat/get_all_messages/0f716c45-f6f4-4e08-a563-9ccb5f8c9bc3 HTTP/1.1" 200
+2025-08-16 00:23:08,827 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 0f716c45-f6f4-4e08-a563-9ccb5f8c9bc3
+2025-08-16 00:23:08,828 [INFO] uvicorn.access: 127.0.0.1:55512 - "GET /api/chat/get_all_messages/0f716c45-f6f4-4e08-a563-9ccb5f8c9bc3 HTTP/1.1" 200
+2025-08-16 00:23:20,858 [INFO] uvicorn.access: 127.0.0.1:38642 - "OPTIONS /api/chat/send_message/0f716c45-f6f4-4e08-a563-9ccb5f8c9bc3?message=Cho%20toi%20cac%20link%20youtube%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:23:25,476 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:23:26,883 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/259f8ce4-2a27-419f-bae9-75073f26badc "HTTP/1.1 404 Not Found"
+2025-08-16 00:23:34,530 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:23:35,568 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/259f8ce4-2a27-419f-bae9-75073f26badc "HTTP/1.1 404 Not Found"
+2025-08-16 00:23:38,415 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi cac link youtube ve luat an toan lao dong | Response: Tôi không tìm thấy thông tin về các link YouTube về luật an toàn lao động trong tài liệu này. Bạn có thể thử tìm kiếm trên YouTube với các từ khóa như "luật an toàn lao động", "hướng dẫn an toàn lao động", hoặc "video về an toàn lao động" để tìm các video phù hợp.
+2025-08-16 00:23:38,416 [INFO] uvicorn.access: 127.0.0.1:38642 - "POST /api/chat/send_message/0f716c45-f6f4-4e08-a563-9ccb5f8c9bc3?message=Cho%20toi%20cac%20link%20youtube%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:23:48,702 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 14 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 00:23:48,703 [INFO] uvicorn.access: 127.0.0.1:58200 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:24:00,020 [INFO] uvicorn.access: 127.0.0.1:37234 - "OPTIONS /api/chat/send_message/686fdab7-a974-4cab-a66f-85ec418b7dcb?message=Cho%20toi%20cac%20link%20youtube%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:24:01,824 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:24:02,839 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/aece6302-47c4-4a52-bcc9-8488ba443c4d "HTTP/1.1 404 Not Found"
+2025-08-16 00:24:07,668 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:24:08,813 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/aece6302-47c4-4a52-bcc9-8488ba443c4d "HTTP/1.1 404 Not Found"
+2025-08-16 00:24:09,917 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi cac link youtube ve luat an toan lao dong | Response: Tôi không tìm thấy thông tin về link youtube về luật an toàn lao động trong tài liệu này. Bạn có thể tìm kiếm trên Youtube với từ khóa "luật an toàn lao động" để xem các video liên quan nhé.
+2025-08-16 00:24:09,918 [INFO] uvicorn.access: 127.0.0.1:37234 - "POST /api/chat/send_message/686fdab7-a974-4cab-a66f-85ec418b7dcb?message=Cho%20toi%20cac%20link%20youtube%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:24:15,970 [INFO] uvicorn.access: 127.0.0.1:49924 - "OPTIONS /api/session/create_session HTTP/1.1" 200
+2025-08-16 00:24:15,983 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session created for user chianh with session ID cb93c3cd-74ab-476a-b08a-6584fe8cce92
+2025-08-16 00:24:15,984 [INFO] uvicorn.access: 127.0.0.1:49924 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-16 00:24:16,072 [INFO] uvicorn.access: 127.0.0.1:49924 - "OPTIONS /api/chat/get_all_messages/cb93c3cd-74ab-476a-b08a-6584fe8cce92 HTTP/1.1" 200
+2025-08-16 00:24:16,079 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session cb93c3cd-74ab-476a-b08a-6584fe8cce92
+2025-08-16 00:24:16,080 [INFO] uvicorn.access: 127.0.0.1:49924 - "GET /api/chat/get_all_messages/cb93c3cd-74ab-476a-b08a-6584fe8cce92 HTTP/1.1" 200
+2025-08-16 00:24:19,044 [INFO] uvicorn.access: 127.0.0.1:49924 - "OPTIONS /api/ingest/ingest?session_id=cb93c3cd-74ab-476a-b08a-6584fe8cce92 HTTP/1.1" 200
+2025-08-16 00:24:19,053 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: DAY-LA-FILE-MAU-PDF.pdf for collection a08e850a-fc4d-4d38-929a-479168f98328
+2025-08-16 00:24:20,730 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:24:20,732 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/exists "HTTP/1.1 200 OK"
+2025-08-16 00:24:21,530 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:24:21,619 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:24:21,675 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:24:21,681 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/points?wait=true "HTTP/1.1 200 OK"
+2025-08-16 00:24:21,683 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File DAY-LA-FILE-MAU-PDF.pdf ingested successfully into collection a08e850a-fc4d-4d38-929a-479168f98328
+2025-08-16 00:24:21,683 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: 🛠 MÔ TẢ CHI TIẾT VỀ AN TOÀN LAO ĐỘNG.docx for collection a08e850a-fc4d-4d38-929a-479168f98328
+2025-08-16 00:24:23,156 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:24:23,158 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/exists "HTTP/1.1 200 OK"
+2025-08-16 00:24:23,160 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:24:23,214 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:24:23,217 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:24:23,628 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:24:23,642 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/points?wait=true "HTTP/1.1 200 OK"
+2025-08-16 00:24:23,645 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File 🛠 MÔ TẢ CHI TIẾT VỀ AN TOÀN LAO ĐỘNG.docx ingested successfully into collection a08e850a-fc4d-4d38-929a-479168f98328
+2025-08-16 00:24:23,645 [INFO] uvicorn.access: 127.0.0.1:49924 - "POST /api/ingest/ingest?session_id=cb93c3cd-74ab-476a-b08a-6584fe8cce92 HTTP/1.1" 200
+2025-08-16 00:24:25,847 [INFO] uvicorn.access: 127.0.0.1:49924 - "OPTIONS /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=Cho%20toi%20thong%20tin%20ve%20luat%20an%20toan%20lao%20don HTTP/1.1" 200
+2025-08-16 00:24:29,285 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:24:30,641 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:24:30,692 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:24:30,693 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:24:30,743 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:24:30,748 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/points/query "HTTP/1.1 200 OK"
+2025-08-16 00:24:36,126 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:24:37,511 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:24:37,560 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:24:37,563 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:24:37,617 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:24:37,624 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/points/query "HTTP/1.1 200 OK"
+2025-08-16 00:24:41,386 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin ve luat an toan lao don | Response: An toàn lao động bao gồm các yếu tố sau:
+
+*   **Nhận thức và trách nhiệm:** Xây dựng ý thức và trách nhiệm của mỗi cá nhân, từ lãnh đạo đến công nhân. Ban quản lý cần ban hành quy định rõ ràng, tổ chức huấn luyện định kỳ và thường xuyên kiểm tra, đánh giá rủi ro.
+*   **An toàn tại công trường xây dựng:** Sử dụng trang bị bảo hộ lao động như mũ, giày, dây an toàn là bắt buộc. Công việc cần được giám sát chặt chẽ, có người hướng dẫn trực tiếp và tuân thủ sơ đồ tổ chức thi công an toàn.
+*   **Huấn luyện và đào tạo định kỳ:** Huấn luyện là hoạt động bắt buộc khi người lao động mới vào làm, khi thay đổi vị trí công việc hoặc sau một sự cố. Nội dung bao gồm: hướng dẫn sử dụng thiết bị, xử lý tình huống khẩn cấp, sơ cứu, thoát hiểm.
+*   **Biển báo và quy trình làm việc an toàn:** Biển báo đóng vai trò cảnh báo và chỉ dẫn trong môi trường làm việc. Mọi quy trình làm việc cần được chuẩn hóa thành văn bản, quy định rõ từng bước thao tác.
+*   **An toàn trong văn phòng làm việc:** Đảm bảo bàn ghế đúng ergonomic, màn hình đặt ngang tầm mắt, khu vực làm việc thông thoáng, đủ ánh sáng và có lịch nghỉ ngắn, vận động nhẹ.
+2025-08-16 00:24:41,387 [INFO] uvicorn.access: 127.0.0.1:49924 - "POST /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=Cho%20toi%20thong%20tin%20ve%20luat%20an%20toan%20lao%20don HTTP/1.1" 200
+2025-08-16 00:25:05,613 [INFO] uvicorn.access: 127.0.0.1:46078 - "OPTIONS /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=Chho%20toi%20tat%20cac%20cac%20link%20youtube%20trong%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:25:13,972 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Chho toi tat cac cac link youtube trong luat an toan lao dong | Response: Tôi không thể tìm thấy các đường dẫn YouTube trong luật an toàn lao động. Bạn có muốn tôi tìm kiếm thông tin khác liên quan đến luật an toàn lao động không?
+2025-08-16 00:25:13,972 [INFO] uvicorn.access: 127.0.0.1:46078 - "POST /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=Chho%20toi%20tat%20cac%20cac%20link%20youtube%20trong%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:25:37,707 [INFO] uvicorn.access: 127.0.0.1:35626 - "OPTIONS /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=cho%20toi%20tat%20cac%20cac%20link%20youtube%20trong%20tai%20lieu%20nay HTTP/1.1" 200
+2025-08-16 00:25:39,824 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: cho toi tat cac cac link youtube trong tai lieu nay | Response: Tôi có thể giúp bạn tìm các link YouTube trong tài liệu. Vui lòng cho tôi biết tên của collection bạn muốn tìm kiếm.
+2025-08-16 00:25:39,825 [INFO] uvicorn.access: 127.0.0.1:35626 - "POST /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=cho%20toi%20tat%20cac%20cac%20link%20youtube%20trong%20tai%20lieu%20nay HTTP/1.1" 200
+2025-08-16 00:25:42,956 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 4abddf3e-6d73-4e0b-8e94-d9fd6296718a
+2025-08-16 00:25:42,956 [INFO] uvicorn.access: 127.0.0.1:35626 - "GET /api/chat/get_all_messages/4abddf3e-6d73-4e0b-8e94-d9fd6296718a HTTP/1.1" 200
+2025-08-16 00:25:44,493 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 15 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 00:25:44,495 [INFO] uvicorn.access: 127.0.0.1:35626 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:25:50,559 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 3 messages for session cb93c3cd-74ab-476a-b08a-6584fe8cce92
+2025-08-16 00:25:50,560 [INFO] uvicorn.access: 127.0.0.1:40586 - "GET /api/chat/get_all_messages/cb93c3cd-74ab-476a-b08a-6584fe8cce92 HTTP/1.1" 200
+2025-08-16 00:25:53,641 [INFO] uvicorn.access: 127.0.0.1:40586 - "OPTIONS /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=.message%20%7B%20%20%20max-width%3A%2080%25%3B%20%20%20padding%3A%2010px%2015px%3B%20%20%20border-radius%3A%2018px%3B%20%20%20margin-bottom%3A%2010px%3B%20%20%20line-height%3A%201.4%3B%20%20%20text-align%3A%20left%3B%20%20%20overflow-wrap%3A%20break-word%3B%20%2F*%20%3C--%20TH%C3%8AM%20D%C3%92NG%20N%C3%80Y%20*%2F%20%7D HTTP/1.1" 200
+2025-08-16 00:25:56,509 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: .message {   max-width: 80%;   padding: 10px 15px;   border-radius: 18px;   margin-bottom: 10px;   line-height: 1.4;   text-align: left;   overflow-wrap: break-word; /* <-- THÊM DÒNG NÀY */ } | Response: Tôi hiểu rồi. Bạn muốn tôi sử dụng collection có tên `a08e850a-fc4d-4d38-929a-479168f98328`. Bạn có câu hỏi cụ thể nào muốn tôi tìm kiếm trong collection này không? Hãy cho tôi biết câu hỏi của bạn.
+2025-08-16 00:25:56,510 [INFO] uvicorn.access: 127.0.0.1:40586 - "POST /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=.message%20%7B%20%20%20max-width%3A%2080%25%3B%20%20%20padding%3A%2010px%2015px%3B%20%20%20border-radius%3A%2018px%3B%20%20%20margin-bottom%3A%2010px%3B%20%20%20line-height%3A%201.4%3B%20%20%20text-align%3A%20left%3B%20%20%20overflow-wrap%3A%20break-word%3B%20%2F*%20%3C--%20TH%C3%8AM%20D%C3%92NG%20N%C3%80Y%20*%2F%20%7D HTTP/1.1" 200
+2025-08-16 00:26:01,113 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 0f716c45-f6f4-4e08-a563-9ccb5f8c9bc3
+2025-08-16 00:26:01,113 [INFO] uvicorn.access: 127.0.0.1:40586 - "GET /api/chat/get_all_messages/0f716c45-f6f4-4e08-a563-9ccb5f8c9bc3 HTTP/1.1" 200
+2025-08-16 00:26:04,412 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 15 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 00:26:04,412 [INFO] uvicorn.access: 127.0.0.1:40586 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:26:11,575 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 4 messages for session cb93c3cd-74ab-476a-b08a-6584fe8cce92
+2025-08-16 00:26:11,575 [INFO] uvicorn.access: 127.0.0.1:46652 - "GET /api/chat/get_all_messages/cb93c3cd-74ab-476a-b08a-6584fe8cce92 HTTP/1.1" 200
+2025-08-16 00:26:13,360 [INFO] uvicorn.access: 127.0.0.1:46652 - "OPTIONS /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=cho%20toi%20cac%20link%20youtube%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:26:14,820 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:26:16,122 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:26:16,181 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:26:16,184 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:26:16,235 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:26:16,240 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/points/query "HTTP/1.1 200 OK"
+2025-08-16 00:26:19,331 [WARNING] langchain_google_genai.chat_models: Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 40
+}
+].
+2025-08-16 00:26:21,595 [WARNING] langchain_google_genai.chat_models: Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 38
+}
+].
+2025-08-16 00:26:26,802 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:26:28,002 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:26:28,051 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:26:28,054 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:26:28,102 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:26:28,107 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/points/query "HTTP/1.1 200 OK"
+2025-08-16 00:26:28,527 [WARNING] langchain_google_genai.chat_models: Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 31
+}
+].
+2025-08-16 00:26:30,804 [WARNING] langchain_google_genai.chat_models: Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 4.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 29
+}
+].
+2025-08-16 00:26:35,184 [WARNING] langchain_google_genai.chat_models: Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 8.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 25
+}
+].
+2025-08-16 00:26:46,963 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: cho toi cac link youtube ve luat an toan lao dong | Response: Dưới đây là các link Youtube về luật an toàn lao động mà tôi tìm được:
+
+*   **Tổng quan và nhận thức về an toàn lao động:** [https://www.youtube.com/watch?v=3S-9yScDBN4](https://www.youtube.com/watch?v=3S-9yScDBN4)
+*   **An toàn tại công trường xây dựng:** [https://www.youtube.com/watch?v=_-sYo2Sdf14](https://www.youtube.com/watch?v=_-sYo2Sdf14)
+*   **Biển báo và quy trình làm việc an toàn:** [https://www.youtube.com/watch?v=bknGAYIWlnU](https://www.youtube.com/watch?v=bknGAYIWlnU)
+*   **Huấn luyện và đào tạo an toàn định kỳ:** [https://www.youtube.com/watch?v=qbKwihzFt3E](https://www.youtube.com/watch?v=qbKwihzFt3E)
+*   **An toàn trong văn phòng làm việc:** [https://www.youtube.com/watch?v=5P3T\_h3BBlI](https://www.youtube.com/watch?v=5P3T_h3BBlI)
+2025-08-16 00:26:46,964 [INFO] uvicorn.access: 127.0.0.1:46652 - "POST /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=cho%20toi%20cac%20link%20youtube%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:26:52,085 [INFO] uvicorn.error: Shutting down
+2025-08-16 00:26:52,186 [INFO] uvicorn.error: Finished server process [63690]
+2025-08-16 00:26:52,223 [INFO] uvicorn.error: Stopping reloader process [63650]
+2025-08-16 00:27:09,434 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG/backend']
+2025-08-16 00:27:09,434 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-08-16 00:27:09,434 [INFO] uvicorn.error: Started reloader process [65812] using StatReload
+2025-08-16 00:27:12,201 [INFO] uvicorn.error: Started server process [65851]
+2025-08-16 00:27:12,202 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 00:27:12,202 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 00:27:12,218 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 00:27:12,219 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 00:27:15,242 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:27:16,971 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:27:17,032 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:27:17,035 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:27:17,085 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:27:17,090 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/points/query "HTTP/1.1 200 OK"
+2025-08-16 00:27:21,998 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:27:23,324 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:27:23,373 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:27:23,375 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:27:23,428 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:27:23,433 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/points/query "HTTP/1.1 200 OK"
+2025-08-16 00:27:26,081 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: cho toi cac link youtube ve luat an toan lao dong | Response: Dưới đây là các link YouTube về luật an toàn lao động, cùng với mô tả chi tiết:
+
+1.  **Tổng quan và nhận thức về an toàn lao động**
+
+    *   Link tham khảo: [https://www.youtube.com/watch?v=3S-9yScDBN4](https://www.youtube.com/watch?v=3S-9yScDBN4)
+    *   Nội dung mô tả: An toàn lao động bắt đầu từ việc xây dựng ý thức và trách nhiệm của mỗi cá nhân.
+2.  **An toàn tại công trường xây dựng**
+
+    *   Link tham khảo: [https://www.youtube.com/watch?v=_-sYo2Sdf14](https://www.youtube.com/watch?v=_-sYo2Sdf14)
+    *   Nội dung mô tả: Các nguy cơ tại công trường và việc sử dụng trang bị bảo hộ lao động.
+3.  **Biển báo và quy trình làm việc an toàn**
+
+    *   Link tham khảo: [https://www.youtube.com/watch?v=bknGAYIWlnU](https://www.youtube.com/watch?v=bknGAYIWlnU)
+    *   Nội dung mô tả: Vai trò của biển báo và sự cần thiết của quy trình làm việc chuẩn hóa.
+4.  **Huấn luyện và đào tạo an toàn định kỳ**
+
+    *   Link tham khảo: [https://www.youtube.com/watch?v=qbKwihzFt3E](https://www.youtube.com/watch?v=qbKwihzFt3E)
+    *   Nội dung mô tả: Tầm quan trọng của huấn luyện định kỳ và nội dung cần thiết.
+5.  **An toàn trong văn phòng làm việc**
+
+    *   Link tham khảo: [https://www.youtube.com/watch?v=5P3T_h3BBlI](https://www.youtube.com/watch?v=5P3T_h3BBlI)
+    *   Nội dung mô tả: Các nguy cơ tiềm ẩn trong văn phòng và biện pháp phòng ngừa.
+2025-08-16 00:27:26,083 [INFO] uvicorn.access: 127.0.0.1:50678 - "POST /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=cho%20toi%20cac%20link%20youtube%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:27:36,829 [INFO] uvicorn.access: 127.0.0.1:58038 - "OPTIONS /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=cho%20toi%20tat%20ca%20cac%20link%20youtube%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:27:38,408 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:27:39,706 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:27:39,756 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:27:39,759 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:27:39,808 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:27:39,812 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/points/query "HTTP/1.1 200 OK"
+2025-08-16 00:27:43,553 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:27:45,318 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:27:45,369 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:27:45,371 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:27:45,423 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:27:45,430 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/points/query "HTTP/1.1 200 OK"
+2025-08-16 00:27:47,791 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: cho toi tat ca cac link youtube ve luat an toan lao dong | Response: Dưới đây là các link Youtube về luật an toàn lao động:
+
+1.  Tổng quan và nhận thức về an toàn lao động: [https://www.youtube.com/watch?v=3S-9yScDBN4](https://www.youtube.com/watch?v=3S-9yScDBN4)
+2.  An toàn tại công trường xây dựng: [https://www.youtube.com/watch?v=_-sYo2Sdf14](https://www.youtube.com/watch?v=_-sYo2Sdf14)
+3.  Huấn luyện và đào tạo an toàn định kỳ: [https://www.youtube.com/watch?v=qbKwihzFt3E](https://www.youtube.com/watch?v=qbKwihzFt3E)
+4.  Biển báo và quy trình làm việc an toàn: [https://www.youtube.com/watch?v=bknGAYIWlnU](https://www.youtube.com/watch?v=bknGAYIWlnU)
+5.  An toàn trong văn phòng làm việc: [https://www.youtube.com/watch?v=5P3T_h3BBlI](https://www.youtube.com/watch?v=5P3T_h3BBlI)
+2025-08-16 00:27:47,793 [INFO] uvicorn.access: 127.0.0.1:58038 - "POST /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=cho%20toi%20tat%20ca%20cac%20link%20youtube%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:28:01,352 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Chho toi tat cac cac link youtube trong luat an toan lao dong | Response: Tôi không thể thực hiện yêu cầu này. Bạn có thể cho tôi biết tên collection chứa luật an toàn lao động không?
+2025-08-16 00:28:01,352 [INFO] uvicorn.access: 127.0.0.1:47248 - "POST /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=Chho%20toi%20tat%20cac%20cac%20link%20youtube%20trong%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:28:09,560 [INFO] uvicorn.access: 127.0.0.1:37946 - "OPTIONS /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=Cho%20toi%20tat%20cac%20cac%20link%20youtube%20trong%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:28:11,268 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:28:12,517 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:28:12,576 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:28:12,579 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328 "HTTP/1.1 200 OK"
+2025-08-16 00:28:12,629 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:28:12,635 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/a08e850a-fc4d-4d38-929a-479168f98328/points/query "HTTP/1.1 200 OK"
+2025-08-16 00:28:16,100 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi tat cac cac link youtube trong luat an toan lao dong | Response: Dưới đây là các link Youtube về an toàn lao động được trích từ luật an toàn lao động:
+
+1.  **Tổng quan và nhận thức về an toàn lao động:** [https://www.youtube.com/watch?v=3S-9yScDBN4](https://www.youtube.com/watch?v=3S-9yScDBN4)
+2.  **An toàn tại công trường xây dựng:** [https://www.youtube.com/watch?v=_-sYo2Sdf14](https://www.youtube.com/watch?v=_-sYo2Sdf14)
+3.  **Biển báo và quy trình làm việc an toàn:** [https://www.youtube.com/watch?v=bknGAYIWlnU](https://www.youtube.com/watch?v=bknGAYIWlnU)
+4.  **Huấn luyện và đào tạo an toàn định kỳ:** [https://www.youtube.com/watch?v=qbKwihzFt3E](https://www.youtube.com/watch?v=qbKwihzFt3E)
+5.  **An toàn trong văn phòng làm việc:** [https://www.youtube.com/watch?v=5P3T_h3BBlI](https://www.youtube.com/watch?v=5P3T_h3BBlI)
+2025-08-16 00:28:16,102 [INFO] uvicorn.access: 127.0.0.1:37946 - "POST /api/chat/send_message/cb93c3cd-74ab-476a-b08a-6584fe8cce92?message=Cho%20toi%20tat%20cac%20cac%20link%20youtube%20trong%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 00:29:41,674 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 9 messages for session cb93c3cd-74ab-476a-b08a-6584fe8cce92
+2025-08-16 00:29:41,675 [INFO] uvicorn.access: 127.0.0.1:35346 - "GET /api/chat/get_all_messages/cb93c3cd-74ab-476a-b08a-6584fe8cce92 HTTP/1.1" 200
+2025-08-16 00:30:04,432 [INFO] uvicorn.access: 127.0.0.1:41002 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:30:04,436 [INFO] uvicorn.access: 127.0.0.1:41012 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:30:04,518 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 15 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 00:30:04,524 [INFO] uvicorn.access: 127.0.0.1:41012 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:30:04,982 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session created for user chianh with session ID 29120a60-a258-41b2-9ca5-20f11661bc8f
+2025-08-16 00:30:04,983 [INFO] uvicorn.access: 127.0.0.1:41012 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-16 00:30:05,094 [INFO] uvicorn.access: 127.0.0.1:41012 - "OPTIONS /api/chat/get_all_messages/29120a60-a258-41b2-9ca5-20f11661bc8f HTTP/1.1" 200
+2025-08-16 00:30:05,101 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 29120a60-a258-41b2-9ca5-20f11661bc8f
+2025-08-16 00:30:05,102 [INFO] uvicorn.access: 127.0.0.1:41012 - "GET /api/chat/get_all_messages/29120a60-a258-41b2-9ca5-20f11661bc8f HTTP/1.1" 200
+2025-08-16 00:33:01,314 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 29120a60-a258-41b2-9ca5-20f11661bc8f
+2025-08-16 00:33:01,315 [INFO] uvicorn.access: 127.0.0.1:58008 - "GET /api/chat/get_all_messages/29120a60-a258-41b2-9ca5-20f11661bc8f HTTP/1.1" 200
+2025-08-16 00:33:01,322 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 29120a60-a258-41b2-9ca5-20f11661bc8f
+2025-08-16 00:33:01,323 [INFO] uvicorn.access: 127.0.0.1:58018 - "GET /api/chat/get_all_messages/29120a60-a258-41b2-9ca5-20f11661bc8f HTTP/1.1" 200
+2025-08-16 00:33:09,919 [INFO] uvicorn.access: 127.0.0.1:56436 - "OPTIONS /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:33:09,923 [INFO] uvicorn.access: 127.0.0.1:56436 - "OPTIONS /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:33:09,927 [INFO] uvicorn.access: 127.0.0.1:56440 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:33:09,934 [INFO] uvicorn.access: 127.0.0.1:56448 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:33:09,970 [INFO] uvicorn.access: 127.0.0.1:56448 - "OPTIONS /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:33:09,999 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 15 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 00:33:10,000 [INFO] uvicorn.access: 127.0.0.1:56440 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:33:21,369 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session created for user chianh with session ID 9dd41571-08f6-4f59-b802-65a67e25996b
+2025-08-16 00:33:21,370 [INFO] uvicorn.access: 127.0.0.1:44454 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-16 00:33:21,422 [INFO] uvicorn.access: 127.0.0.1:44454 - "OPTIONS /api/chat/get_all_messages/9dd41571-08f6-4f59-b802-65a67e25996b HTTP/1.1" 200
+2025-08-16 00:33:21,428 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 9dd41571-08f6-4f59-b802-65a67e25996b
+2025-08-16 00:33:21,428 [INFO] uvicorn.access: 127.0.0.1:44454 - "GET /api/chat/get_all_messages/9dd41571-08f6-4f59-b802-65a67e25996b HTTP/1.1" 200
+2025-08-16 00:33:44,329 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 9dd41571-08f6-4f59-b802-65a67e25996b
+2025-08-16 00:33:44,330 [INFO] uvicorn.access: 127.0.0.1:46068 - "GET /api/chat/get_all_messages/9dd41571-08f6-4f59-b802-65a67e25996b HTTP/1.1" 200
+2025-08-16 00:33:49,649 [INFO] uvicorn.access: 127.0.0.1:60046 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:33:49,652 [INFO] uvicorn.access: 127.0.0.1:60058 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:33:49,681 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 15 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 00:33:49,681 [INFO] uvicorn.access: 127.0.0.1:60058 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:33:52,006 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session created for user chianh with session ID b3040e14-decf-4f92-9b90-f9a53a9138e9
+2025-08-16 00:33:52,007 [INFO] uvicorn.access: 127.0.0.1:60058 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-16 00:33:52,070 [INFO] uvicorn.access: 127.0.0.1:60058 - "OPTIONS /api/chat/get_all_messages/b3040e14-decf-4f92-9b90-f9a53a9138e9 HTTP/1.1" 200
+2025-08-16 00:33:52,075 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session b3040e14-decf-4f92-9b90-f9a53a9138e9
+2025-08-16 00:33:52,076 [INFO] uvicorn.access: 127.0.0.1:60058 - "GET /api/chat/get_all_messages/b3040e14-decf-4f92-9b90-f9a53a9138e9 HTTP/1.1" 200
+2025-08-16 00:33:55,837 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 15 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 00:33:55,838 [INFO] uvicorn.access: 127.0.0.1:60058 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:33:57,852 [INFO] uvicorn.access: 127.0.0.1:60058 - "OPTIONS /api/chat/get_all_messages/578c6cab-2465-476c-a8f5-fe3adc5e5667 HTTP/1.1" 200
+2025-08-16 00:33:57,863 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 3 messages for session 578c6cab-2465-476c-a8f5-fe3adc5e5667
+2025-08-16 00:33:57,863 [INFO] uvicorn.access: 127.0.0.1:60058 - "GET /api/chat/get_all_messages/578c6cab-2465-476c-a8f5-fe3adc5e5667 HTTP/1.1" 200
+2025-08-16 00:34:02,071 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session b3040e14-decf-4f92-9b90-f9a53a9138e9
+2025-08-16 00:34:02,072 [INFO] uvicorn.access: 127.0.0.1:60058 - "GET /api/chat/get_all_messages/b3040e14-decf-4f92-9b90-f9a53a9138e9 HTTP/1.1" 200
+2025-08-16 00:34:02,782 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session created for user chianh with session ID 0cb00e08-20ec-4536-9f75-0f25f487ecd6
+2025-08-16 00:34:02,783 [INFO] uvicorn.access: 127.0.0.1:60058 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-16 00:34:02,817 [INFO] uvicorn.access: 127.0.0.1:60058 - "OPTIONS /api/chat/get_all_messages/0cb00e08-20ec-4536-9f75-0f25f487ecd6 HTTP/1.1" 200
+2025-08-16 00:34:02,822 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 0cb00e08-20ec-4536-9f75-0f25f487ecd6
+2025-08-16 00:34:02,822 [INFO] uvicorn.access: 127.0.0.1:54784 - "GET /api/chat/get_all_messages/0cb00e08-20ec-4536-9f75-0f25f487ecd6 HTTP/1.1" 200
+2025-08-16 00:34:11,986 [INFO] uvicorn.access: 127.0.0.1:36244 - "OPTIONS /api/ingest/ingest?session_id=0cb00e08-20ec-4536-9f75-0f25f487ecd6 HTTP/1.1" 200
+2025-08-16 00:34:12,005 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: DAY-LA-FILE-MAU-PDF.pdf for collection 1bb60c99-06ad-49ed-8141-5df5ad21a71b
+2025-08-16 00:34:13,976 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:34:13,978 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/1bb60c99-06ad-49ed-8141-5df5ad21a71b/exists "HTTP/1.1 200 OK"
+2025-08-16 00:34:14,797 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:34:14,894 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/1bb60c99-06ad-49ed-8141-5df5ad21a71b "HTTP/1.1 200 OK"
+2025-08-16 00:34:14,952 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:34:14,957 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/1bb60c99-06ad-49ed-8141-5df5ad21a71b/points?wait=true "HTTP/1.1 200 OK"
+2025-08-16 00:34:14,960 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File DAY-LA-FILE-MAU-PDF.pdf ingested successfully into collection 1bb60c99-06ad-49ed-8141-5df5ad21a71b
+2025-08-16 00:34:14,960 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: 🛠 MÔ TẢ CHI TIẾT VỀ AN TOÀN LAO ĐỘNG.docx for collection 1bb60c99-06ad-49ed-8141-5df5ad21a71b
+2025-08-16 00:34:16,300 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 00:34:16,302 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/1bb60c99-06ad-49ed-8141-5df5ad21a71b/exists "HTTP/1.1 200 OK"
+2025-08-16 00:34:16,305 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/1bb60c99-06ad-49ed-8141-5df5ad21a71b "HTTP/1.1 200 OK"
+2025-08-16 00:34:16,355 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:34:16,358 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/1bb60c99-06ad-49ed-8141-5df5ad21a71b "HTTP/1.1 200 OK"
+2025-08-16 00:34:16,782 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 00:34:16,796 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/1bb60c99-06ad-49ed-8141-5df5ad21a71b/points?wait=true "HTTP/1.1 200 OK"
+2025-08-16 00:34:16,797 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File 🛠 MÔ TẢ CHI TIẾT VỀ AN TOÀN LAO ĐỘNG.docx ingested successfully into collection 1bb60c99-06ad-49ed-8141-5df5ad21a71b
+2025-08-16 00:34:16,798 [INFO] uvicorn.access: 127.0.0.1:36244 - "POST /api/ingest/ingest?session_id=0cb00e08-20ec-4536-9f75-0f25f487ecd6 HTTP/1.1" 200
+2025-08-16 00:34:23,781 [INFO] uvicorn.access: 127.0.0.1:46282 - "OPTIONS /api/chat/send_message/0cb00e08-20ec-4536-9f75-0f25f487ecd6?message=ban%20hay%20cho%20toi%20biet%20tai%20lieu%20nay%20co%20nhung%20thong%20tin%20gi HTTP/1.1" 200
+2025-08-16 00:34:26,851 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: ban hay cho toi biet tai lieu nay co nhung thong tin gi | Response: Bạn muốn biết thông tin về collection có tên `1bb60c99-06ad-49ed-8141-5df5ad21a71b`. Bạn có thể cho tôi biết bạn muốn biết thông tin gì cụ thể về collection này không? Ví dụ như bạn có thể hỏi về một chủ đề cụ thể liên quan đến collection này.
+2025-08-16 00:34:26,851 [INFO] uvicorn.access: 127.0.0.1:46282 - "POST /api/chat/send_message/0cb00e08-20ec-4536-9f75-0f25f487ecd6?message=ban%20hay%20cho%20toi%20biet%20tai%20lieu%20nay%20co%20nhung%20thong%20tin%20gi HTTP/1.1" 200
+2025-08-16 00:34:31,552 [INFO] uvicorn.access: 127.0.0.1:46282 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:34:31,557 [INFO] uvicorn.access: 127.0.0.1:47610 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 00:34:31,575 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 15 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 00:34:31,577 [INFO] uvicorn.access: 127.0.0.1:47610 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 00:34:35,759 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 0cb00e08-20ec-4536-9f75-0f25f487ecd6
+2025-08-16 00:34:35,760 [INFO] uvicorn.access: 127.0.0.1:47610 - "GET /api/chat/get_all_messages/0cb00e08-20ec-4536-9f75-0f25f487ecd6 HTTP/1.1" 200
+2025-08-16 00:34:38,318 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session b3040e14-decf-4f92-9b90-f9a53a9138e9
+2025-08-16 00:34:38,318 [INFO] uvicorn.access: 127.0.0.1:47610 - "GET /api/chat/get_all_messages/b3040e14-decf-4f92-9b90-f9a53a9138e9 HTTP/1.1" 200
+2025-08-16 00:34:40,513 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 9dd41571-08f6-4f59-b802-65a67e25996b
+2025-08-16 00:34:40,514 [INFO] uvicorn.access: 127.0.0.1:47610 - "GET /api/chat/get_all_messages/9dd41571-08f6-4f59-b802-65a67e25996b HTTP/1.1" 200
+2025-08-16 00:34:41,249 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 29120a60-a258-41b2-9ca5-20f11661bc8f
+2025-08-16 00:34:41,250 [INFO] uvicorn.access: 127.0.0.1:47610 - "GET /api/chat/get_all_messages/29120a60-a258-41b2-9ca5-20f11661bc8f HTTP/1.1" 200
+2025-08-16 00:34:41,861 [INFO] uvicorn.access: 127.0.0.1:47610 - "OPTIONS /api/chat/get_all_messages/cb93c3cd-74ab-476a-b08a-6584fe8cce92 HTTP/1.1" 200
+2025-08-16 00:34:41,868 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 9 messages for session cb93c3cd-74ab-476a-b08a-6584fe8cce92
+2025-08-16 00:34:41,868 [INFO] uvicorn.access: 127.0.0.1:47610 - "GET /api/chat/get_all_messages/cb93c3cd-74ab-476a-b08a-6584fe8cce92 HTTP/1.1" 200
+2025-08-16 00:34:42,443 [INFO] uvicorn.access: 127.0.0.1:47610 - "OPTIONS /api/chat/get_all_messages/0f716c45-f6f4-4e08-a563-9ccb5f8c9bc3 HTTP/1.1" 200
+2025-08-16 00:34:42,448 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 0f716c45-f6f4-4e08-a563-9ccb5f8c9bc3
+2025-08-16 00:34:42,449 [INFO] uvicorn.access: 127.0.0.1:47610 - "GET /api/chat/get_all_messages/0f716c45-f6f4-4e08-a563-9ccb5f8c9bc3 HTTP/1.1" 200
+2025-08-16 00:34:43,312 [INFO] uvicorn.access: 127.0.0.1:47610 - "OPTIONS /api/chat/get_all_messages/17650450-03b0-474b-8101-522ad921fa8a HTTP/1.1" 200
+2025-08-16 00:34:43,325 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 17650450-03b0-474b-8101-522ad921fa8a
+2025-08-16 00:34:43,327 [INFO] uvicorn.access: 127.0.0.1:47610 - "GET /api/chat/get_all_messages/17650450-03b0-474b-8101-522ad921fa8a HTTP/1.1" 200
