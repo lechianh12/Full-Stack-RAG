@@ -41,3 +41,44 @@ class DocumentExtractor:
             return await DocumentExtractor.extract_text_from_docx(file)
         else:
             raise ValueError(f"Unsupported file extension: {ext}")
+
+
+import csv
+import docx
+import PyPDF2
+import io
+from pathlib import Path
+
+
+class DocumentExtractor_2:
+    
+    def extract_text_from_pdf(self, path: Union[str, Path]) -> str:
+        text = ""
+        with open(path, "rb") as f:
+            reader = PyPDF2.PdfReader(f)
+            for page in reader.pages:
+                text += page.extract_text() or ""
+        return text
+
+    def extract_text_from_csv(self, path: Union[str, Path]) -> str:
+        with open(path, "r", encoding="utf-8") as f:
+            reader = csv.reader(f)
+            lines = [", ".join(row) for row in reader]
+        return "\n".join(lines)
+
+    def extract_text_from_docx(self, path: Union[str, Path]) -> str:
+        doc = docx.Document(path)
+        return "\n".join([para.text for para in doc.paragraphs])
+
+    def extract_text(self, path: Union[str, Path]) -> str:
+        ext = Path(path).suffix.lower()
+
+        if ext == ".pdf":
+            return self.extract_text_from_pdf(path)
+        elif ext == ".csv":
+            return self.extract_text_from_csv(path)
+        elif ext == ".docx":
+            return self.extract_text_from_docx(path)
+        else:
+            raise ValueError(f"Unsupported file extension: {ext}")
+

@@ -27,7 +27,8 @@ async def send_message(session_id: str, message: str, current_user: str = Depend
     collections = session.collection
     final_prompt = f"collections: {collections}\n" + message
 
-    response = Agent().run(final_prompt)  
+    response = Agent().run(final_prompt) 
+    Agent().debug(final_prompt)  # Debugging output  
     chat = ChatMessage(
         SessionId=session.session_id,  
         message=message,

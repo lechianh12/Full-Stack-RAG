@@ -3,3 +3,5 @@ aliases
 collections
 .env
 __pycache__
+.vscode
+.deleted
