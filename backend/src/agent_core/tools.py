@@ -9,6 +9,8 @@ from langchain_community.vectorstores import Qdrant
 from langchain_qdrant import FastEmbedSparse, QdrantVectorStore
 from langchain_qdrant import FastEmbedSparse, RetrievalMode
 from langchain_qdrant import QdrantVectorStore
+from langchain.chains import RetrievalQA
+from llm import llm
 
 qdrant_config = QDRantConfig()
 ollama_config = OllamaConfig()
@@ -41,9 +43,22 @@ def rag_tool(query: str, collection_name: str) -> str:
     )
 
     # db = Qdrant(client=client, embeddings=embeddings, collection_name=collection_name)
-    docs = vectorstore.similarity_search_with_score(query=query, k=5)
-    return "\n\n".join([doc.page_content for doc, _ in docs])
+    # docs = vectorstore.similarity_search_with_score(query=query, k=5)
+    
+    qa_chain = RetrievalQA.from_chain_type(
+        llm=llm,
+        chain_type="stuff",
+        retriever=vectorstore.as_retriever(
+            search_kwargs={"k": 10}
+        ),
+        return_source_documents=True,
+    )
 
+    # result = qa_chain.invoke({"query": query})
+
+    # return "\n\n".join([doc.page_content for doc, _ in docs])
+
+    return qa_chain
 
 
 
@@ -62,13 +77,14 @@ def list_collections() -> str:
     return "Các collection hiện có: " + ", ".join(collection_names)
 
 
-if __name__ == "__main__":
-    # Ví dụ sử dụng rag_tool
-    query = "Cho toi tat ca thong tin video youtube trong tai lieu"
-    collection_name = "Game"  # Thay bằng tên collection thực tế của bạn
-    result = rag_tool(query=query, collection_name=collection_name)
-    print("Kết quả tìm kiếm:", result)
+# if __name__ == "__main__":
+#     # Ví dụ sử dụng rag_tool
+#     # query = "Cho toi tat ca thong tin video youtube trong tai lieu"
+#     query = "FastAPI là gì?"
+#     collection_name = "9e37d83d-470f-49db-a2be-3e4de650a391"  # Thay bằng tên collection thực tế của bạn
+#     result = rag_tool(query=query, collection_name=collection_name)
+#     print("Kết quả tìm kiếm:", result)
 
-    # Ví dụ sử dụng list_collections
-    collections = list_collections()
-    print(collections)
+#     # Ví dụ sử dụng list_collections
+#     collections = list_collections()
+#     print(collections)

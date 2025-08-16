@@ -3424,3 +3424,1115 @@ https://www.youtube.com/watch?v=_-sYo2Sdf14
 2025-08-16 00:34:43,312 [INFO] uvicorn.access: 127.0.0.1:47610 - "OPTIONS /api/chat/get_all_messages/17650450-03b0-474b-8101-522ad921fa8a HTTP/1.1" 200
 2025-08-16 00:34:43,325 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 17650450-03b0-474b-8101-522ad921fa8a
 2025-08-16 00:34:43,327 [INFO] uvicorn.access: 127.0.0.1:47610 - "GET /api/chat/get_all_messages/17650450-03b0-474b-8101-522ad921fa8a HTTP/1.1" 200
+2025-08-16 00:39:31,677 [INFO] uvicorn.error: Shutting down
+2025-08-16 00:39:31,778 [INFO] uvicorn.error: Finished server process [65851]
+2025-08-16 00:39:31,818 [INFO] uvicorn.error: Stopping reloader process [65812]
+2025-08-16 21:15:20,771 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG/backend']
+2025-08-16 21:15:20,772 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-08-16 21:15:20,772 [INFO] uvicorn.error: Started reloader process [8143] using StatReload
+2025-08-16 21:15:23,743 [INFO] uvicorn.error: Started server process [8198]
+2025-08-16 21:15:23,743 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:15:23,743 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:15:37,817 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:15:37,818 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:15:57,859 [INFO] uvicorn.access: 127.0.0.1:44268 - "OPTIONS /api/auth/login HTTP/1.1" 200
+2025-08-16 21:15:57,877 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/authen_router.py: Da dang nhap thanh cong
+2025-08-16 21:15:57,878 [INFO] uvicorn.access: 127.0.0.1:44280 - "POST /api/auth/login HTTP/1.1" 500
+2025-08-16 21:15:57,879 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 328, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 177, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'access_token'), 'msg': 'Field required', 'input': LoginRequest(username='chiahh', password='123')}
+
+2025-08-16 21:16:09,821 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/authen_router.py: Da dang nhap thanh cong
+2025-08-16 21:16:09,822 [INFO] uvicorn.access: 127.0.0.1:53344 - "POST /api/auth/login HTTP/1.1" 500
+2025-08-16 21:16:09,823 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 328, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 177, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'access_token'), 'msg': 'Field required', 'input': LoginRequest(username='chiahh', password='123456')}
+
+2025-08-16 21:16:10,163 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/authen_router.py: Da dang nhap thanh cong
+2025-08-16 21:16:10,164 [INFO] uvicorn.access: 127.0.0.1:53352 - "POST /api/auth/login HTTP/1.1" 500
+2025-08-16 21:16:10,166 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 328, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 177, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'access_token'), 'msg': 'Field required', 'input': LoginRequest(username='chiahh', password='123456')}
+
+2025-08-16 21:16:35,347 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/authen_router.py: Da dang nhap thanh cong
+2025-08-16 21:16:35,347 [INFO] uvicorn.access: 127.0.0.1:54830 - "POST /api/auth/login HTTP/1.1" 500
+2025-08-16 21:16:35,348 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 328, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 177, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'access_token'), 'msg': 'Field required', 'input': LoginRequest(username='chiahh', password='123')}
+
+2025-08-16 21:16:35,839 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/authen_router.py: Da dang nhap thanh cong
+2025-08-16 21:16:35,840 [INFO] uvicorn.access: 127.0.0.1:54840 - "POST /api/auth/login HTTP/1.1" 500
+2025-08-16 21:16:35,842 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 328, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 177, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'access_token'), 'msg': 'Field required', 'input': LoginRequest(username='chiahh', password='123')}
+
+2025-08-16 21:16:36,001 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/authen_router.py: Da dang nhap thanh cong
+2025-08-16 21:16:36,003 [INFO] uvicorn.access: 127.0.0.1:54856 - "POST /api/auth/login HTTP/1.1" 500
+2025-08-16 21:16:36,004 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 328, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 177, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'access_token'), 'msg': 'Field required', 'input': LoginRequest(username='chiahh', password='123')}
+
+2025-08-16 21:16:36,155 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/authen_router.py: Da dang nhap thanh cong
+2025-08-16 21:16:36,156 [INFO] uvicorn.access: 127.0.0.1:54862 - "POST /api/auth/login HTTP/1.1" 500
+2025-08-16 21:16:36,157 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 328, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 177, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'access_token'), 'msg': 'Field required', 'input': LoginRequest(username='chiahh', password='123')}
+
+2025-08-16 21:16:42,756 [INFO] uvicorn.access: 127.0.0.1:43788 - "POST /api/auth/login HTTP/1.1" 200
+2025-08-16 21:16:42,790 [INFO] uvicorn.access: 127.0.0.1:43788 - "OPTIONS /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 21:16:42,795 [INFO] uvicorn.access: 127.0.0.1:43800 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 21:16:42,832 [INFO] uvicorn.access: 127.0.0.1:43788 - "OPTIONS /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 21:16:42,837 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 15 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 21:16:42,838 [INFO] uvicorn.access: 127.0.0.1:43800 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 21:16:47,279 [INFO] uvicorn.access: 127.0.0.1:43800 - "OPTIONS /api/session/create_session HTTP/1.1" 200
+2025-08-16 21:16:47,291 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session created for user chianh with session ID c4881bf1-c2f6-4a31-9681-687a08b7cac7
+2025-08-16 21:16:47,292 [INFO] uvicorn.access: 127.0.0.1:43788 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-16 21:16:47,359 [INFO] uvicorn.access: 127.0.0.1:43788 - "OPTIONS /api/chat/get_all_messages/c4881bf1-c2f6-4a31-9681-687a08b7cac7 HTTP/1.1" 200
+2025-08-16 21:16:47,365 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session c4881bf1-c2f6-4a31-9681-687a08b7cac7
+2025-08-16 21:16:47,366 [INFO] uvicorn.access: 127.0.0.1:43800 - "GET /api/chat/get_all_messages/c4881bf1-c2f6-4a31-9681-687a08b7cac7 HTTP/1.1" 200
+2025-08-16 21:17:02,605 [INFO] uvicorn.access: 127.0.0.1:43344 - "OPTIONS /api/ingest/ingest?session_id=c4881bf1-c2f6-4a31-9681-687a08b7cac7 HTTP/1.1" 200
+2025-08-16 21:17:02,614 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: DAY-LA-FILE-MAU-PDF.pdf for collection 5ad6c0b2-043b-4869-8a1c-9d3ea98eb2b8
+2025-08-16 21:17:34,053 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:17:34,056 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/5ad6c0b2-043b-4869-8a1c-9d3ea98eb2b8/exists "HTTP/1.1 200 OK"
+2025-08-16 21:17:34,120 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:17:34,216 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/5ad6c0b2-043b-4869-8a1c-9d3ea98eb2b8 "HTTP/1.1 200 OK"
+2025-08-16 21:17:34,263 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:17:34,272 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/5ad6c0b2-043b-4869-8a1c-9d3ea98eb2b8/points?wait=true "HTTP/1.1 200 OK"
+2025-08-16 21:17:34,275 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File DAY-LA-FILE-MAU-PDF.pdf ingested successfully into collection 5ad6c0b2-043b-4869-8a1c-9d3ea98eb2b8
+2025-08-16 21:17:34,276 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: 🛠 MÔ TẢ CHI TIẾT VỀ AN TOÀN LAO ĐỘNG.docx for collection 5ad6c0b2-043b-4869-8a1c-9d3ea98eb2b8
+2025-08-16 21:17:35,754 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:17:35,756 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/5ad6c0b2-043b-4869-8a1c-9d3ea98eb2b8/exists "HTTP/1.1 200 OK"
+2025-08-16 21:17:35,758 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/5ad6c0b2-043b-4869-8a1c-9d3ea98eb2b8 "HTTP/1.1 200 OK"
+2025-08-16 21:17:35,807 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:17:35,810 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/5ad6c0b2-043b-4869-8a1c-9d3ea98eb2b8 "HTTP/1.1 200 OK"
+2025-08-16 21:17:36,242 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:17:36,257 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/5ad6c0b2-043b-4869-8a1c-9d3ea98eb2b8/points?wait=true "HTTP/1.1 200 OK"
+2025-08-16 21:17:36,259 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File 🛠 MÔ TẢ CHI TIẾT VỀ AN TOÀN LAO ĐỘNG.docx ingested successfully into collection 5ad6c0b2-043b-4869-8a1c-9d3ea98eb2b8
+2025-08-16 21:17:36,259 [INFO] uvicorn.access: 127.0.0.1:43344 - "POST /api/ingest/ingest?session_id=c4881bf1-c2f6-4a31-9681-687a08b7cac7 HTTP/1.1" 200
+2025-08-16 21:17:39,900 [INFO] uvicorn.access: 127.0.0.1:43344 - "OPTIONS /api/chat/send_message/c4881bf1-c2f6-4a31-9681-687a08b7cac7?message=Cho%20toi%20tat%20ca%20cac%20link%20yotube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:17:42,554 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi tat ca cac link yotube co trong tai lieu | Response: Tôi không thể trả lời câu hỏi này. Bạn vui lòng cho tôi biết bạn muốn tìm kiếm thông tin trong collection nào để tôi có thể tìm kiếm các link YouTube có trong đó.
+2025-08-16 21:17:42,555 [INFO] uvicorn.access: 127.0.0.1:43016 - "POST /api/chat/send_message/c4881bf1-c2f6-4a31-9681-687a08b7cac7?message=Cho%20toi%20tat%20ca%20cac%20link%20yotube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:17:59,538 [INFO] uvicorn.access: 127.0.0.1:49332 - "OPTIONS /api/chat/send_message/c4881bf1-c2f6-4a31-9681-687a08b7cac7?message=cho%20toi%20tat%20ca%20cac%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:18:01,505 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: cho toi tat ca cac link youtube co trong tai lieu | Response: Tôi không thể trả lời câu hỏi này. Bạn cần cung cấp collection_name và query để tôi có thể tìm kiếm thông tin liên quan.
+2025-08-16 21:18:01,506 [INFO] uvicorn.access: 127.0.0.1:49346 - "POST /api/chat/send_message/c4881bf1-c2f6-4a31-9681-687a08b7cac7?message=cho%20toi%20tat%20ca%20cac%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:18:09,698 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:18:09,736 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:18:09,836 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:18:09,837 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:18:09,837 [INFO] uvicorn.error: Finished server process [8198]
+2025-08-16 21:18:12,921 [INFO] uvicorn.error: Started server process [9777]
+2025-08-16 21:18:12,922 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:18:12,922 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:18:12,938 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:18:12,938 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:18:14,122 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:18:14,143 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:18:14,244 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:18:14,245 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:18:14,245 [INFO] uvicorn.error: Finished server process [9777]
+2025-08-16 21:18:17,285 [INFO] uvicorn.error: Started server process [9837]
+2025-08-16 21:18:17,286 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:18:17,286 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:18:17,301 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:18:17,301 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:18:32,219 [INFO] uvicorn.access: 127.0.0.1:35492 - "OPTIONS /api/chat/send_message/c4881bf1-c2f6-4a31-9681-687a08b7cac7?message=Cho%20toi%20tat%20ca%20cac%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:18:36,528 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi tat ca cac link youtube co trong tai lieu | Response: Tôi không thể trả về tất cả các link YouTube có trong tài liệu vì tôi cần một truy vấn cụ thể để tìm kiếm thông tin liên quan. Bạn có thể cung cấp truy vấn cụ thể hơn để tôi có thể sử dụng công cụ `rag_tool` hiệu quả hơn không? Ví dụ: bạn có thể hỏi về một chủ đề cụ thể liên quan đến YouTube trong tài liệu.
+2025-08-16 21:18:36,529 [INFO] uvicorn.access: 127.0.0.1:35494 - "POST /api/chat/send_message/c4881bf1-c2f6-4a31-9681-687a08b7cac7?message=Cho%20toi%20tat%20ca%20cac%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:19:02,191 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:19:02,229 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:19:02,330 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:19:02,330 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:19:02,330 [INFO] uvicorn.error: Finished server process [9837]
+2025-08-16 21:19:05,212 [INFO] uvicorn.error: Started server process [10053]
+2025-08-16 21:19:05,212 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:19:05,212 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:19:05,228 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:19:05,229 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:19:19,851 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi tat ca cac link youtube co trong tai lieu | Response: Tôi không thể trả lời câu hỏi này dựa trên các công cụ hiện có. Tôi chỉ có thể tìm kiếm thông tin dựa trên một truy vấn cụ thể trong một collection đã cho, chứ không thể trích xuất tất cả các liên kết YouTube từ tài liệu.
+2025-08-16 21:19:19,852 [INFO] uvicorn.access: 127.0.0.1:48762 - "POST /api/chat/send_message/c4881bf1-c2f6-4a31-9681-687a08b7cac7?message=Cho%20toi%20tat%20ca%20cac%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:19:29,477 [INFO] uvicorn.access: 127.0.0.1:55988 - "OPTIONS /api/session/delete_session/0cb00e08-20ec-4536-9f75-0f25f487ecd6 HTTP/1.1" 200
+2025-08-16 21:19:29,489 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session with session_id 0cb00e08-20ec-4536-9f75-0f25f487ecd6 deleted successfully
+2025-08-16 21:19:29,490 [INFO] uvicorn.access: 127.0.0.1:56000 - "DELETE /api/session/delete_session/0cb00e08-20ec-4536-9f75-0f25f487ecd6 HTTP/1.1" 204
+2025-08-16 21:19:29,498 [INFO] uvicorn.access: 127.0.0.1:56000 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 21:19:32,609 [INFO] uvicorn.access: 127.0.0.1:56000 - "OPTIONS /api/session/delete_session/4abddf3e-6d73-4e0b-8e94-d9fd6296718a HTTP/1.1" 200
+2025-08-16 21:19:32,626 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session with session_id 4abddf3e-6d73-4e0b-8e94-d9fd6296718a deleted successfully
+2025-08-16 21:19:32,627 [INFO] uvicorn.access: 127.0.0.1:55988 - "DELETE /api/session/delete_session/4abddf3e-6d73-4e0b-8e94-d9fd6296718a HTTP/1.1" 204
+2025-08-16 21:19:32,639 [INFO] uvicorn.access: 127.0.0.1:55988 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 21:19:34,527 [INFO] uvicorn.access: 127.0.0.1:55988 - "OPTIONS /api/session/delete_session/63954f16-30cd-4eb2-a5ab-89145bd6efe5 HTTP/1.1" 200
+2025-08-16 21:19:34,543 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session with session_id 63954f16-30cd-4eb2-a5ab-89145bd6efe5 deleted successfully
+2025-08-16 21:19:34,544 [INFO] uvicorn.access: 127.0.0.1:56000 - "DELETE /api/session/delete_session/63954f16-30cd-4eb2-a5ab-89145bd6efe5 HTTP/1.1" 204
+2025-08-16 21:19:34,556 [INFO] uvicorn.access: 127.0.0.1:56000 - "GET /api/session/get_all_sessions HTTP/1.1" 200
+2025-08-16 21:19:36,629 [INFO] uvicorn.access: 127.0.0.1:56000 - "OPTIONS /api/chat/get_all_messages/b3040e14-decf-4f92-9b90-f9a53a9138e9 HTTP/1.1" 200
+2025-08-16 21:19:36,636 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session b3040e14-decf-4f92-9b90-f9a53a9138e9
+2025-08-16 21:19:36,636 [INFO] uvicorn.access: 127.0.0.1:55988 - "GET /api/chat/get_all_messages/b3040e14-decf-4f92-9b90-f9a53a9138e9 HTTP/1.1" 200
+2025-08-16 21:19:38,154 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 15 messages for session 686fdab7-a974-4cab-a66f-85ec418b7dcb
+2025-08-16 21:19:38,155 [INFO] uvicorn.access: 127.0.0.1:55988 - "GET /api/chat/get_all_messages/686fdab7-a974-4cab-a66f-85ec418b7dcb HTTP/1.1" 200
+2025-08-16 21:19:40,932 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session created for user chianh with session ID 934ab1cd-d076-4cd8-939b-801f1bd73c94
+2025-08-16 21:19:40,933 [INFO] uvicorn.access: 127.0.0.1:55988 - "POST /api/session/create_session HTTP/1.1" 200
+2025-08-16 21:19:41,005 [INFO] uvicorn.access: 127.0.0.1:55988 - "OPTIONS /api/chat/get_all_messages/934ab1cd-d076-4cd8-939b-801f1bd73c94 HTTP/1.1" 200
+2025-08-16 21:19:41,011 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 934ab1cd-d076-4cd8-939b-801f1bd73c94
+2025-08-16 21:19:41,012 [INFO] uvicorn.access: 127.0.0.1:56000 - "GET /api/chat/get_all_messages/934ab1cd-d076-4cd8-939b-801f1bd73c94 HTTP/1.1" 200
+2025-08-16 21:19:45,286 [INFO] uvicorn.access: 127.0.0.1:56000 - "OPTIONS /api/ingest/ingest?session_id=934ab1cd-d076-4cd8-939b-801f1bd73c94 HTTP/1.1" 200
+2025-08-16 21:19:45,304 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: DAY-LA-FILE-MAU-PDF.pdf for collection 65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e
+2025-08-16 21:19:46,982 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:19:46,985 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/exists "HTTP/1.1 200 OK"
+2025-08-16 21:19:47,047 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:19:47,155 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:19:47,211 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:19:47,218 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points?wait=true "HTTP/1.1 200 OK"
+2025-08-16 21:19:47,222 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File DAY-LA-FILE-MAU-PDF.pdf ingested successfully into collection 65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e
+2025-08-16 21:19:47,222 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: 🛠 MÔ TẢ CHI TIẾT VỀ AN TOÀN LAO ĐỘNG.docx for collection 65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e
+2025-08-16 21:19:48,566 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:19:48,569 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/exists "HTTP/1.1 200 OK"
+2025-08-16 21:19:48,572 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:19:48,625 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:19:48,628 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:19:49,039 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:19:49,053 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points?wait=true "HTTP/1.1 200 OK"
+2025-08-16 21:19:49,054 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File 🛠 MÔ TẢ CHI TIẾT VỀ AN TOÀN LAO ĐỘNG.docx ingested successfully into collection 65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e
+2025-08-16 21:19:49,055 [INFO] uvicorn.access: 127.0.0.1:56000 - "POST /api/ingest/ingest?session_id=934ab1cd-d076-4cd8-939b-801f1bd73c94 HTTP/1.1" 200
+2025-08-16 21:19:51,403 [INFO] uvicorn.access: 127.0.0.1:56000 - "OPTIONS /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20tat%20ca%20cac%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:19:53,912 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi tat ca cac link youtube co trong tai lieu | Response: Tôi không thể trả lời câu hỏi này. Bạn vui lòng cho biết câu hỏi cụ thể hơn để tôi có thể tìm kiếm thông tin trong tài liệu.
+2025-08-16 21:19:53,913 [INFO] uvicorn.access: 127.0.0.1:39596 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20tat%20ca%20cac%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:20:26,904 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:20:26,916 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:20:27,017 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:20:27,018 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:20:27,018 [INFO] uvicorn.error: Finished server process [10053]
+2025-08-16 21:20:30,136 [INFO] uvicorn.error: Started server process [10676]
+2025-08-16 21:20:30,137 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:20:30,137 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:20:30,150 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:20:30,151 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:20:33,467 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi tat ca cac link youtube co trong tai lieu | Response: Tôi không thể trả lời câu hỏi này. Bạn vui lòng cho biết câu hỏi cụ thể hơn để tôi có thể tìm kiếm thông tin trong tài liệu.
+2025-08-16 21:20:33,467 [INFO] uvicorn.access: 127.0.0.1:47076 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20tat%20ca%20cac%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:20:51,292 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi tat ca cac link youtube co trong tai lieu | Response: Tôi không thể trực tiếp lấy tất cả các link YouTube có trong tài liệu. Để làm được điều này, tôi cần bạn cung cấp một truy vấn cụ thể hơn để tìm kiếm trong collection "65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e". Ví dụ, bạn có thể hỏi: "Tìm các video YouTube liên quan đến chủ đề [tên chủ đề]".
+2025-08-16 21:20:51,292 [INFO] uvicorn.access: 127.0.0.1:50532 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20tat%20ca%20cac%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:21:26,035 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:21:26,136 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:21:26,136 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:21:26,136 [INFO] uvicorn.error: Finished server process [10676]
+2025-08-16 21:21:26,157 [INFO] uvicorn.error: Stopping reloader process [8143]
+2025-08-16 21:35:55,740 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG/backend']
+2025-08-16 21:35:55,740 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-08-16 21:35:55,741 [INFO] uvicorn.error: Started reloader process [14770] using StatReload
+2025-08-16 21:35:58,441 [INFO] uvicorn.error: Started server process [14813]
+2025-08-16 21:35:58,441 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:35:58,441 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:35:58,455 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:35:58,455 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:36:04,527 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:36:04,578 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:36:04,679 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:36:04,680 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:36:04,681 [INFO] uvicorn.error: Finished server process [14813]
+2025-08-16 21:36:07,832 [INFO] uvicorn.error: Started server process [14900]
+2025-08-16 21:36:07,832 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:36:07,832 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:36:07,853 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:36:07,854 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:36:23,612 [INFO] uvicorn.access: 127.0.0.1:46756 - "OPTIONS /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20chi%20tiet%20ve%20tat%20ca%20cac%20video%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:36:23,765 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:36:25,003 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:36:25,105 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:36:25,107 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:36:25,161 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:36:25,167 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:36:29,189 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin chi tiet ve tat ca cac video youtube co trong tai lieu | Response: Dưới đây là thông tin chi tiết về tất cả các video YouTube có trong tài liệu:
+
+1.  **Tổng quan và nhận thức về an toàn lao động**
+
+    *   **Link tham khảo:** [https://www.youtube.com/watch?v=3S-9yScDBN4](https://www.youtube.com/watch?v=3S-9yScDBN4)
+    *   **Nội dung mô tả:** An toàn lao động bắt đầu từ việc xây dựng ý thức và trách nhiệm của mỗi cá nhân. Mọi thành viên trong tổ chức – từ lãnh đạo đến công nhân – cần hiểu rõ vai trò của mình trong việc phòng ngừa tai nạn. Ban quản lý cần ban hành quy định rõ ràng, tổ chức huấn luyện định kỳ và thường xuyên kiểm tra, đánh giá rủi ro để kịp thời khắc phục.
+2.  **An toàn tại công trường xây dựng**
+
+    *   **Link tham khảo:** [https://www.youtube.com/watch?v=_-sYo2Sdf14](https://www.youtube.com/watch?v=_-sYo2Sdf14)
+    *   **Nội dung mô tả:** Tại công trường, người lao động đối mặt với nhiều nguy cơ: té ngã, sập giàn giáo, điện giật hoặc tai nạn do thiết bị hư hỏng. Việc sử dụng trang bị bảo hộ lao động như mũ, giày, dây an toàn là bắt buộc. Ngoài ra, công việc cần được giám sát chặt chẽ, có người hướng dẫn trực tiếp và tuân thủ sơ đồ tổ chức thi công an toàn.
+3.  **Biển báo và quy trình làm việc an toàn**
+
+    *   **Link tham khảo:** [https://www.youtube.com/watch?v=bknGAYIWlnU](https://www.youtube.com/watch?v=bknGAYIWlnU)
+    *   **Nội dung mô tả:** Biển báo đóng vai trò cảnh báo và chỉ dẫn trong môi trường làm việc. Màu sắc, hình dạng và ký hiệu trên biển báo cần tuân thủ quy định quốc gia (TCVN hoặc ISO). Ngoài ra, mọi quy trình làm việc cần được chuẩn hóa thành văn bản, quy định rõ từng bước thao tác để người lao động dễ nhớ, dễ tuân thủ và hạn chế rủi ro.
+4.  **An toàn trong văn phòng làm việc**
+
+    *   **Link tham khảo:** [https://www.youtube.com/watch?v=5P3T\_h3BBlI](https://www.youtube.com/watch?v=5P3T_h3BBlI)
+    *   **Nội dung mô tả:** Môi trường văn phòng tưởng chừng ít rủi ro nhưng lại tiềm ẩn nguy cơ từ tư thế làm việc sai, thiết bị sắp xếp bất hợp lý hoặc áp lực công việc kéo dài. Doanh nghiệp cần đảm bảo:
+
+        *   Bàn ghế đúng ergonomic
+        *   Màn hình đặt ngang tầm mắt
+        *   Khu vực làm việc thông thoáng, đủ ánh sáng
+        *   Có lịch nghỉ ngắn, vận động nhẹ giúp nhân viên duy trì sức khỏe lâu dài
+2025-08-16 21:36:29,189 [INFO] uvicorn.access: 127.0.0.1:46764 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20chi%20tiet%20ve%20tat%20ca%20cac%20video%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:36:49,519 [INFO] uvicorn.access: 127.0.0.1:51402 - "OPTIONS /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20C%23 HTTP/1.1" 200
+2025-08-16 21:36:49,686 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:36:51,176 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:36:51,237 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:36:51,239 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:36:51,294 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:36:51,299 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:36:52,218 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin ve C# | Response: Tôi rất tiếc, tôi không thể cung cấp thông tin về C# vì điều đó nằm ngoài phạm vi kiến thức của tôi.
+2025-08-16 21:36:52,218 [INFO] uvicorn.access: 127.0.0.1:51416 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20C%23 HTTP/1.1" 200
+2025-08-16 21:37:16,101 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:37:16,112 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:37:16,212 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:37:16,213 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:37:16,214 [INFO] uvicorn.error: Finished server process [14900]
+2025-08-16 21:37:18,108 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:37:21,074 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:37:23,215 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:37:26,377 [INFO] uvicorn.error: Started server process [15519]
+2025-08-16 21:37:26,377 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:37:26,377 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:37:26,393 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:37:26,393 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:37:28,141 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:37:31,646 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:37:31,707 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:37:31,710 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:37:31,761 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:37:31,767 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:37:32,906 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin ve C# | Response: Tôi xin lỗi, tôi không thể cung cấp thông tin về C# vì tôi chỉ có thông tin về an toàn lao động.
+2025-08-16 21:37:32,907 [INFO] uvicorn.access: 127.0.0.1:57868 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20C%23 HTTP/1.1" 200
+2025-08-16 21:37:55,863 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:37:55,899 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:37:56,000 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:37:56,000 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:37:56,001 [INFO] uvicorn.error: Finished server process [15519]
+2025-08-16 21:37:57,924 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:38:00,931 [INFO] uvicorn.error: Started server process [15805]
+2025-08-16 21:38:00,931 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:38:00,932 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:38:00,946 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:38:00,946 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:38:01,097 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:38:02,451 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:38:02,511 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:38:02,513 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:38:02,566 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:38:02,573 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:38:03,712 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin ve C# | Response: Tôi xin lỗi, tôi không thể cung cấp thông tin về C# vì tôi chỉ có thông tin về an toàn lao động.
+2025-08-16 21:38:03,713 [INFO] uvicorn.access: 127.0.0.1:54802 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20C%23 HTTP/1.1" 200
+2025-08-16 21:39:10,020 [INFO] uvicorn.access: 127.0.0.1:33036 - "OPTIONS /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20dieu%205 HTTP/1.1" 200
+2025-08-16 21:39:10,183 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:39:11,761 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:39:11,822 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:39:11,825 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:39:11,874 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:39:11,879 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:39:13,524 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin ve dieu 5 | Response: Điều 5 mô tả về an toàn trong văn phòng làm việc. Môi trường văn phòng có thể tiềm ẩn nguy cơ từ tư thế làm việc sai, thiết bị sắp xếp bất hợp lý hoặc áp lực công việc kéo dài. Doanh nghiệp cần đảm bảo:
+
+*   Bàn ghế đúng ergonomic
+*   Màn hình đặt ngang tầm mắt
+*   Khu vực làm việc thông thoáng, đủ ánh sáng
+*   Có lịch nghỉ ngắn, vận động nhẹ giúp nhân viên duy trì sức khỏe lâu dài
+
+Bạn có thể tham khảo thêm tại: https://www.youtube.com/watch?v=5P3T\_h3BBlI
+2025-08-16 21:39:13,525 [INFO] uvicorn.access: 127.0.0.1:33044 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20dieu%205 HTTP/1.1" 200
+2025-08-16 21:42:04,335 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:42:04,429 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:42:04,530 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:42:04,531 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:42:04,531 [INFO] uvicorn.error: Finished server process [15805]
+2025-08-16 21:42:06,734 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:42:07,815 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:42:11,467 [INFO] uvicorn.error: Started server process [16679]
+2025-08-16 21:42:11,468 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:42:11,468 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:42:11,484 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:42:11,484 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:42:11,580 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:42:11,585 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:42:11,686 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:42:11,687 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:42:11,688 [INFO] uvicorn.error: Finished server process [16679]
+2025-08-16 21:42:15,163 [INFO] uvicorn.error: Started server process [16742]
+2025-08-16 21:42:15,163 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:42:15,164 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:42:15,179 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:42:15,179 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:42:15,198 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:42:15,280 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:42:15,381 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:42:15,381 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:42:15,382 [INFO] uvicorn.error: Finished server process [16742]
+2025-08-16 21:42:18,590 [INFO] uvicorn.error: Started server process [16788]
+2025-08-16 21:42:18,591 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:42:18,591 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:42:18,606 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:42:18,606 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:42:27,240 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:42:27,335 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:42:27,436 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:42:27,436 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:42:27,437 [INFO] uvicorn.error: Finished server process [16788]
+2025-08-16 21:42:30,652 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:42:31,734 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:42:34,944 [INFO] uvicorn.error: Started server process [16927]
+2025-08-16 21:42:34,944 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:42:34,944 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:42:34,959 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:42:34,959 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:42:37,350 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:42:38,937 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:42:38,998 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:42:39,001 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:42:39,052 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:42:39,058 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:42:40,830 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin ve dieu 5 | Response: Điều 5 nói về an toàn trong văn phòng làm việc. Môi trường văn phòng có vẻ ít rủi ro nhưng lại tiềm ẩn nguy cơ từ tư thế làm việc sai, thiết bị sắp xếp bất hợp lý hoặc áp lực công việc kéo dài. Để đảm bảo an toàn, doanh nghiệp cần:
+
+*   Bàn ghế đúng ergonomic
+*   Màn hình đặt ngang tầm mắt
+*   Khu vực làm việc thông thoáng, đủ ánh sáng
+*   Có lịch nghỉ ngắn, vận động nhẹ giúp nhân viên duy trì sức khỏe lâu dài
+2025-08-16 21:42:40,832 [INFO] uvicorn.access: 127.0.0.1:46730 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20dieu%205 HTTP/1.1" 200
+2025-08-16 21:42:52,996 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/agent.py'. Reloading...
+2025-08-16 21:42:53,074 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:42:53,175 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:42:53,175 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:42:53,175 [INFO] uvicorn.error: Finished server process [16927]
+2025-08-16 21:42:56,210 [INFO] uvicorn.error: Started server process [17136]
+2025-08-16 21:42:56,210 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:42:56,210 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:42:56,225 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:42:56,226 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:44:19,058 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:44:20,391 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:44:20,450 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:44:20,452 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:44:20,501 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:44:20,506 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:44:22,558 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin ve dieu 5 | Response: Điều 5 mô tả về an toàn trong văn phòng làm việc. Môi trường văn phòng có thể tiềm ẩn nguy cơ từ tư thế làm việc sai, thiết bị sắp xếp bất hợp lý hoặc áp lực công việc kéo dài. Doanh nghiệp cần đảm bảo:
+
+*   Bàn ghế đúng ergonomic
+*   Màn hình đặt ngang tầm mắt
+*   Khu vực làm việc thông thoáng, đủ ánh sáng
+*   Có lịch nghỉ ngắn, vận động nhẹ giúp nhân viên duy trì sức khỏe lâu dài
+
+Bạn có thể tham khảo thêm thông tin chi tiết tại: [https://www.youtube.com/watch?v=5P3T\_h3BBlI](https://www.youtube.com/watch?v=5P3T_h3BBlI)
+2025-08-16 21:44:22,560 [INFO] uvicorn.access: 127.0.0.1:48568 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20dieu%205 HTTP/1.1" 200
+2025-08-16 21:44:43,694 [INFO] uvicorn.access: 127.0.0.1:34466 - "OPTIONS /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=cho%20toi%20tat%20ca%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:44:43,873 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:44:45,087 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:44:45,147 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:44:45,150 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:44:45,202 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:44:45,207 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:44:46,926 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: cho toi tat ca link youtube co trong tai lieu | Response: Dưới đây là danh sách các đường dẫn YouTube có trong tài liệu:
+
+1. An toàn lao động tổng quan: [https://www.youtube.com/watch?v=3S-9yScDBN4](https://www.youtube.com/watch?v=3S-9yScDBN4)
+2. An toàn tại công trường xây dựng: [https://www.youtube.com/watch?v=_-sYo2Sdf14](https://www.youtube.com/watch?v=_-sYo2Sdf14)
+3. Biển báo và quy trình làm việc an toàn: [https://www.youtube.com/watch?v=bknGAYIWlnU](https://www.youtube.com/watch?v=bknGAYIWlnU)
+4. An toàn trong văn phòng làm việc: [https://www.youtube.com/watch?v=5P3T_h3BBlI](https://www.youtube.com/watch?v=5P3T_h3BBlI)
+2025-08-16 21:44:46,928 [INFO] uvicorn.access: 127.0.0.1:34476 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=cho%20toi%20tat%20ca%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:44:56,276 [INFO] uvicorn.access: 127.0.0.1:56260 - "OPTIONS /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=cho%20toi%20tat%20ca%205%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:44:56,534 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:44:58,202 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:44:58,253 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:44:58,256 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:44:58,306 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:44:58,311 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:44:59,827 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: cho toi tat ca 5 link youtube co trong tai lieu | Response: Dưới đây là danh sách 5 đường dẫn YouTube được cung cấp trong tài liệu:
+
+1. An toàn trong văn phòng làm việc: https://www.youtube.com/watch?v=5P3T_h3BBlI
+2. Tổng quan và nhận thức về an toàn lao động: https://www.youtube.com/watch?v=3S-9yScDBN4
+3. An toàn tại công trường xây dựng: https://www.youtube.com/watch?v=_-sYo2Sdf14
+4. Biển báo và quy trình làm việc an toàn: https://www.youtube.com/watch?v=bknGAYIWlnU
+2025-08-16 21:44:59,828 [INFO] uvicorn.access: 127.0.0.1:56272 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=cho%20toi%20tat%20ca%205%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:45:52,752 [INFO] uvicorn.access: 127.0.0.1:50700 - "OPTIONS /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20dieu%204%20Huan%20luyen%20va%20dao%20tao%20an%20toan HTTP/1.1" 200
+2025-08-16 21:45:52,947 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:45:54,101 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:45:54,160 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:45:54,163 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:45:54,211 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:45:54,216 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:45:55,530 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin ve dieu 4 Huan luyen va dao tao an toan | Response: Điều 4 về Huấn luyện và đào tạo an toàn quy định rằng huấn luyện là hoạt động bắt buộc khi người lao động mới vào làm, khi thay đổi vị trí công việc hoặc sau một sự cố. Nội dung huấn luyện bao gồm: hướng dẫn sử dụng thiết bị, xử lý tình huống khẩn cấp, sơ cứu, thoát hiểm. Doanh nghiệp cần lưu trữ hồ sơ huấn luyện, tổ chức kiểm tra đánh giá để bảo đảm hiệu quả và tuân thủ pháp luật.
+2025-08-16 21:45:55,531 [INFO] uvicorn.access: 127.0.0.1:50704 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20dieu%204%20Huan%20luyen%20va%20dao%20tao%20an%20toan HTTP/1.1" 200
+2025-08-16 21:46:14,199 [INFO] uvicorn.access: 127.0.0.1:60308 - "OPTIONS /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=link%20youtube%20dieu%204 HTTP/1.1" 200
+2025-08-16 21:46:14,389 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:46:15,463 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:46:15,520 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:46:15,522 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:46:15,573 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:46:15,579 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:46:16,516 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: link youtube dieu 4 | Response: Điều 4 là về "Huấn luyện và đào tạo an toàn định kỳ" và đây là link youtube: https://www.youtube.com/watch?v=qbKwihzFt3E
+2025-08-16 21:46:16,516 [INFO] uvicorn.access: 127.0.0.1:60314 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=link%20youtube%20dieu%204 HTTP/1.1" 200
+2025-08-16 21:48:51,661 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:48:51,695 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:48:51,795 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:48:51,795 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:48:51,796 [INFO] uvicorn.error: Finished server process [17136]
+2025-08-16 21:48:52,935 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:48:55,362 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:48:59,055 [INFO] uvicorn.error: Started server process [18748]
+2025-08-16 21:48:59,055 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:48:59,056 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:48:59,072 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:48:59,073 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:49:05,150 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:49:06,390 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:49:06,453 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:49:06,458 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:49:06,518 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:49:06,527 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:49:09,162 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: cho toi tat ca 5 link youtube co trong tai lieu | Response: Dưới đây là 5 đường dẫn YouTube có trong tài liệu:
+
+1.  An toàn trong văn phòng làm việc: [https://www.youtube.com/watch?v=5P3T\_h3BBlI](https://www.youtube.com/watch?v=5P3T_h3BBlI)
+2.  Tổng quan và nhận thức về an toàn lao động: [https://www.youtube.com/watch?v=3S-9yScDBN4](https://www.youtube.com/watch?v=3S-9yScDBN4)
+3.  An toàn tại công trường xây dựng: [https://www.youtube.com/watch?v=\_-sYo2Sdf14](https://www.youtube.com/watch?v=_-sYo2Sdf14)
+4.  Huấn luyện và đào tạo an toàn định kỳ: [https://www.youtube.com/watch?v=qbKwihzFt3E](https://www.youtube.com/watch?v=qbKwihzFt3E)
+5.  Biển báo và quy trình làm việc an toàn: [https://www.youtube.com/watch?v=bknGAYIWlnU](https://www.youtube.com/watch?v=bknGAYIWlnU)
+2025-08-16 21:49:09,162 [INFO] uvicorn.access: 127.0.0.1:36032 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=cho%20toi%20tat%20ca%205%20link%20youtube%20co%20trong%20tai%20lieu HTTP/1.1" 200
+2025-08-16 21:49:19,838 [INFO] uvicorn.access: 127.0.0.1:45676 - "OPTIONS /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 21:49:20,115 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:49:21,279 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:49:21,330 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:49:21,333 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:49:21,382 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:49:21,388 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:49:22,173 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin ve luat an toan lao dong | Response: Tôi rất tiếc, tôi không có thông tin về luật an toàn lao động trong tài liệu này.
+2025-08-16 21:49:22,175 [INFO] uvicorn.access: 127.0.0.1:45682 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 21:49:33,971 [INFO] uvicorn.access: 127.0.0.1:47460 - "OPTIONS /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 21:49:34,184 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:49:35,901 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:49:35,949 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:49:35,952 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:49:36,004 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:49:36,011 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:49:40,445 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin ve an toan lao dong | Response: Dưới đây là thông tin về an toàn lao động, bao gồm tổng quan, an toàn tại công trường, biển báo và quy trình, huấn luyện định kỳ và an toàn trong văn phòng:
+
+1.  **Tổng quan và nhận thức về an toàn lao động**:
+    *   An toàn lao động bắt đầu từ việc xây dựng ý thức và trách nhiệm của mỗi cá nhân.
+    *   Mọi thành viên trong tổ chức cần hiểu rõ vai trò của mình trong việc phòng ngừa tai nạn.
+    *   Ban quản lý cần ban hành quy định rõ ràng, tổ chức huấn luyện định kỳ và thường xuyên kiểm tra, đánh giá rủi ro để kịp thời khắc phục.
+    *   [Xem thêm tại đây](https://www.youtube.com/watch?v=3S-9yScDBN4)
+2.  **An toàn tại công trường xây dựng**:
+    *   Người lao động đối mặt với nhiều nguy cơ: té ngã, sập giàn giáo, điện giật hoặc tai nạn do thiết bị hư hỏng.
+    *   Sử dụng trang bị bảo hộ lao động như mũ, giày, dây an toàn là bắt buộc.
+    *   Công việc cần được giám sát chặt chẽ, có người hướng dẫn trực tiếp và tuân thủ sơ đồ tổ chức thi công an toàn.
+    *   [Xem thêm tại đây](https://www.youtube.com/watch?v=_-sYo2Sdf14)
+3.  **Biển báo và quy trình làm việc an toàn**:
+    *   Biển báo đóng vai trò cảnh báo và chỉ dẫn trong môi trường làm việc.
+    *   Màu sắc, hình dạng và ký hiệu trên biển báo cần tuân thủ quy định quốc gia (TCVN hoặc ISO).
+    *   Mọi quy trình làm việc cần được chuẩn hóa thành văn bản, quy định rõ từng bước thao tác để người lao động dễ nhớ, dễ tuân thủ và hạn chế rủi ro.
+    *   [Xem thêm tại đây](https://www.youtube.com/watch?v=bknGAYIWlnU)
+4.  **Huấn luyện và đào tạo an toàn định kỳ**:
+    *   Huấn luyện là hoạt động bắt buộc khi người lao động mới vào làm, khi thay đổi vị trí công việc hoặc sau một sự cố.
+    *   Nội dung bao gồm: hướng dẫn sử dụng thiết bị, xử lý tình huống khẩn cấp, sơ cứu, thoát hiểm.
+    *   Doanh nghiệp cần lưu trữ hồ sơ huấn luyện, tổ chức kiểm tra đánh giá để bảo đảm hiệu quả và tuân thủ pháp luật.
+    *   [Xem thêm tại đây](https://www.youtube.com/watch?v=qbKwihzFt3E)
+5.  **An toàn trong văn phòng làm việc**:
+    *   Môi trường văn phòng tiềm ẩn nguy cơ từ tư thế làm việc sai, thiết bị sắp xếp bất hợp lý hoặc áp lực công việc kéo dài.
+    *   Doanh nghiệp cần đảm bảo:
+        *   Bàn ghế đúng ergonomic
+        *   Màn hình đặt ngang tầm mắt
+        *   Khu vực làm việc thông thoáng, đủ ánh sáng
+    *   Có lịch nghỉ ngắn, vận động nhẹ giúp nhân viên duy trì sức khỏe lâu dài
+    *   [Xem thêm tại đây](https://www.youtube.com/watch?v=5P3T_h3BBlI)
+2025-08-16 21:49:40,445 [INFO] uvicorn.access: 127.0.0.1:47464 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 21:51:15,236 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:51:15,281 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:51:15,382 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:51:15,382 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:51:15,382 [INFO] uvicorn.error: Finished server process [18748]
+2025-08-16 21:51:22,075 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:51:24,555 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:51:29,800 [INFO] uvicorn.error: Started server process [19621]
+2025-08-16 21:51:29,801 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:51:29,801 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:51:29,818 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:51:29,819 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:51:31,333 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:51:31,423 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:51:31,524 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:51:31,525 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:51:31,526 [INFO] uvicorn.error: Finished server process [19621]
+2025-08-16 21:51:34,559 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:51:39,693 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:51:41,019 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:51:47,031 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:51:49,993 [INFO] uvicorn.error: Started server process [19874]
+2025-08-16 21:51:49,994 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:51:49,995 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:51:50,009 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:51:50,009 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:51:57,272 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:51:57,340 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:51:57,441 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:51:57,441 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:51:57,441 [INFO] uvicorn.error: Finished server process [19874]
+2025-08-16 21:52:00,682 [INFO] uvicorn.error: Started server process [19961]
+2025-08-16 21:52:00,682 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:52:00,683 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:52:00,699 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:52:00,699 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:52:05,157 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:52:06,571 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:52:06,632 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:52:06,634 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:52:07,729 [INFO] uvicorn.access: 127.0.0.1:48638 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 500
+2025-08-16 21:52:07,729 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py", line 32, in send_message
+    response = Agent().qa_agent(query=message, collection_name=collections)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/agent_core/agent.py", line 34, in qa_agent
+    qa_agent = rag_tool(query=query, collection_name=collection_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/agent_core/tools.py", line 50, in rag_tool
+    qa_chain = RetrievalQA.from_chain_type(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/langchain/chains/retrieval_qa/base.py", line 123, in from_chain_type
+    return cls(combine_documents_chain=combine_documents_chain, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/langchain_core/_api/deprecation.py", line 223, in warn_if_direct_instance
+    return wrapped(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/langchain_core/_api/deprecation.py", line 223, in warn_if_direct_instance
+    return wrapped(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/langchain_core/load/serializable.py", line 130, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/pydantic/main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for RetrievalQA
+retrieval_mode
+  Extra inputs are not permitted [type=extra_forbidden, input_value=<RetrievalMode.HYBRID: 'hybrid'>, input_type=RetrievalMode]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+sparse_embedding
+  Extra inputs are not permitted [type=extra_forbidden, input_value=<langchain_qdrant.fastemb...bject at 0x764fefd36250>, input_type=FastEmbedSparse]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+2025-08-16 21:52:16,169 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:52:16,270 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:52:16,271 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:52:16,272 [INFO] uvicorn.error: Finished server process [19961]
+2025-08-16 21:52:16,305 [INFO] uvicorn.error: Stopping reloader process [14770]
+2025-08-16 21:54:21,999 [INFO] uvicorn.error: Will watch for changes in these directories: ['/home/le-chi-anh/Documents/Full-Stack-RAG/backend']
+2025-08-16 21:54:22,000 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-08-16 21:54:22,000 [INFO] uvicorn.error: Started reloader process [20728] using StatReload
+2025-08-16 21:54:25,221 [INFO] uvicorn.error: Started server process [20767]
+2025-08-16 21:54:25,222 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:54:25,223 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:54:25,238 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:54:25,239 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:54:29,278 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:54:30,965 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:54:31,029 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:54:31,032 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:54:31,083 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:54:31,085 [INFO] uvicorn.access: 127.0.0.1:34748 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 500
+2025-08-16 21:54:31,086 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/fastapi/routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py", line 32, in send_message
+    response = Agent().qa_agent(query=message, collection_name=collections)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/agent_core/agent.py", line 35, in qa_agent
+    result = qa_agent.invoke({"query": query,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/langchain/chains/base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/langchain/chains/retrieval_qa/base.py", line 156, in _call
+    docs = self._get_docs(question, run_manager=_run_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/langchain/chains/retrieval_qa/base.py", line 278, in _get_docs
+    return self.retriever.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/langchain_core/retrievers.py", line 261, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/langchain_core/vectorstores/base.py", line 1080, in _get_relevant_documents
+    docs = self.vectorstore.similarity_search(query, **kwargs_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/langchain_qdrant/qdrant.py", line 468, in similarity_search
+    results = self.similarity_search_with_score(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/langchain_qdrant/qdrant.py", line 532, in similarity_search_with_score
+    results = self.client.query_points(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/le-chi-anh/anaconda3/envs/chianh/lib/python3.11/site-packages/qdrant_client/qdrant_client.py", line 552, in query_points
+    assert len(kwargs) == 0, f"Unknown arguments: {list(kwargs.keys())}"
+           ^^^^^^^^^^^^^^^^
+AssertionError: Unknown arguments: ['fetch_k']
+2025-08-16 21:54:42,445 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:54:42,539 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:54:42,640 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:54:42,641 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:54:42,641 [INFO] uvicorn.error: Finished server process [20767]
+2025-08-16 21:54:44,008 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:54:47,155 [INFO] uvicorn.error: Started server process [20995]
+2025-08-16 21:54:47,155 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:54:47,156 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:54:47,171 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:54:47,172 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:54:47,319 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:54:48,394 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:54:48,447 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:54:48,449 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:54:48,500 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:54:48,506 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:54:50,264 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin ve luat an toan lao dong | Response: Tôi có thể cung cấp thông tin về các khía cạnh khác nhau của an toàn lao động như:
+
+*   Tổng quan và nhận thức về an toàn lao động
+*   An toàn tại công trường xây dựng
+*   Biển báo và quy trình làm việc an toàn
+*   Huấn luyện và đào tạo an toàn định kỳ
+*   An toàn trong văn phòng làm việc
+
+Bạn có muốn tôi cung cấp thêm thông tin về bất kỳ chủ đề cụ thể nào không?
+2025-08-16 21:54:50,265 [INFO] uvicorn.access: 127.0.0.1:38726 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 21:55:09,373 [INFO] uvicorn.access: 127.0.0.1:44976 - "OPTIONS /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20chi%20tiet%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 21:55:09,567 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-16 21:55:10,761 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:55:10,823 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:55:10,825 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e "HTTP/1.1 200 OK"
+2025-08-16 21:55:10,873 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-08-16 21:55:10,878 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/65a5d4e3-1f6d-40ff-a3bb-ff4127792d8e/points/query "HTTP/1.1 200 OK"
+2025-08-16 21:55:14,749 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Message sent: Cho toi thong tin chi tiet ve luat an toan lao dong | Response: Tôi rất tiếc, tôi không có thông tin chi tiết về luật an toàn lao động. Tuy nhiên, tôi có thể cung cấp cho bạn một số thông tin tổng quan về an toàn lao động, bao gồm:
+
+*   **Tổng quan và nhận thức về an toàn lao động:** An toàn lao động bắt đầu từ việc xây dựng ý thức và trách nhiệm của mỗi cá nhân. Mọi thành viên trong tổ chức cần hiểu rõ vai trò của mình trong việc phòng ngừa tai nạn. Ban quản lý cần ban hành quy định rõ ràng, tổ chức huấn luyện định kỳ và thường xuyên kiểm tra, đánh giá rủi ro để kịp thời khắc phục. (https://www.youtube.com/watch?v=3S-9yScDBN4)
+*   **An toàn tại công trường xây dựng:** Tại công trường, người lao động đối mặt với nhiều nguy cơ: té ngã, sập giàn giáo, điện giật hoặc tai nạn do thiết bị hư hỏng. Việc sử dụng trang bị bảo hộ lao động như mũ, giày, dây an toàn là bắt buộc. Ngoài ra, công việc cần được giám sát chặt chẽ, có người hướng dẫn trực tiếp và tuân thủ sơ đồ tổ chức thi công an toàn. (https://www.youtube.com/watch?v=_-sYo2Sdf14)
+*   **Biển báo và quy trình làm việc an toàn:** Biển báo đóng vai trò cảnh báo và chỉ dẫn trong môi trường làm việc. Màu sắc, hình dạng và ký hiệu trên biển báo cần tuân thủ quy định quốc gia (TCVN hoặc ISO). Mọi quy trình làm việc cần được chuẩn hóa thành văn bản, quy định rõ từng bước thao tác để người lao động dễ nhớ, dễ tuân thủ và hạn chế rủi ro. (https://www.youtube.com/watch?v=bknGAYIWlnU)
+*   **Huấn luyện và đào tạo an toàn định kỳ:** Huấn luyện là hoạt động bắt buộc khi người lao động mới vào làm, khi thay đổi vị trí công việc hoặc sau một sự cố. Nội dung bao gồm: hướng dẫn sử dụng thiết bị, xử lý tình huống khẩn cấp, sơ cứu, thoát hiểm. Doanh nghiệp cần lưu trữ hồ sơ huấn luyện, tổ chức kiểm tra đánh giá để bảo đảm hiệu quả và tuân thủ pháp luật. (https://www.youtube.com/watch?v=qbKwihzFt3E)
+*   **An toàn trong văn phòng làm việc:** Môi trường văn phòng tiềm ẩn nguy cơ từ tư thế làm việc sai, thiết bị sắp xếp bất hợp lý hoặc áp lực công việc kéo dài. Doanh nghiệp cần đảm bảo: Bàn ghế đúng ergonomic, màn hình đặt ngang tầm mắt, khu vực làm việc thông thoáng, đủ ánh sáng, có lịch nghỉ ngắn, vận động nhẹ giúp nhân viên duy trì sức khỏe lâu dài. (https://www.youtube.com/watch?v=5P3T_h3BBlI)
+
+Để có thông tin chi tiết và chính xác về luật an toàn lao động, bạn nên tham khảo các nguồn chính thức như văn bản pháp luật của nhà nước hoặc tìm kiếm sự tư vấn từ các chuyên gia trong lĩnh vực này.
+2025-08-16 21:55:14,750 [INFO] uvicorn.access: 127.0.0.1:44986 - "POST /api/chat/send_message/934ab1cd-d076-4cd8-939b-801f1bd73c94?message=Cho%20toi%20thong%20tin%20chi%20tiet%20ve%20luat%20an%20toan%20lao%20dong HTTP/1.1" 200
+2025-08-16 21:56:15,337 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:56:15,381 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:56:15,482 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:56:15,482 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:56:15,482 [INFO] uvicorn.error: Finished server process [20995]
+2025-08-16 21:56:18,433 [INFO] uvicorn.error: Started server process [21537]
+2025-08-16 21:56:18,433 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:56:18,433 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:56:18,448 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:56:18,448 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:56:23,682 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:56:23,768 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:56:23,869 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:56:23,869 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:56:23,869 [INFO] uvicorn.error: Finished server process [21537]
+2025-08-16 21:56:26,998 [INFO] uvicorn.error: Started server process [21630]
+2025-08-16 21:56:26,998 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:56:26,999 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:56:27,017 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:56:27,018 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:56:27,653 [WARNING] uvicorn.error: StatReload detected changes in 'src/agent_core/tools.py'. Reloading...
+2025-08-16 21:56:27,721 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:56:27,822 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:56:27,822 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:56:27,823 [INFO] uvicorn.error: Finished server process [21630]
+2025-08-16 21:56:31,089 [INFO] uvicorn.error: Started server process [21688]
+2025-08-16 21:56:31,089 [INFO] uvicorn.error: Waiting for application startup.
+2025-08-16 21:56:31,090 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2025-08-16 21:56:31,102 [INFO] /home/le-chi-anh/Documents/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2025-08-16 21:56:31,102 [INFO] uvicorn.error: Application startup complete.
+2025-08-16 21:56:40,436 [INFO] uvicorn.error: Shutting down
+2025-08-16 21:56:40,537 [INFO] uvicorn.error: Waiting for application shutdown.
+2025-08-16 21:56:40,537 [INFO] uvicorn.error: Application shutdown complete.
+2025-08-16 21:56:40,538 [INFO] uvicorn.error: Finished server process [21688]
+2025-08-16 21:56:40,564 [INFO] uvicorn.error: Stopping reloader process [20728]

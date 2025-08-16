@@ -25,10 +25,12 @@ async def send_message(session_id: str, message: str, current_user: str = Depend
         return {"error": "Session not found"}
 
     collections = session.collection
-    final_prompt = f"collections: {collections}\n" + message
+    # final_prompt = f"collections: {collections}\n" + message
 
-    response = Agent().run(final_prompt) 
-    Agent().debug(final_prompt)  # Debugging output  
+    # response = Agent().run(final_prompt) 
+
+    response = Agent().qa_agent(query=message, collection_name=collections)
+    # Agent().debug(final_prompt)  # Debugging output  
     chat = ChatMessage(
         SessionId=session.session_id,  
         message=message,

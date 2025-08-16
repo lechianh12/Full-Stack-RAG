@@ -1,7 +1,8 @@
 from llm import llm
 from langgraph.prebuilt import create_react_agent
-from agent_core.tools import rag_tool, list_collections
+from src.agent_core.tools import rag_tool, list_collections
 from config.config import Config
+
 
 
 config = Config()
@@ -23,9 +24,20 @@ class Agent:
             prompt=self.system_prompt
         )
 
+        
+
     def run(self, prompt: str):
         output = self.agent.invoke({"messages": [{"role": "user", "content": prompt}]})
         return output['messages'][-1].content
+    
+    def qa_agent(self, query: str, collection_name: str):
+        qa_agent = rag_tool(query=query, collection_name=collection_name)
+        result = qa_agent.invoke({"query": query,
+                                  "system_prompt": self.system_prompt})
+        
+        
+        print(result)
+        return result['result']
         
     def debug(self, prompt: str) -> None:
         print("SYSTEM MESSAGE: ",self.system_prompt)
@@ -38,8 +50,8 @@ class Agent:
 
 # agent = Agent()
 
-# question = "FastAPI là gì?"
-# response = agent.run(question)
+# question = "Cho toi tat cac thong tin 5 video youtube trong tai lieu"
+# response = agent.qa_agent(question, collection_name="9e37d83d-470f-49db-a2be-3e4de650a391")
 # print("Response:", response)
 
 
