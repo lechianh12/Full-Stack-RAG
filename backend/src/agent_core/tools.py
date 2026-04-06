@@ -1,21 +1,29 @@
 from langchain_core.tools import tool
 from langchain_ollama import OllamaEmbeddings
 from src.agent_core.ingest import Ingest
-from langchain_core.tools import tool
 from config.config import QDRantConfig
 from config.config import OllamaConfig
 from qdrant_client import QdrantClient
-from langchain_community.vectorstores import Qdrant
-from langchain_qdrant import FastEmbedSparse, QdrantVectorStore
-from langchain_qdrant import FastEmbedSparse, RetrievalMode
-from langchain_qdrant import QdrantVectorStore
-from langchain.chains import RetrievalQA
+from langchain_qdrant import FastEmbedSparse, QdrantVectorStore, RetrievalMode
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough
+from module.chat_chema import ChatMessage 
 from llm import llm
+from langchain_community.document_compressors import FlashrankRerank
+from langchain_classic.retrievers.contextual_compression import ContextualCompressionRetriever
 
 qdrant_config = QDRantConfig()
 ollama_config = OllamaConfig()
 
-def rag_tool(query: str, collection_name: str) -> str:
+async def memory(session_id: str) -> str:
+    """Get the most recent messages from memory."""
+    record = await ChatMessage.find(ChatMessage.session_id == session_id).sort("-timestamp").limit(5).to_list()
+    his = [f"Human: {i.message}\nAI: {i.response}" for i in record]
+    return "\n\n".join(his)
+
+
+def rag_tool(query: str, collection_name: str, history: str) -> str:
     """
     Truy vấn Qdrant collection để lấy các tài liệu liên quan tới truy vấn đầu vào.
     Dung tool nay sau khi dung list_collections để kiểm tra các collection đã được tạo ra.
@@ -25,13 +33,13 @@ def rag_tool(query: str, collection_name: str) -> str:
         collection_name: Tên của collection Qdrant đã lưu vector embeddings.
 
     Returns:
-        Văn bản tài liệu liên quan đến truy vấn.
+        Câu trả lời dựa trên tài liệu liên quan đến truy vấn.
     """
 
     embeddings = OllamaEmbeddings(model=ollama_config.OLLAMA_EMBEDDINGS_MODEL)
     client = QdrantClient(
-        url=qdrant_config.QDRANT_URL, prefer_grpc=False
-
+        url=qdrant_config.QDRANT_URL, 
+        prefer_grpc=False
     )
 
     vectorstore = QdrantVectorStore(
@@ -42,27 +50,90 @@ def rag_tool(query: str, collection_name: str) -> str:
         retrieval_mode=RetrievalMode.HYBRID,
     )
 
-    # db = Qdrant(client=client, embeddings=embeddings, collection_name=collection_name)
-    # docs = vectorstore.similarity_search_with_score(query=query, k=5)
+
+    base_retriever  = vectorstore.as_retriever(search_kwargs={"k": 20})
+
+    compressor = FlashrankRerank(top_n=10)
+
+    retriever = ContextualCompressionRetriever(
+        base_compressor=compressor,
+        base_retriever=base_retriever
+    )
     
-    qa_chain = RetrievalQA.from_chain_type(
-        llm=llm,
-        chain_type="stuff",
-        retriever=vectorstore.as_retriever(
-            search_kwargs={"k": 10}
-        ),
-        return_source_documents=True,
+
+    template = """Dựa trên các tài liệu sau đây, hãy trả lời câu hỏi một cách chính xác và chi tiết:
+
+        Lich sử hội thoại:
+        {history}
+
+        Tài liệu:
+        {context}
+
+        Câu hỏi: {question}
+
+        Câu trả lời:"""
+
+    prompt = ChatPromptTemplate.from_template(template)
+    
+
+    def format_docs(docs):
+        return "\n\n".join([f"Tài liệu {i+1}:\n{doc.page_content}" for i, doc in enumerate(docs)])
+    
+
+    rag_chain = (
+        {"context": retriever | format_docs, "question": RunnablePassthrough(), "history": lambda _: history }
+        | prompt
+        | llm
+        | StrOutputParser()
+    )
+    
+
+    result = rag_chain.invoke(query)
+    
+    return result
+
+
+def rag_tool_with_sources(query: str, collection_name: str) -> dict:
+    embeddings = OllamaEmbeddings(model=ollama_config.OLLAMA_EMBEDDINGS_MODEL)
+    client = QdrantClient(
+        url=qdrant_config.QDRANT_URL, 
+        prefer_grpc=False
     )
 
-    # result = qa_chain.invoke({"query": query})
+    vectorstore = QdrantVectorStore(
+        client=client,
+        collection_name=collection_name,
+        embedding=embeddings,
+        sparse_embedding=FastEmbedSparse(model_name=qdrant_config.QDRANT_MODEL_NAME),
+        retrieval_mode=RetrievalMode.HYBRID,
+    )
 
-    # return "\n\n".join([doc.page_content for doc, _ in docs])
 
-    return qa_chain
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 10})
+    docs = retriever.invoke(query)
 
+    template = """Dựa trên các tài liệu sau đây, hãy trả lời câu hỏi một cách chính xác và chi tiết:
 
+        Tài liệu:
+        {context}
 
+        Câu hỏi: {question}
 
+        Câu trả lời:"""
+
+    prompt = ChatPromptTemplate.from_template(template)
+    
+
+    context = "\n\n".join([f"Tài liệu {i+1}:\n{doc.page_content}" for i, doc in enumerate(docs)])
+    
+
+    chain = prompt | llm | StrOutputParser()
+    answer = chain.invoke({"context": context, "question": query})
+    
+    return {
+        "answer": answer,
+        "source_documents": docs
+    }
 
 
 def list_collections() -> str:
@@ -70,7 +141,6 @@ def list_collections() -> str:
     Trả về danh sách các collection hiện có trong Qdrant.
     dung tool này để kiểm tra các collection đã được tạo ra truoc khi sử dụng rag_tool.
     """
-    from qdrant_client import QdrantClient
     client = QdrantClient(url=qdrant_config.QDRANT_URL)
     collections = client.get_collections()
     collection_names = [c.name for c in collections.collections]
@@ -79,12 +149,19 @@ def list_collections() -> str:
 
 # if __name__ == "__main__":
 #     # Ví dụ sử dụng rag_tool
-#     # query = "Cho toi tat ca thong tin video youtube trong tai lieu"
 #     query = "FastAPI là gì?"
-#     collection_name = "9e37d83d-470f-49db-a2be-3e4de650a391"  # Thay bằng tên collection thực tế của bạn
+#     collection_name = "9e37d83d-470f-49db-a2be-3e4de650a391"
+    
+#     print("=== Sử dụng rag_tool ===")
 #     result = rag_tool(query=query, collection_name=collection_name)
-#     print("Kết quả tìm kiếm:", result)
-
-#     # Ví dụ sử dụng list_collections
+#     print("Kết quả:", result)
+    
+#     print("\n=== Sử dụng rag_tool_with_sources ===")
+#     result_with_sources = rag_tool_with_sources(query=query, collection_name=collection_name)
+#     print("Câu trả lời:", result_with_sources["answer"])
+#     print(f"\nSố tài liệu tham khảo: {len(result_with_sources['source_documents'])}")
+    
+#     print("\n=== Danh sách collections ===")
 #     collections = list_collections()
 #     print(collections)
+

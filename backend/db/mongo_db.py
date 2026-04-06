@@ -1,12 +1,16 @@
 import beanie
-import motor
 import motor.motor_asyncio
-from src.api.routers.authen_router import Authen
-from src.api.routers.session_router import SessionRequest
-from src.api.routers.chat_router import ChatMessage
+# Đảm bảo import đúng model Authen đã cập nhật
+from module.authen_schema import Authen
+from module.session_schema import SessionRequest
+from module.chat_chema import ChatMessage
+from module.document_schema import DocumentMetadata
 
 
 async def init_db():
-    client = motor.motor_asyncio.AsyncIOMotorClient("mongodb://localhost:27017")
-
-    await beanie.init_beanie(database=client.db_name, document_models=[Authen, SessionRequest, ChatMessage])
+    # client = motor.motor_asyncio.AsyncIOMotorClient("mongodb://localhost:27017") # Thay bằng connection string của bạn nếu cần
+    client = motor.motor_asyncio.AsyncIOMotorClient("mongodb://172.30.80.1:27017")
+    await beanie.init_beanie(
+        database=client["rag_db"],
+        document_models=[Authen, SessionRequest, ChatMessage, DocumentMetadata]
+    )

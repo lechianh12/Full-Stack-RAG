@@ -24,7 +24,7 @@ class Gemini():
         )
     
 class Ollama():
-    def __init__(self, model="llama3.1"):
+    def __init__(self, model="qwen3.5:4b"):
         self.model = model
 
     def init_ollama(self):
@@ -35,7 +35,7 @@ class Ollama():
     
 
 class LLM():
-    def __init__(self, bool = True):
+    def __init__(self, bool = False):
         self.llm = Gemini().init_gemini() if bool else Ollama().init_ollama() 
 
     def init_llm(self):

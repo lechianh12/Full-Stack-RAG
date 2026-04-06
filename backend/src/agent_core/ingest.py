@@ -1,7 +1,6 @@
 import getpass
 import os
 from config.config import Config
-from langchain.chat_models import init_chat_model
 from llm.init_model import LLM
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
@@ -78,13 +77,8 @@ class Ingest:
     
 
     def chunking(self, texts):
-        """
-        Chia nhỏ các văn bản thành các chunk (đoạn nhỏ) dạng Document.
-        """
-        # Chuyển str -> Document
         docs = [Document(page_content=text) for text in texts]
 
-        # Chunking
         text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
             chunk_size=700,
             chunk_overlap=50
@@ -98,6 +92,7 @@ class Ingest:
         embeddings = OllamaEmbeddings(model=self.ollama_embeddings_model)
 
         doc_splits = self.chunking(self.documents)
+        
 
         vectorstore = QdrantVectorStore.from_documents(
             doc_splits,
@@ -110,14 +105,7 @@ class Ingest:
         )
 
         return vectorstore
-
-        # retriever = vectorstore.similarity_search(query)
-
-        # return retriever
     
-
-
-
     
 # if __name__ == "__main__":
 #     query = "Elden Ring là gì?"
