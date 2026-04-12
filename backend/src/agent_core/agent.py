@@ -1,6 +1,6 @@
 from llm import llm
 from langgraph.prebuilt import create_react_agent
-from src.agent_core.tools import rag_tool, list_collections
+from src.agent_core.tools import rag_tool, rag_tool_stream, list_collections
 from config.config import Config
 
 config = Config()
@@ -28,7 +28,11 @@ class Agent:
     def qa_agent(self, query: str, collection_name: str, history: str):
         result = rag_tool(query=query, collection_name=collection_name, history=history)
         return result
-        
+
+    async def qa_agent_stream(self, query: str, collection_name: str, history: str):
+        async for chunk in rag_tool_stream(query=query, collection_name=collection_name, history=history):
+            yield chunk
+
     def debug(self, prompt: str) -> None:
         print("SYSTEM MESSAGE: ", self.system_prompt)
         

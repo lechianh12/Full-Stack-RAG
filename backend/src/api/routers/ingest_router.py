@@ -24,12 +24,17 @@ logger = logging.getLogger(__file__)
 
 
 @ingest_router.post("/ingest", tags=["Ingest"])
-# SỬA 2: Cập nhật dependency
-async def ingest_data(session_id: str, files: List[UploadFile] = File(...), current_user: Authen = Depends(get_current_user)):
-    
-    # SỬA 3: Kiểm tra quyền sở hữu session (chỉ khi user thường upload)
-    session = None
-    if current_user.role != "admin":
+async def ingest_data(
+    session_id: str,
+    files: List[UploadFile] = File(...),
+    is_global: bool = False,            # <-- frontend gửi True khi admin muốn upload global
+    current_user: Authen = Depends(get_current_user)
+):
+    # Chỉ admin mới được upload global
+    make_global = is_global and current_user.role == "admin"
+
+    # Kiểm tra session tồn tại (trừ khi admin upload global không cần session)
+    if not make_global:
         session = await SessionRequest.find_one(
             SessionRequest.session_id == session_id,
             SessionRequest.username == current_user.username
@@ -48,27 +53,25 @@ async def ingest_data(session_id: str, files: List[UploadFile] = File(...), curr
             text = await DocumentExtractor.extract_text(file)
             Ingest(documents=[text], collection_name=collection_name).process()
 
-            # SỬA 4: LOGIC PHÂN QUYỀN ADMIN
-            doc_meta = None
-            if current_user.role == "admin":
-                # Admin upload -> Tài liệu GLOBAL
+            if make_global:
                 doc_meta = DocumentMetadata(
                     username=current_user.username,
-                    session_id=None, # <-- GLOBAL
+                    session_id=None,
                     collection_name=collection_name,
                     original_filename=file.filename,
-                    is_global=True # <-- GLOBAL
+                    is_global=True
                 )
                 logger.info(f"Admin {current_user.username} uploaded GLOBAL document: {file.filename}")
             else:
-                # User thường upload -> Tài liệu CỤC BỘ
+                # Cả admin lẫn user đều upload vào session cụ thể khi is_global=False
                 doc_meta = DocumentMetadata(
                     username=current_user.username,
-                    session_id=session_id, # <-- Cụ thể cho session
+                    session_id=session_id,
                     collection_name=collection_name,
                     original_filename=file.filename,
-                    is_global=False # <-- Không phải global
+                    is_global=False
                 )
+                
             
             await doc_meta.create()
 

@@ -61,6 +61,41 @@ async def get_current_user(token: str = Depends(security)) -> Authen:
         )
     return user
 
+@authen_router.get("/me")
+async def get_me(current_user: Authen = Depends(get_current_user)):
+    """Trả về thông tin user hiện tại (username, role, email)."""
+    return {
+        "username": current_user.username,
+        "email": current_user.email,
+        "role": current_user.role,
+    }
+
+@authen_router.patch("/me/role", status_code=200)
+async def set_user_role(
+    target_username: str,
+    new_role: str,
+    current_user: Authen = Depends(get_current_user)
+):
+    """Admin-only: đổi role của user thành 'user' hoặc 'admin'."""
+    if current_user.role != "admin":
+        raise HTTPException(status_code=403, detail="Only admin can change roles")
+    if new_role not in ("user", "admin"):
+        raise HTTPException(status_code=400, detail="role phải là 'user' hoặc 'admin'")
+    target = await Authen.find_one(Authen.username == target_username)
+    if not target:
+        raise HTTPException(status_code=404, detail="User not found")
+    target.role = new_role
+    await target.save()
+    return {"message": f"Updated {target_username} → role={new_role}"}
+
+@authen_router.get("/list_users")
+async def list_users(current_user: Authen = Depends(get_current_user)):
+    """Admin-only: liệt kê tất cả user kèm role."""
+    if current_user.role != "admin":
+        raise HTTPException(status_code=403, detail="Only admin can list users")
+    users = await Authen.find_all().to_list()
+    return [{"username": u.username, "email": u.email, "role": u.role} for u in users]
+
 @authen_router.post('/login', response_model=TokenResponse)
 async def login(request_data: LoginRequest):
     user = await verify_password(request_data.username, request_data.password)

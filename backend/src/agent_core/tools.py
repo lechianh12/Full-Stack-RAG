@@ -136,6 +136,58 @@ def rag_tool_with_sources(query: str, collection_name: str) -> dict:
     }
 
 
+async def rag_tool_stream(query: str, collection_name: str, history: str):
+    """
+    Streaming version of rag_tool. Yields text chunks as they are generated.
+    """
+    embeddings = OllamaEmbeddings(model=ollama_config.OLLAMA_EMBEDDINGS_MODEL)
+    client = QdrantClient(
+        url=qdrant_config.QDRANT_URL,
+        prefer_grpc=False
+    )
+
+    vectorstore = QdrantVectorStore(
+        client=client,
+        collection_name=collection_name,
+        embedding=embeddings,
+        sparse_embedding=FastEmbedSparse(model_name=qdrant_config.QDRANT_MODEL_NAME),
+        retrieval_mode=RetrievalMode.HYBRID,
+    )
+
+    base_retriever = vectorstore.as_retriever(search_kwargs={"k": 20})
+    compressor = FlashrankRerank(top_n=10)
+    retriever = ContextualCompressionRetriever(
+        base_compressor=compressor,
+        base_retriever=base_retriever
+    )
+
+    template = """Dựa trên các tài liệu sau đây, hãy trả lời câu hỏi một cách chính xác và chi tiết:
+
+        Lich sử hội thoại:
+        {history}
+
+        Tài liệu:
+        {context}
+
+        Câu hỏi: {question}
+
+        Câu trả lời:"""
+
+    prompt = ChatPromptTemplate.from_template(template)
+
+    def format_docs(docs):
+        return "\n\n".join([f"Tài liệu {i+1}:\n{doc.page_content}" for i, doc in enumerate(docs)])
+
+    # Retrieve docs synchronously (retrieval doesn't need streaming)
+    docs = retriever.invoke(query)
+    context = format_docs(docs)
+
+    # Stream only the LLM response
+    chain = prompt | llm | StrOutputParser()
+    async for chunk in chain.astream({"context": context, "question": query, "history": history}):
+        yield chunk
+
+
 def list_collections() -> str:
     """
     Trả về danh sách các collection hiện có trong Qdrant.
