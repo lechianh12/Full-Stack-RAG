@@ -129,7 +129,7 @@ export default function Sidebar({
               if (list.length === 0) return null;
               return (
                 <div key={group} className="mb-1">
-                  <p className="px-3 py-1.5 text-xs font-medium uppercase tracking-wider"
+                  <p className="px-3 py-2 text-xs font-medium uppercase tracking-wider"
                     style={{ color: '#475569' }}>
                     {group}
                   </p>
@@ -149,7 +149,7 @@ export default function Sidebar({
                         }}
                       >
                         <ChatIcon />
-                        <span className="flex-1 truncate text-xs">
+                        <span className="flex-1 truncate text-sm">
                           {session.display_name || 'Phiên mới'}
                         </span>
                         {(isHovered || isActive) && (

@@ -8,100 +8,82 @@ function extractYouTubeId(url) {
   return m ? m[1] : null;
 }
 
-// Custom ReactMarkdown components: YouTube links get an inline embed right below them
-const markdownComponents = {
-  // --- Tables ---
+const mdComponents = {
   table: ({ children }) => (
-    <div style={{ overflowX: 'auto', marginTop: '10px', marginBottom: '10px' }}>
-      <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '13px' }}>{children}</table>
+    <div style={{ overflowX: 'auto', margin: '14px 0' }}>
+      <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '14px' }}>{children}</table>
     </div>
   ),
-  thead: ({ children }) => <thead style={{ background: '#f1f5f9' }}>{children}</thead>,
-  th: ({ children }) => (
-    <th style={{ border: '1px solid #e2e8f0', padding: '7px 12px', textAlign: 'left', fontWeight: 700, color: '#334155', whiteSpace: 'nowrap' }}>{children}</th>
-  ),
-  td: ({ children }) => (
-    <td style={{ border: '1px solid #e2e8f0', padding: '6px 12px', color: '#475569', verticalAlign: 'top' }}>{children}</td>
-  ),
-  tr: ({ children }) => <tr style={{ borderBottom: '1px solid #f1f5f9' }}>{children}</tr>,
+  thead: ({ children }) => <thead style={{ background: '#f9fafb' }}>{children}</thead>,
+  th: ({ children }) => <th style={{ border: '1px solid #e5e7eb', padding: '9px 14px', textAlign: 'left', fontWeight: 600, color: '#374151' }}>{children}</th>,
+  td: ({ children }) => <td style={{ border: '1px solid #e5e7eb', padding: '8px 14px', color: '#374151', verticalAlign: 'top' }}>{children}</td>,
+  tr: ({ children }) => <tr>{children}</tr>,
 
-  // --- Code ---
   code: ({ inline, children }) =>
     inline
-      ? <code style={{ background: '#f1f5f9', color: '#be123c', padding: '1px 6px', borderRadius: '4px', fontSize: '12px', fontFamily: 'monospace' }}>{children}</code>
-      : <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '14px 16px', borderRadius: '10px', overflowX: 'auto', fontSize: '12px', fontFamily: 'monospace', lineHeight: 1.6, margin: '10px 0' }}><code>{children}</code></pre>,
+      ? <code style={{ background: '#f3f4f6', color: '#be123c', padding: '2px 6px', borderRadius: '5px', fontSize: '13.5px', fontFamily: "'Fira Code',monospace" }}>{children}</code>
+      : <pre style={{ background: '#1e1e1e', color: '#d4d4d4', padding: '16px 18px', borderRadius: '12px', overflowX: 'auto', fontSize: '13px', fontFamily: "'Fira Code',monospace", lineHeight: 1.7, margin: '12px 0' }}><code>{children}</code></pre>,
 
-  // --- Blockquote ---
   blockquote: ({ children }) => (
-    <blockquote style={{ borderLeft: '3px solid #f97316', paddingLeft: '12px', margin: '8px 0', color: '#64748b', fontStyle: 'italic' }}>{children}</blockquote>
+    <blockquote style={{ borderLeft: '3px solid #d1d5db', paddingLeft: '16px', margin: '10px 0', color: '#6b7280', fontStyle: 'italic' }}>{children}</blockquote>
   ),
 
-  // --- Lists ---
-  ul: ({ children }) => <ul style={{ paddingLeft: '20px', margin: '6px 0', listStyleType: 'disc' }}>{children}</ul>,
-  ol: ({ children }) => <ol style={{ paddingLeft: '20px', margin: '6px 0', listStyleType: 'decimal' }}>{children}</ol>,
-  li: ({ children }) => <li style={{ marginBottom: '3px', color: '#334155' }}>{children}</li>,
+  ul: ({ children }) => <ul style={{ paddingLeft: '24px', margin: '8px 0', listStyleType: 'disc' }}>{children}</ul>,
+  ol: ({ children }) => <ol style={{ paddingLeft: '24px', margin: '8px 0', listStyleType: 'decimal' }}>{children}</ol>,
+  li: ({ children }) => <li style={{ marginBottom: '5px', lineHeight: 1.7 }}>{children}</li>,
 
-  // --- Headings ---
-  h1: ({ children }) => <h1 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a', margin: '14px 0 6px' }}>{children}</h1>,
-  h2: ({ children }) => <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', margin: '12px 0 5px' }}>{children}</h2>,
-  h3: ({ children }) => <h3 style={{ fontSize: '14px', fontWeight: 600, color: '#1e293b', margin: '10px 0 4px' }}>{children}</h3>,
+  h1: ({ children }) => <h1 style={{ fontSize: '22px', fontWeight: 700, margin: '20px 0 10px', color: '#111827' }}>{children}</h1>,
+  h2: ({ children }) => <h2 style={{ fontSize: '18px', fontWeight: 700, margin: '18px 0 8px', color: '#111827' }}>{children}</h2>,
+  h3: ({ children }) => <h3 style={{ fontSize: '16px', fontWeight: 600, margin: '14px 0 6px', color: '#1f2937' }}>{children}</h3>,
 
-  // --- Links + YouTube embed ---
+  p: ({ children }) => <p style={{ margin: '0 0 12px', lineHeight: 1.75, color: '#1a1a1a' }}>{children}</p>,
+
   a: ({ href, children }) => {
     const vid = extractYouTubeId(href);
     return (
-      <span style={{ display: 'inline' }}>
+      <span>
         <a href={href} target="_blank" rel="noopener noreferrer"
-          style={{ color: '#2563eb', textDecoration: 'underline', wordBreak: 'break-all' }}>
+          style={{ color: '#2563eb', textDecoration: 'underline' }}>
           {children}
         </a>
         {vid && (
-          <span style={{ display: 'block', marginTop: '10px', marginBottom: '8px' }}>
-            <iframe
-              src={`https://www.youtube.com/embed/${vid}`}
-              width="460"
-              height="259"
-              style={{
-                display: 'block', border: 'none',
-                borderRadius: '12px',
-                boxShadow: '0 2px 12px rgba(0,0,0,0.14)',
-                maxWidth: '100%',
-              }}
-              allowFullScreen
-              title={`YouTube ${vid}`}
-              loading="lazy"
-            />
+          <span style={{ display: 'block', marginTop: '12px', marginBottom: '6px' }}>
+            <iframe src={`https://www.youtube.com/embed/${vid}`}
+              width="500" height="281"
+              style={{ display: 'block', border: 'none', borderRadius: '12px', boxShadow: '0 2px 16px rgba(0,0,0,0.14)', maxWidth: '100%' }}
+              allowFullScreen title={`yt-${vid}`} loading="lazy" />
           </span>
         )}
       </span>
     );
   },
+
+  strong: ({ children }) => <strong style={{ fontWeight: 600, color: '#111827' }}>{children}</strong>,
+  em: ({ children }) => <em style={{ fontStyle: 'italic', color: '#374151' }}>{children}</em>,
+  hr: () => <hr style={{ border: 'none', borderTop: '1px solid #e5e7eb', margin: '18px 0' }} />,
 };
 
 function SourcesAccordion({ sources }) {
   const [open, setOpen] = useState(false);
   if (!sources?.length) return null;
   return (
-    <div className="mt-3">
+    <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid #f3f4f6' }}>
       <button onClick={() => setOpen(v => !v)}
-        className="flex items-center gap-1.5 text-xs transition-colors"
-        style={{ color: open ? '#f97316' : '#94a3b8' }}>
-        <svg className="w-3 h-3 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-          style={{ transform: open ? 'rotate(90deg)' : '' }}>
+        style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: open ? '#f97316' : '#9ca3af', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+        <svg style={{ width: '13px', height: '13px', transform: open ? 'rotate(90deg)' : '', transition: 'transform 0.15s' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
         {sources.length} nguồn tham khảo
       </button>
       {open && (
-        <div className="mt-2 space-y-1.5">
+        <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '7px' }}>
           {sources.map((src, i) => (
-            <div key={i} className="p-2.5 rounded-lg text-xs"
-              style={{ background: '#f8fafc', border: '1px solid #e2e8f0' }}>
-              <p className="font-medium truncate mb-1" style={{ color: '#475569' }}>
+            <div key={i} style={{ padding: '11px 14px', borderRadius: '10px', background: '#f9fafb', border: '1px solid #e5e7eb', fontSize: '13px' }}>
+              <p style={{ margin: '0 0 5px', fontWeight: 600, color: '#374151', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 📄 {src?.metadata?.source || src?.metadata?.filename || `Nguồn ${i + 1}`}
               </p>
               {(src?.page_content || src?.content) && (
-                <p className="line-clamp-2 leading-relaxed" style={{ color: '#64748b' }}>
+                <p style={{ margin: 0, color: '#6b7280', lineHeight: 1.55, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                   {src.page_content || src.content}
                 </p>
               )}
@@ -113,11 +95,15 @@ function SourcesAccordion({ sources }) {
   );
 }
 
-function BotAvatar() {
+function AiAvatar() {
   return (
-    <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
-      style={{ background: 'rgba(249,115,22,0.1)', border: '1px solid rgba(249,115,22,0.2)' }}>
-      <svg className="w-3.5 h-3.5" style={{ color: '#f97316' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div style={{
+      width: '36px', height: '36px', borderRadius: '50%', flexShrink: 0,
+      background: 'linear-gradient(135deg,#f97316,#ea580c)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      boxShadow: '0 2px 8px rgba(249,115,22,0.4)',
+    }}>
+      <svg style={{ width: '18px', height: '18px', color: '#fff' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
           d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
@@ -125,66 +111,78 @@ function BotAvatar() {
   );
 }
 
-function UserBubble({ text, time }) {
+/* max-width wrapper */
+const ROW = { maxWidth: '820px', margin: '0 auto', width: '100%', padding: '0 24px' };
+
+function UserMsg({ text }) {
   return (
-    <div className="flex justify-end">
-      <div style={{ maxWidth: '72%' }}>
-        <div className="px-4 py-2.5 rounded-2xl text-sm text-white shadow-sm"
-          style={{ background: 'linear-gradient(135deg, #f97316, #ea580c)', borderBottomRightRadius: '4px' }}>
-          <p className="whitespace-pre-wrap leading-relaxed">{text}</p>
+    <div style={ROW}>
+      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <div style={{
+          maxWidth: '78%',
+          background: '#f3f4f6',
+          color: '#111827',
+          borderRadius: '20px 20px 5px 20px',
+          padding: '12px 18px',
+          fontSize: '15px',
+          lineHeight: 1.7,
+          whiteSpace: 'pre-wrap',
+          wordBreak: 'break-word',
+        }}>
+          {text}
         </div>
-        {time && <p className="text-right text-xs mt-1 pr-1" style={{ color: '#cbd5e1' }}>{time}</p>}
       </div>
     </div>
   );
 }
 
-function BotBubble({ text, sources, time, streaming }) {
+function AiMsg({ text, sources, streaming }) {
   return (
-    <div className="flex justify-start gap-2.5">
-      <BotAvatar />
-      <div style={{ maxWidth: '72%' }}>
-        <div className="px-4 py-2.5 rounded-2xl text-sm shadow-sm"
-          style={{ background: '#fff', border: '1px solid #e2e8f0', borderBottomLeftRadius: '4px', color: '#1e293b' }}>
-          <div className="prose-content">
-            <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{text}</ReactMarkdown>
+    <div style={ROW}>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+        <AiAvatar />
+        <div style={{ flex: 1, minWidth: 0, paddingTop: '4px' }}>
+          <div style={{ fontSize: '15px', lineHeight: 1.75, color: '#111827' }}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>{text}</ReactMarkdown>
           </div>
           {streaming && (
-            <span className="inline-block w-1.5 h-4 ml-0.5 rounded-sm animate-pulse"
-              style={{ background: '#f97316', verticalAlign: 'text-bottom' }} />
+            <span style={{
+              display: 'inline-block', width: '7px', height: '18px', marginLeft: '3px',
+              borderRadius: '3px', background: '#f97316',
+              animation: 'pulse 1s infinite',
+              verticalAlign: 'text-bottom',
+            }} />
           )}
           {!streaming && <SourcesAccordion sources={sources} />}
         </div>
-        {time && !streaming && <p className="text-xs mt-1 pl-1" style={{ color: '#cbd5e1' }}>{time}</p>}
       </div>
     </div>
   );
 }
 
-function TypingIndicator() {
+function Typing() {
   return (
-    <div className="flex justify-start gap-2.5">
-      <BotAvatar />
-      <div className="px-4 py-3 rounded-2xl shadow-sm"
-        style={{ background: '#fff', border: '1px solid #e2e8f0', borderBottomLeftRadius: '4px' }}>
-        <div className="flex gap-1">
-          <span className="w-2 h-2 rounded-full typing-dot" style={{ background: '#cbd5e1' }} />
-          <span className="w-2 h-2 rounded-full typing-dot" style={{ background: '#cbd5e1' }} />
-          <span className="w-2 h-2 rounded-full typing-dot" style={{ background: '#cbd5e1' }} />
+    <div style={ROW}>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+        <AiAvatar />
+        <div style={{ display: 'flex', gap: '6px', paddingTop: '4px' }}>
+          {[0, 1, 2].map(i => (
+            <span key={i} className="typing-dot" style={{
+              width: '8px', height: '8px', borderRadius: '50%',
+              background: '#d1d5db', animationDelay: `${i * 0.15}s`,
+            }} />
+          ))}
         </div>
       </div>
     </div>
   );
 }
 
-function MessageItem({ msg }) {
-  const time = msg.timestamp
-    ? new Date(msg.timestamp).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })
-    : '';
+function MsgPair({ msg }) {
   return (
-    <div className="space-y-3 fade-in">
-      <UserBubble text={msg.message} time={time} />
-      {msg.response && <BotBubble text={msg.response} sources={msg.sources} time={time} />}
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
+      <UserMsg text={msg.message} />
+      {msg.response && <AiMsg text={msg.response} sources={msg.sources} />}
     </div>
   );
 }
@@ -201,48 +199,50 @@ export default function MessageList({
 
   if (isLoading) {
     return (
-      <div className="flex-1 flex flex-col items-center justify-center gap-3">
-        <div className="w-7 h-7 rounded-full border-2 animate-spin"
-          style={{ borderColor: 'rgba(249,115,22,0.2)', borderTopColor: '#f97316' }} />
-        <p className="text-sm" style={{ color: '#94a3b8' }}>Đang tải...</p>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '14px' }}>
+        <div style={{ width: '32px', height: '32px', borderRadius: '50%', border: '2.5px solid rgba(249,115,22,0.2)', borderTopColor: '#f97316', animation: 'spin 0.8s linear infinite' }} />
+        <p style={{ fontSize: '14px', color: '#9ca3af' }}>Đang tải...</p>
       </div>
     );
   }
 
   const isEmpty = messages.length === 0 && !pendingUserMsg;
-
   if (isEmpty) {
     return (
-      <div className="flex-1 flex flex-col items-center justify-center text-center px-8">
-        <div className="text-4xl mb-3">💬</div>
-        <p className="text-sm font-medium" style={{ color: '#64748b' }}>Bắt đầu cuộc trò chuyện</p>
-        <p className="text-xs mt-1" style={{ color: '#cbd5e1' }}>
-          Chọn tài liệu bằng nút 📂 rồi đặt câu hỏi bên dưới
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '0 32px' }}>
+        <div style={{
+          width: '60px', height: '60px', borderRadius: '18px', marginBottom: '20px',
+          background: 'linear-gradient(135deg,#f97316,#ea580c)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          boxShadow: '0 6px 24px rgba(249,115,22,0.35)',
+        }}>
+          <svg style={{ width: '30px', height: '30px', color: '#fff' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+        </div>
+        <p style={{ fontSize: '22px', fontWeight: 700, color: '#111827', margin: '0 0 10px' }}>Bắt đầu hội thoại</p>
+        <p style={{ fontSize: '15px', color: '#9ca3af', lineHeight: 1.65, maxWidth: '360px' }}>
+          Chọn tài liệu bên dưới rồi đặt câu hỏi để AI trả lời dựa trên nội dung tài liệu.
         </p>
       </div>
     );
   }
 
   return (
-    <div className="flex-1 overflow-y-auto px-6 py-5 space-y-5">
-      {/* Historical messages */}
+    <div style={{ flex: 1, overflowY: 'auto', paddingTop: '28px', paddingBottom: '12px', display: 'flex', flexDirection: 'column', gap: '32px' }}>
       {messages.map((msg, i) => (
-        <MessageItem key={msg._id || msg.id || i} msg={msg} />
+        <MsgPair key={msg._id || msg.id || i} msg={msg} />
       ))}
-
-      {/* Pending user message + streaming response */}
       {pendingUserMsg && (
-        <div className="space-y-3 fade-in">
-          <UserBubble text={pendingUserMsg.message} />
-          {hasFirstChunk && streamingText ? (
-            <BotBubble text={streamingText} streaming />
-          ) : isStreaming ? (
-            <TypingIndicator />
-          ) : null}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
+          <UserMsg text={pendingUserMsg.message} />
+          {hasFirstChunk && streamingText
+            ? <AiMsg text={streamingText} streaming />
+            : isStreaming ? <Typing /> : null}
         </div>
       )}
-
-      <div ref={bottomRef} />
+      <div ref={bottomRef} style={{ height: '4px' }} />
     </div>
   );
 }

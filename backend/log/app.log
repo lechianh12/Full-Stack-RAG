@@ -9084,3 +9084,34 @@ Tóm lại, tài liệu này cung cấp bằng chứng về quy trình kiểm to
 2026-04-06 17:16:22,944 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 12 documents (session + global) for session f02ff03e-9864-4b35-a998-9ee5490866e1
 2026-04-06 17:16:22,951 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 2 messages for session f02ff03e-9864-4b35-a998-9ee5490866e1
 2026-04-06 17:16:22,952 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 12 documents (session + global) for session f02ff03e-9864-4b35-a998-9ee5490866e1
+2026-04-12 10:20:22,047 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2026-04-12 10:20:22,072 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2026-04-12 10:23:28,919 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/authen_router.py: Da dang nhap thanh cong
+2026-04-12 10:23:29,003 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:23:29,006 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 14 documents (session + global) for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:23:29,010 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:23:29,012 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 14 documents (session + global) for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:23:31,061 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 8377e6fc-fdcd-4d34-8f69-ff788605881c
+2026-04-12 10:23:31,063 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 13 documents (session + global) for session 8377e6fc-fdcd-4d34-8f69-ff788605881c
+2026-04-12 10:23:31,068 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 8377e6fc-fdcd-4d34-8f69-ff788605881c
+2026-04-12 10:23:31,069 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 13 documents (session + global) for session 8377e6fc-fdcd-4d34-8f69-ff788605881c
+2026-04-12 10:23:31,805 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 13 documents (session + global) for session ed91ed5e-1bd3-42c4-9672-528a89622d9e
+2026-04-12 10:23:31,806 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 6 messages for session ed91ed5e-1bd3-42c4-9672-528a89622d9e
+2026-04-12 10:23:31,811 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 13 documents (session + global) for session ed91ed5e-1bd3-42c4-9672-528a89622d9e
+2026-04-12 10:23:31,812 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 6 messages for session ed91ed5e-1bd3-42c4-9672-528a89622d9e
+2026-04-12 10:23:32,492 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 8377e6fc-fdcd-4d34-8f69-ff788605881c
+2026-04-12 10:23:32,492 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 13 documents (session + global) for session 8377e6fc-fdcd-4d34-8f69-ff788605881c
+2026-04-12 10:23:32,496 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 8377e6fc-fdcd-4d34-8f69-ff788605881c
+2026-04-12 10:23:32,498 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 13 documents (session + global) for session 8377e6fc-fdcd-4d34-8f69-ff788605881c
+2026-04-12 10:23:32,995 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:23:32,997 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 14 documents (session + global) for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:23:33,001 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:23:33,002 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 14 documents (session + global) for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:32:50,335 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:32:50,336 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 14 documents (session + global) for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:32:50,340 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:32:50,341 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 14 documents (session + global) for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:42:57,575 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:42:57,576 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 14 documents (session + global) for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:42:57,580 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:42:57,581 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 14 documents (session + global) for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
