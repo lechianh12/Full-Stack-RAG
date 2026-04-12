@@ -9115,3 +9115,231 @@ Tóm lại, tài liệu này cung cấp bằng chứng về quy trình kiểm to
 2026-04-12 10:42:57,576 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 14 documents (session + global) for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
 2026-04-12 10:42:57,580 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
 2026-04-12 10:42:57,581 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 14 documents (session + global) for session 0c0b6a8c-f0ca-4e4a-b3de-eb1c296e2317
+2026-04-12 10:49:31,312 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2026-04-12 10:49:31,326 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2026-04-12 10:49:39,352 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2026-04-12 10:49:39,364 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2026-04-12 10:58:23,749 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2026-04-12 10:58:23,767 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2026-04-12 10:59:27,050 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session created for user chianh123 with session ID f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 10:59:27,080 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 10:59:27,080 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 0 documents (session + global) for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 10:59:27,084 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 10:59:27,085 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 0 documents (session + global) for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 11:00:01,541 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: luan-van-tot-nghiep-hoan-thien-quy-trinh-kiem-toan-tien-luong-cq5622.pdf for new collection 5eab3f80-545d-483c-80f0-4024e5f9bdff
+2026-04-12 11:00:07,374 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:00:07,379 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff/exists "HTTP/1.1 200 OK"
+2026-04-12 11:00:08,426 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:00:08,736 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff "HTTP/1.1 200 OK"
+2026-04-12 11:00:09,371 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:00:09,455 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:00:09,927 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:00:10,004 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:00:10,462 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:00:10,536 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:00:11,003 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:00:11,072 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:00:11,207 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:00:11,234 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:00:11,237 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File luan-van-tot-nghiep-hoan-thien-quy-trinh-kiem-toan-tien-luong-cq5622.pdf ingested successfully into collection 5eab3f80-545d-483c-80f0-4024e5f9bdff
+2026-04-12 11:00:11,237 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: audit-of-the-payroll-and-personnel-cycle-bachelor-thesis-dau-11183452.pdf for new collection 93d48254-9b22-44ea-80b1-9e78402eb379
+2026-04-12 11:00:13,035 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:00:13,037 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/93d48254-9b22-44ea-80b1-9e78402eb379/exists "HTTP/1.1 200 OK"
+2026-04-12 11:00:13,052 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:00:13,448 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/93d48254-9b22-44ea-80b1-9e78402eb379 "HTTP/1.1 200 OK"
+2026-04-12 11:00:14,267 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:00:14,326 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/93d48254-9b22-44ea-80b1-9e78402eb379/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:00:14,330 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File audit-of-the-payroll-and-personnel-cycle-bachelor-thesis-dau-11183452.pdf ingested successfully into collection 93d48254-9b22-44ea-80b1-9e78402eb379
+2026-04-12 11:00:14,336 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 2 documents (session + global) for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 11:00:32,241 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:00:33,166 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff "HTTP/1.1 200 OK"
+2026-04-12 11:00:33,215 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:00:33,218 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff "HTTP/1.1 200 OK"
+2026-04-12 11:00:33,293 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:00:33,304 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff/points/query "HTTP/1.1 200 OK"
+2026-04-12 11:00:33,329 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:00:34,180 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/93d48254-9b22-44ea-80b1-9e78402eb379 "HTTP/1.1 200 OK"
+2026-04-12 11:00:34,222 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:00:34,224 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/93d48254-9b22-44ea-80b1-9e78402eb379 "HTTP/1.1 200 OK"
+2026-04-12 11:00:34,268 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:00:34,273 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/93d48254-9b22-44ea-80b1-9e78402eb379/points/query "HTTP/1.1 200 OK"
+2026-04-12 11:00:48,900 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-12 11:05:29,154 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: CV.pdf for new collection ed80e697-a837-41a7-acad-d3088935419a
+2026-04-12 11:05:30,588 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:05:30,590 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/ed80e697-a837-41a7-acad-d3088935419a/exists "HTTP/1.1 200 OK"
+2026-04-12 11:05:30,606 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:05:30,901 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/ed80e697-a837-41a7-acad-d3088935419a "HTTP/1.1 200 OK"
+2026-04-12 11:05:30,920 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:05:30,929 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/ed80e697-a837-41a7-acad-d3088935419a/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:05:30,932 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File CV.pdf ingested successfully into collection ed80e697-a837-41a7-acad-d3088935419a
+2026-04-12 11:05:30,940 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 3 documents (session + global) for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 11:07:06,183 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2026-04-12 11:07:06,197 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2026-04-12 11:07:20,351 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2026-04-12 11:07:20,365 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2026-04-12 11:10:48,339 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2026-04-12 11:10:48,354 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2026-04-12 11:11:23,786 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 11:11:23,787 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 3 documents (session + global) for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 11:11:23,792 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 11:11:23,793 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 3 documents (session + global) for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 11:11:26,240 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session created for user chianh123 with session ID 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:11:26,255 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:11:26,256 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 0 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:11:26,260 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:11:26,261 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 0 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:11:29,771 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 11:11:29,772 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 3 documents (session + global) for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 11:11:29,777 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 1 messages for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 11:11:29,778 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 3 documents (session + global) for session f0173f5a-2bb3-456c-b821-6db6d89f06f4
+2026-04-12 11:11:44,137 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:11:45,142 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/ed80e697-a837-41a7-acad-d3088935419a "HTTP/1.1 200 OK"
+2026-04-12 11:11:45,859 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:11:45,862 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/ed80e697-a837-41a7-acad-d3088935419a "HTTP/1.1 200 OK"
+2026-04-12 11:11:45,889 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:11:45,894 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/ed80e697-a837-41a7-acad-d3088935419a/points/query "HTTP/1.1 200 OK"
+2026-04-12 11:11:45,920 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:11:46,942 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff "HTTP/1.1 200 OK"
+2026-04-12 11:11:46,956 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:11:46,958 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff "HTTP/1.1 200 OK"
+2026-04-12 11:11:46,973 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:11:46,977 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff/points/query "HTTP/1.1 200 OK"
+2026-04-12 11:11:52,831 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-12 11:16:38,919 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:16:40,192 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/ed80e697-a837-41a7-acad-d3088935419a "HTTP/1.1 200 OK"
+2026-04-12 11:16:40,246 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:16:40,249 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/ed80e697-a837-41a7-acad-d3088935419a "HTTP/1.1 200 OK"
+2026-04-12 11:16:40,315 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:16:40,319 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/ed80e697-a837-41a7-acad-d3088935419a/points/query "HTTP/1.1 200 OK"
+2026-04-12 11:16:40,344 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:16:41,197 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff "HTTP/1.1 200 OK"
+2026-04-12 11:16:41,372 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:16:41,375 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff "HTTP/1.1 200 OK"
+2026-04-12 11:16:41,392 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:16:41,396 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/5eab3f80-545d-483c-80f0-4024e5f9bdff/points/query "HTTP/1.1 200 OK"
+2026-04-12 11:16:44,517 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-12 11:20:00,493 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session with session_id f0173f5a-2bb3-456c-b821-6db6d89f06f4 deleted successfully
+2026-04-12 11:20:00,506 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:20:00,512 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 0 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:20:00,518 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:20:00,523 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 0 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:20:18,232 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2026-04-12 11:20:18,245 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2026-04-12 11:20:28,230 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2026-04-12 11:20:28,244 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2026-04-12 11:23:21,731 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2026-04-12 11:23:21,744 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2026-04-12 11:23:54,030 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:23:54,031 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 0 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:23:54,036 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:23:54,037 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 0 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:24:38,815 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:24:38,816 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 0 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:24:38,820 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:24:38,821 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 0 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:24:51,026 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: luan-van-tot-nghiep-hoan-thien-quy-trinh-kiem-toan-tien-luong-cq5622.pdf for new collection 232f572e-8292-445c-810f-87b94f310734
+2026-04-12 11:24:56,833 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:24:56,835 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734/exists "HTTP/1.1 200 OK"
+2026-04-12 11:24:57,527 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:24:57,804 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734 "HTTP/1.1 200 OK"
+2026-04-12 11:24:58,430 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:24:58,509 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:24:59,014 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:24:59,096 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:24:59,565 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:24:59,640 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:25:00,115 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:25:00,184 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:25:00,321 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:25:00,345 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:25:00,348 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File luan-van-tot-nghiep-hoan-thien-quy-trinh-kiem-toan-tien-luong-cq5622.pdf ingested successfully into collection 232f572e-8292-445c-810f-87b94f310734
+2026-04-12 11:25:00,348 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: audit-of-the-payroll-and-personnel-cycle-bachelor-thesis-dau-11183452.pdf for new collection 59248574-c8b0-4b69-b293-b6826d417051
+2026-04-12 11:25:02,358 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:25:02,360 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/59248574-c8b0-4b69-b293-b6826d417051/exists "HTTP/1.1 200 OK"
+2026-04-12 11:25:02,374 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:25:02,655 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/59248574-c8b0-4b69-b293-b6826d417051 "HTTP/1.1 200 OK"
+2026-04-12 11:25:03,473 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:25:03,534 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/59248574-c8b0-4b69-b293-b6826d417051/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:25:03,538 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File audit-of-the-payroll-and-personnel-cycle-bachelor-thesis-dau-11183452.pdf ingested successfully into collection 59248574-c8b0-4b69-b293-b6826d417051
+2026-04-12 11:25:03,538 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: CV.pdf for new collection 8060c97d-eb5d-41a8-94e8-7ffee3e90c5e
+2026-04-12 11:25:05,394 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:25:05,396 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/8060c97d-eb5d-41a8-94e8-7ffee3e90c5e/exists "HTTP/1.1 200 OK"
+2026-04-12 11:25:05,414 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:25:05,712 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/8060c97d-eb5d-41a8-94e8-7ffee3e90c5e "HTTP/1.1 200 OK"
+2026-04-12 11:25:05,752 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:25:05,760 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/8060c97d-eb5d-41a8-94e8-7ffee3e90c5e/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 11:25:05,763 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File CV.pdf ingested successfully into collection 8060c97d-eb5d-41a8-94e8-7ffee3e90c5e
+2026-04-12 11:25:05,769 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 3 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 11:25:17,969 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:25:19,867 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734 "HTTP/1.1 200 OK"
+2026-04-12 11:25:19,943 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:25:19,945 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734 "HTTP/1.1 200 OK"
+2026-04-12 11:25:20,023 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:25:20,029 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734/points/query "HTTP/1.1 200 OK"
+2026-04-12 11:25:20,054 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:25:21,216 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/8060c97d-eb5d-41a8-94e8-7ffee3e90c5e "HTTP/1.1 200 OK"
+2026-04-12 11:25:21,444 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:25:21,446 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/8060c97d-eb5d-41a8-94e8-7ffee3e90c5e "HTTP/1.1 200 OK"
+2026-04-12 11:25:21,463 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:25:21,467 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/8060c97d-eb5d-41a8-94e8-7ffee3e90c5e/points/query "HTTP/1.1 200 OK"
+2026-04-12 11:25:27,024 [INFO] httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-12 11:28:02,296 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:28:03,582 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734 "HTTP/1.1 200 OK"
+2026-04-12 11:28:03,764 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:28:03,767 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734 "HTTP/1.1 200 OK"
+2026-04-12 11:28:03,830 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:28:03,834 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734/points/query "HTTP/1.1 200 OK"
+2026-04-12 11:28:03,858 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:28:05,648 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/8060c97d-eb5d-41a8-94e8-7ffee3e90c5e "HTTP/1.1 200 OK"
+2026-04-12 11:28:05,674 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:28:05,676 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/8060c97d-eb5d-41a8-94e8-7ffee3e90c5e "HTTP/1.1 200 OK"
+2026-04-12 11:28:05,708 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:28:05,712 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/8060c97d-eb5d-41a8-94e8-7ffee3e90c5e/points/query "HTTP/1.1 200 OK"
+2026-04-12 11:28:09,145 [INFO] httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-12 11:28:39,328 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:28:41,009 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734 "HTTP/1.1 200 OK"
+2026-04-12 11:28:41,252 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:28:41,255 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734 "HTTP/1.1 200 OK"
+2026-04-12 11:28:41,308 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:28:41,312 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/232f572e-8292-445c-810f-87b94f310734/points/query "HTTP/1.1 200 OK"
+2026-04-12 11:28:41,338 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 11:28:42,217 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/8060c97d-eb5d-41a8-94e8-7ffee3e90c5e "HTTP/1.1 200 OK"
+2026-04-12 11:28:42,231 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:28:42,234 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/8060c97d-eb5d-41a8-94e8-7ffee3e90c5e "HTTP/1.1 200 OK"
+2026-04-12 11:28:42,253 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 11:28:42,258 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/8060c97d-eb5d-41a8-94e8-7ffee3e90c5e/points/query "HTTP/1.1 200 OK"
+2026-04-12 11:28:45,904 [INFO] httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-12 13:54:16,703 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connecting to MongoDB...
+2026-04-12 13:54:16,724 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/app.py: Connected to MongoDB successfully.
+2026-04-12 13:54:49,362 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 3 messages for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 13:54:49,364 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 3 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 13:54:49,374 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 3 messages for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 13:54:49,375 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 3 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 13:55:31,830 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/authen_router.py: Da dang nhap thanh cong
+2026-04-12 13:55:35,791 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Session created for user admin with session ID 30583625-c5b7-4242-9f42-a4ff9169ebd2
+2026-04-12 13:55:35,806 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 30583625-c5b7-4242-9f42-a4ff9169ebd2
+2026-04-12 13:55:35,807 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 0 documents (session + global) for session 30583625-c5b7-4242-9f42-a4ff9169ebd2
+2026-04-12 13:55:35,812 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 0 messages for session 30583625-c5b7-4242-9f42-a4ff9169ebd2
+2026-04-12 13:55:35,813 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 0 documents (session + global) for session 30583625-c5b7-4242-9f42-a4ff9169ebd2
+2026-04-12 13:55:59,603 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Processing file: An_toan_lao_dong.docx for new collection 3741d65c-7006-402a-b527-2a651042c551
+2026-04-12 13:56:00,621 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 13:56:00,626 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/3741d65c-7006-402a-b527-2a651042c551/exists "HTTP/1.1 200 OK"
+2026-04-12 13:56:01,721 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 13:56:02,009 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/3741d65c-7006-402a-b527-2a651042c551 "HTTP/1.1 200 OK"
+2026-04-12 13:56:02,069 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 13:56:02,083 [INFO] httpx: HTTP Request: PUT http://localhost:6333/collections/3741d65c-7006-402a-b527-2a651042c551/points?wait=true "HTTP/1.1 200 OK"
+2026-04-12 13:56:02,085 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: Admin admin uploaded GLOBAL document: An_toan_lao_dong.docx
+2026-04-12 13:56:02,087 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/ingest_router.py: File An_toan_lao_dong.docx ingested successfully into collection 3741d65c-7006-402a-b527-2a651042c551
+2026-04-12 13:56:02,093 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 1 documents (session + global) for session 30583625-c5b7-4242-9f42-a4ff9169ebd2
+2026-04-12 13:56:11,394 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/authen_router.py: Da dang nhap thanh cong
+2026-04-12 13:56:11,417 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 3 messages for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 13:56:11,418 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 4 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 13:56:11,423 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/chat_router.py: Retrieved 3 messages for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 13:56:11,425 [INFO] /mnt/d/Full-Stack-RAG/backend/src/api/routers/session_router.py: Retrieved 4 documents (session + global) for session 042a824b-91cf-4968-880e-d5e5988472ee
+2026-04-12 13:56:25,950 [INFO] httpx: HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2026-04-12 13:56:26,811 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/3741d65c-7006-402a-b527-2a651042c551 "HTTP/1.1 200 OK"
+2026-04-12 13:56:26,859 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 13:56:26,861 [INFO] httpx: HTTP Request: GET http://localhost:6333/collections/3741d65c-7006-402a-b527-2a651042c551 "HTTP/1.1 200 OK"
+2026-04-12 13:56:27,431 [INFO] httpx: HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-04-12 13:56:27,436 [INFO] httpx: HTTP Request: POST http://localhost:6333/collections/3741d65c-7006-402a-b527-2a651042c551/points/query "HTTP/1.1 200 OK"
+2026-04-12 13:56:34,428 [INFO] httpx: HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"

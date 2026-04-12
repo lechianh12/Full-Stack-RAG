@@ -47,31 +47,43 @@ async def send_message(session_id: str, request: MessageRequest, current_user: A
     except Exception as e:
         logger.error(f"Error checking/updating session display name: {e}")
         
-    collection_to_use = request.collection_name
+    # Resolve collection list (hỗ trợ cả single và multi)
+    collections_to_use = request.collection_names or (
+        [request.collection_name] if request.collection_name else []
+    )
     response_text = ""
 
-    if collection_to_use:
-        # Dòng 60 (gây lỗi) nằm ở đây. Giờ nó đã có 'DocumentMetadata' và 'Or'
-        doc = await DocumentMetadata.find_one( 
-            DocumentMetadata.collection_name == collection_to_use,
-            Or(
-                (DocumentMetadata.is_global == True),
-                (DocumentMetadata.session_id == session_id)
+    if collections_to_use:
+        # Kiểm tra quyền truy cập từng collection
+        for cn in collections_to_use:
+            doc = await DocumentMetadata.find_one(
+                DocumentMetadata.collection_name == cn,
+                Or(
+                    (DocumentMetadata.is_global == True),
+                    (DocumentMetadata.session_id == session_id)
+                )
             )
-        )
-        if not doc:
-             raise HTTPException(status_code=403, detail="Not authorized to access this document collection")
-        
-        logger.info(f"Calling RAG agent for collection: {collection_to_use}")
+            if not doc:
+                raise HTTPException(status_code=403, detail=f"Not authorized to access collection: {cn}")
+
+        logger.info(f"Calling RAG agent for {len(collections_to_use)} collection(s): {collections_to_use}")
         try:
-            history = await memory(session_id)  
-            response_text = Agent().qa_agent(query=message_content, collection_name=collection_to_use, history=history)
+            history = await memory(session_id)
+            agent = Agent()
+            if len(collections_to_use) == 1:
+                response_text = agent.qa_agent(
+                    query=message_content, collection_name=collections_to_use[0], history=history
+                )
+            else:
+                response_text = agent.qa_agent_multi(
+                    query=message_content, collection_names=collections_to_use, history=history
+                )
         except Exception as e:
-            logger.error(f"RAG agent failed for collection {collection_to_use}: {e}")
-            response_text = "Error accessing selected document."
+            logger.error(f"RAG agent failed: {e}")
+            response_text = "Lỗi khi truy cập tài liệu đã chọn."
     else:
-        logger.info("Calling non-RAG agent (no collection selected)")
-        response_text = "I am a RAG assistant. Please select a document to start chatting."
+        logger.info("No collection selected — returning guide message")
+        response_text = "Tôi là trợ lý RAG. Vui lòng chọn ít nhất một tài liệu để bắt đầu hội thoại."
 
     chat = ChatMessage(
         session_id=session.session_id,  
@@ -108,22 +120,23 @@ async def send_message_stream(session_id: str, request: MessageRequest, current_
     except Exception as e:
         logger.error(f"Error checking/updating session display name: {e}")
 
-    collection_to_use = request.collection_name
+    # Resolve collection list
+    collections_to_use = request.collection_names or (
+        [request.collection_name] if request.collection_name else []
+    )
 
-    if collection_to_use:
+    for cn in collections_to_use:
         doc = await DocumentMetadata.find_one(
-            DocumentMetadata.collection_name == collection_to_use,
+            DocumentMetadata.collection_name == cn,
             Or(
                 (DocumentMetadata.is_global == True),
                 (DocumentMetadata.session_id == session_id)
             )
         )
         if not doc:
-            raise HTTPException(status_code=403, detail="Not authorized to access this document collection")
+            raise HTTPException(status_code=403, detail=f"Not authorized to access collection: {cn}")
 
-    history = ""
-    if collection_to_use:
-        history = await memory(session_id)
+    history = await memory(session_id) if collections_to_use else ""
 
     async def event_generator():
         full_response = ""
@@ -131,16 +144,21 @@ async def send_message_stream(session_id: str, request: MessageRequest, current_
         yield f"data: {json.dumps({'type': 'meta', 'session_updated': session_updated})}\n\n"
 
         try:
-            if collection_to_use:
-                async for chunk in Agent().qa_agent_stream(
-                    query=message_content,
-                    collection_name=collection_to_use,
-                    history=history
-                ):
+            if collections_to_use:
+                agent = Agent()
+                if len(collections_to_use) == 1:
+                    gen = agent.qa_agent_stream(
+                        query=message_content, collection_name=collections_to_use[0], history=history
+                    )
+                else:
+                    gen = agent.qa_agent_multi_stream(
+                        query=message_content, collection_names=collections_to_use, history=history
+                    )
+                async for chunk in gen:
                     full_response += chunk
                     yield f"data: {json.dumps({'type': 'chunk', 'text': chunk})}\n\n"
             else:
-                full_response = "Tôi là trợ lý RAG. Vui lòng chọn một tài liệu để bắt đầu hội thoại."
+                full_response = "Tôi là trợ lý RAG. Vui lòng chọn ít nhất một tài liệu để bắt đầu hội thoại."
                 yield f"data: {json.dumps({'type': 'chunk', 'text': full_response})}\n\n"
 
         except Exception as e:

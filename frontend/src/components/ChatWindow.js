@@ -5,14 +5,14 @@ import MessageInput from './MessageInput';
 import DocumentPanel from './DocumentPanel';
 
 export default function ChatWindow({ sessionId, userRole, onUnauthorized, onSessionNameUpdate }) {
-  const [messages, setMessages]                       = useState([]);
-  const [documents, setDocuments]                     = useState([]);
-  const [selectedCollection, setSelectedCollection]   = useState(null);
-  const [isLoadingMessages, setIsLoadingMessages]     = useState(true);
-  const [docPanelOpen, setDocPanelOpen]               = useState(false);
+  const [messages, setMessages]                         = useState([]);
+  const [documents, setDocuments]                       = useState([]);
+  const [selectedCollections, setSelectedCollections]   = useState([]); // array of collection_names
+  const [isLoadingMessages, setIsLoadingMessages]       = useState(true);
+  const [docPanelOpen, setDocPanelOpen]                 = useState(false);
 
-  // Streaming state
-  const [isStreaming, setIsStreaming]   = useState(false);
+  // Streaming
+  const [isStreaming, setIsStreaming]     = useState(false);
   const [hasFirstChunk, setHasFirstChunk] = useState(false);
   const [streamingText, setStreamingText] = useState('');
   const [pendingUserMsg, setPendingUserMsg] = useState(null);
@@ -23,7 +23,7 @@ export default function ChatWindow({ sessionId, userRole, onUnauthorized, onSess
     setIsLoadingMessages(true);
     setMessages([]);
     setDocuments([]);
-    setSelectedCollection(null);
+    setSelectedCollections([]);
     try {
       const [msgs, docs] = await Promise.all([
         getAllMessages(sessionId),
@@ -50,7 +50,7 @@ export default function ChatWindow({ sessionId, userRole, onUnauthorized, onSess
     setStreamingText('');
     streamingTextRef.current = '';
 
-    const controller = sendMessageStream(sessionId, text, selectedCollection, {
+    const controller = sendMessageStream(sessionId, text, selectedCollections, {
       onMeta: (meta) => {
         if (meta.session_updated && onSessionNameUpdate) {
           onSessionNameUpdate(sessionId, text.slice(0, 50) + (text.length > 50 ? '...' : ''));
@@ -88,7 +88,7 @@ export default function ChatWindow({ sessionId, userRole, onUnauthorized, onSess
       },
     });
     abortRef.current = controller;
-  }, [sessionId, selectedCollection, isStreaming, onSessionNameUpdate, onUnauthorized]);
+  }, [sessionId, selectedCollections, isStreaming, onSessionNameUpdate, onUnauthorized]);
 
   const handleStopStream = useCallback(() => { abortRef.current?.abort(); }, []);
 
@@ -97,22 +97,45 @@ export default function ChatWindow({ sessionId, userRole, onUnauthorized, onSess
       const docs = await getDocumentsForSession(sessionId);
       setDocuments(docs || []);
       setDocPanelOpen(true);
-      const firstCol = uploadResponse?.processed_files_info?.[0]?.collection_name;
-      if (firstCol) setSelectedCollection(firstCol);
+      // Auto-select newly uploaded doc
+      const newCol = uploadResponse?.processed_files_info?.[0]?.collection_name;
+      if (newCol) setSelectedCollections(prev => [...new Set([...prev, newCol])]);
     } catch (_) {}
   }, [sessionId]);
 
-  const handleSelectDocument = (doc) => {
-    setSelectedCollection(prev => prev === doc.collection_name ? null : doc.collection_name);
-    setDocPanelOpen(false);
+  // Toggle a single collection in/out of selection
+  const handleToggleDocument = useCallback((collectionName) => {
+    setSelectedCollections(prev =>
+      prev.includes(collectionName)
+        ? prev.filter(c => c !== collectionName)
+        : [...prev, collectionName]
+    );
+  }, []);
+
+  const handleSelectAll = useCallback(() => {
+    setSelectedCollections(documents.map(d => d.collection_name));
+  }, [documents]);
+
+  const handleDeselectAll = useCallback(() => {
+    setSelectedCollections([]);
+  }, []);
+
+  // Pill label
+  const pillLabel = () => {
+    if (selectedCollections.length === 0)
+      return documents.length > 0 ? `${documents.length} tài liệu` : 'Tài liệu';
+    if (selectedCollections.length === 1) {
+      const doc = documents.find(d => d.collection_name === selectedCollections[0]);
+      return doc?.original_filename || '1 tài liệu';
+    }
+    return `${selectedCollections.length} tài liệu đã chọn`;
   };
 
-  const selectedDoc = documents.find(d => d.collection_name === selectedCollection);
+  const hasSelection = selectedCollections.length > 0;
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', background: '#fff', position: 'relative' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', background: '#fff' }}>
 
-      {/* Messages */}
       <MessageList
         messages={messages}
         isLoading={isLoadingMessages}
@@ -122,45 +145,45 @@ export default function ChatWindow({ sessionId, userRole, onUnauthorized, onSess
         hasFirstChunk={hasFirstChunk}
       />
 
-      {/* ── Bottom: pill + input (centered, max-width) ── */}
+      {/* ── Bottom: pill + input ── */}
       <div style={{ flexShrink: 0, padding: '0 20px 20px', background: '#fff' }}>
         <div style={{ maxWidth: '820px', margin: '0 auto' }}>
 
-          {/* Pill row — also anchors the floating panel */}
+          {/* Pill row — anchors the floating panel */}
           <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
 
-            {/* Floating document card — appears above the pill */}
+            {/* Floating panel above pill */}
             {docPanelOpen && (
               <div style={{
                 position: 'absolute',
                 bottom: 'calc(100% + 10px)',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                width: 'min(460px, 90vw)',
+                width: 'min(480px, 92vw)',
                 zIndex: 200,
               }}>
                 <DocumentPanel
                   documents={documents}
-                  selectedCollection={selectedCollection}
-                  onSelectDocument={handleSelectDocument}
+                  selectedCollections={selectedCollections}
+                  onToggleDocument={handleToggleDocument}
+                  onSelectAll={handleSelectAll}
+                  onDeselectAll={handleDeselectAll}
                   onClose={() => setDocPanelOpen(false)}
                 />
               </div>
             )}
 
-            {/* The pill button */}
+            {/* Pill button */}
             <button
               onClick={() => setDocPanelOpen(v => !v)}
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '7px',
                 padding: '7px 16px 7px 12px',
                 borderRadius: '22px', border: 'none', cursor: 'pointer',
-                background: selectedCollection ? '#fff7ed' : '#f3f4f6',
-                boxShadow: selectedCollection
-                  ? '0 0 0 1.5px #fdba74'
-                  : '0 0 0 1px #e5e7eb',
+                background: hasSelection ? '#f0f9ff' : '#f3f4f6',
+                boxShadow: hasSelection ? '0 0 0 1.5px #7dd3fc' : '0 0 0 1px #e5e7eb',
                 fontSize: '13px', fontWeight: 500,
-                color: selectedCollection ? '#c2410c' : '#6b7280',
+                color: hasSelection ? '#0369a1' : '#6b7280',
                 transition: 'all 0.15s',
               }}
             >
@@ -169,37 +192,35 @@ export default function ChatWindow({ sessionId, userRole, onUnauthorized, onSess
                   d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
               </svg>
 
-              {selectedDoc ? (
-                <>
-                  <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#f97316', flexShrink: 0 }} />
-                  <span style={{ maxWidth: '220px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                    {selectedDoc.original_filename}
-                  </span>
-                  <span role="button"
-                    onClick={e => { e.stopPropagation(); setSelectedCollection(null); }}
-                    style={{ display: 'flex', alignItems: 'center', color: '#9a3412', marginLeft: '2px', cursor: 'pointer' }}>
-                    <svg style={{ width: '12px', height: '12px' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </span>
-                </>
-              ) : (
-                <>
-                  <span>{documents.length > 0 ? `${documents.length} tài liệu` : 'Tài liệu'}</span>
+              {hasSelection && (
+                <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#0ea5e9', flexShrink: 0 }} />
+              )}
+
+              <span style={{ maxWidth: '240px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                {pillLabel()}
+              </span>
+
+              {hasSelection ? (
+                <span role="button"
+                  onClick={e => { e.stopPropagation(); setSelectedCollections([]); }}
+                  style={{ display: 'flex', alignItems: 'center', color: '#0369a1', marginLeft: '2px', cursor: 'pointer' }}>
                   <svg style={{ width: '12px', height: '12px' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                      d={docPanelOpen ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                   </svg>
-                </>
+                </span>
+              ) : (
+                <svg style={{ width: '12px', height: '12px' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                    d={docPanelOpen ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} />
+                </svg>
               )}
             </button>
           </div>
 
-          {/* Input */}
           <MessageInput
             sessionId={sessionId}
             userRole={userRole}
-            selectedCollection={selectedCollection}
+            selectedCollection={selectedCollections.length > 0 ? selectedCollections[0] : null}
             isStreaming={isStreaming}
             onSend={handleSend}
             onStop={handleStopStream}

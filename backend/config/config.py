@@ -15,3 +15,5 @@ class QDRantConfig(BaseModel):
 
 class OllamaConfig(BaseModel):
     OLLAMA_EMBEDDINGS_MODEL: str = os.getenv("OLLAMA_EMBEDDINGS_MODEL")
+    OLLAMA_BASE_URL: str       = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+    OLLAMA_CHAT_MODEL: str     = os.getenv("OLLAMA_CHAT_MODEL", "qwen3.5:4b")

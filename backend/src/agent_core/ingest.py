@@ -63,21 +63,26 @@ ollama_config = OllamaConfig()
 
 
 class Ingest:
-    def __init__(self, documents, 
+    def __init__(self, documents,
                  collection_name=qdrant_config.COLLECTION_NAME,
-                 url = qdrant_config.QDRANT_URL, 
+                 url=qdrant_config.QDRANT_URL,
                  qdrant_model_name=qdrant_config.QDRANT_MODEL_NAME,
-                 ollama_embeddings_model=ollama_config.OLLAMA_EMBEDDINGS_MODEL):
+                 ollama_embeddings_model=ollama_config.OLLAMA_EMBEDDINGS_MODEL,
+                 original_filename=None):   # <-- tên file gốc để lưu vào metadata
         self.documents = documents
         self.url = url
         self.collection_name = collection_name
         self.ollama_embeddings_model = ollama_embeddings_model
         self.qdrant_model_name = qdrant_model_name
-
-    
+        self.original_filename = original_filename
 
     def chunking(self, texts):
-        docs = [Document(page_content=text) for text in texts]
+        # Thêm metadata source (tên file) và doc_id vào mỗi chunk
+        meta = {
+            "source": self.original_filename or "unknown",
+            "doc_id": self.collection_name,
+        }
+        docs = [Document(page_content=text, metadata=meta) for text in texts]
 
         text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
             chunk_size=700,

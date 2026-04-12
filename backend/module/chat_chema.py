@@ -8,7 +8,8 @@ from datetime import datetime
 # SỬA: Thêm collection_name vào model này
 class MessageRequest(BaseModel):
     message: str
-    collection_name: Optional[str] = None
+    collection_name: Optional[str] = None         # backward compat (single doc)
+    collection_names: Optional[List[str]] = None  # multi-doc RAG
 
 class ChatMessage(Document):
     session_id: str

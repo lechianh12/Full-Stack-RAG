@@ -51,7 +51,11 @@ async def ingest_data(
             logger.info(f"Processing file: {file.filename} for new collection {collection_name}")
             
             text = await DocumentExtractor.extract_text(file)
-            Ingest(documents=[text], collection_name=collection_name).process()
+            Ingest(
+                documents=[text],
+                collection_name=collection_name,
+                original_filename=file.filename,
+            ).process()
 
             if make_global:
                 doc_meta = DocumentMetadata(

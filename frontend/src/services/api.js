@@ -130,9 +130,12 @@ export const uploadFile = async (sessionId, files, isGlobal = false) => {
  * Streaming version of sendMessage using SSE.
  * Returns an AbortController so the caller can cancel the stream.
  */
-export const sendMessageStream = (sessionId, message, collectionName, { onChunk, onMeta, onDone, onError }) => {
+export const sendMessageStream = (sessionId, message, collectionNames, { onChunk, onMeta, onDone, onError }) => {
   const token = localStorage.getItem('token');
   const controller = new AbortController();
+
+  // collectionNames is string[] (multi-doc) or null/[]
+  const names = Array.isArray(collectionNames) ? collectionNames : (collectionNames ? [collectionNames] : []);
 
   const run = async () => {
     const response = await fetch(`${API_URL}/chat/send_message_stream/${sessionId}`, {
@@ -141,7 +144,7 @@ export const sendMessageStream = (sessionId, message, collectionName, { onChunk,
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`,
       },
-      body: JSON.stringify({ message, collection_name: collectionName }),
+      body: JSON.stringify({ message, collection_names: names.length > 0 ? names : null }),
       signal: controller.signal,
     });
 

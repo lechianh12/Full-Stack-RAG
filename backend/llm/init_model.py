@@ -1,14 +1,10 @@
-from google import genai
-from config.config import Config
 import sys
 import os
 from langchain.chat_models import init_chat_model
-from langchain_core.messages import SystemMessage
-
+from config.config import Config
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 config = Config()
-
 
 
 class Gemini():
@@ -16,13 +12,13 @@ class Gemini():
         self.api_key = api_key
         self.model = model
 
-
     def init_gemini(self):
         return init_chat_model(
-            model = self.model,
+            model=self.model,
             model_provider="google_genai",
         )
-    
+
+
 class Ollama():
     def __init__(self, model="qwen3.5:4b"):
         self.model = model
@@ -32,21 +28,11 @@ class Ollama():
             model=self.model,
             model_provider="ollama",
         )
-    
+
 
 class LLM():
-    def __init__(self, bool = False):
-        self.llm = Gemini().init_gemini() if bool else Ollama().init_ollama() 
+    def __init__(self, use_gemini=False):
+        self.llm = Gemini().init_gemini() if use_gemini else Ollama().init_ollama()
 
     def init_llm(self):
         return self.llm
-
-
-
-if __name__ == "__main__":
-    gemini = Gemini().init_gemini()
-    output = gemini.invoke(
-        "Ban biet gi ve fastapi khong?",
-        stream=True)
-    print("Output:", output.content)
-    
