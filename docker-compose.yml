@@ -1,0 +1,96 @@
+services:
+
+  # ── MongoDB ───────────────────────────────────────────────────────────────
+  mongodb:
+    image: mongo:7
+    container_name: rag-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"           # expose ra host để dùng scripts/clear_data.py
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - ragnet
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Qdrant ────────────────────────────────────────────────────────────────
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: rag-qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"             # HTTP
+      - "6334:6334"             # gRPC (optional)
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - ragnet
+    healthcheck:
+      # Qdrant image chỉ có sh + bash cơ bản, không có curl/wget
+      # Dùng TCP check qua /dev/tcp để kiểm tra port 6333 đã mở chưa
+      test: ["CMD-SHELL", "bash -c '</dev/tcp/localhost/6333' 2>/dev/null && echo ok || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+
+  # ── Backend (FastAPI) ─────────────────────────────────────────────────────
+  backend:
+    image: ${DOCKER_USERNAME:-chianh12}/rag-backend:latest   # dùng khi docker compose push
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: rag-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env                    # đọc GOOGLE_API_KEY, SYSTEM_MESSAGE, v.v.
+    environment:
+      # Ghi đè URL để dùng tên service Docker thay vì localhost
+      MONGODB_URL:      mongodb://mongodb:27017
+      QDRANT_URL:       http://qdrant:6333
+      # Ollama chạy trên HOST → truy cập qua host.docker.internal
+      OLLAMA_BASE_URL:  http://host.docker.internal:11434
+      OLLAMA_CHAT_MODEL: ${OLLAMA_CHAT_MODEL:-qwen3.5:4b}
+      OLLAMA_EMBEDDINGS_MODEL: ${OLLAMA_EMBEDDINGS_MODEL:-nomic-embed-text:latest}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # WSL/Linux: map host
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+    networks:
+      - ragnet
+
+  # ── Frontend (React → Nginx) ──────────────────────────────────────────────
+  frontend:
+    image: ${DOCKER_USERNAME:-chianh12}/rag-frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_URL: /api   # nginx proxy /api → backend:8000
+    container_name: rag-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"               # truy cập tại http://localhost:3000
+    depends_on:
+      - backend
+    networks:
+      - ragnet
+
+# ── Volumes ───────────────────────────────────────────────────────────────
+volumes:
+  mongo_data:
+  qdrant_data:
+
+# ── Network ───────────────────────────────────────────────────────────────
+networks:
+  ragnet:
+    driver: bridge

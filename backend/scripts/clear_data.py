@@ -21,7 +21,7 @@ from config.config import QDRantConfig
 
 qdrant_config = QDRantConfig()
 
-MONGO_URL = "mongodb://172.30.80.1:27017"
+MONGO_URL = os.getenv("MONGODB_URL", "mongodb://172.30.80.1:27017")
 MONGO_DB  = "rag_db"
 
 

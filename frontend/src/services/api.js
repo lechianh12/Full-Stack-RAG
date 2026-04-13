@@ -2,7 +2,9 @@
 
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api';
+// Dùng env var để dễ chuyển giữa local và Docker
+// Local: http://localhost:8000/api  |  Docker: /api (proxied qua nginx)
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
 
 // Hàm này lấy token và tạo headers cho các request cần xác thực
 const getAuthHeaders = () => {
