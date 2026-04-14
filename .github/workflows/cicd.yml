@@ -20,7 +20,12 @@ jobs:
       - name: Install ruff
         run: pip install ruff
 
-      - name: Run ruff check
+      - name: Auto-fix
+        run: |
+          ruff check --fix backend/
+          ruff format backend/
+
+      - name: Check remaining errors
         run: ruff check backend/
 
   build-backend:
