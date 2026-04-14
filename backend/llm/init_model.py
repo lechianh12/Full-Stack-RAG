@@ -1,10 +1,12 @@
 import sys
 import os
 from langchain.chat_models import init_chat_model
-from config.config import Config
+from config.config import Config, OllamaConfig
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 config = Config()
+ollama_config = OllamaConfig()
 
 
 class Gemini():
@@ -20,7 +22,7 @@ class Gemini():
 
 
 class Ollama():
-    def __init__(self, model="qwen3.5:4b"):
+    def __init__(self, model=ollama_config.OLLAMA_CHAT_MODEL):
         self.model = model
 
     def init_ollama(self):

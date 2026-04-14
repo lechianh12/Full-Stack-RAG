@@ -1,15 +1,14 @@
-# backend/module/chat_chema.py
-
 from pydantic import BaseModel, Field
 from typing import List, Optional
 from beanie import Document, PydanticObjectId
 from datetime import datetime
 
-# SỬA: Thêm collection_name vào model này
+
 class MessageRequest(BaseModel):
     message: str
-    collection_name: Optional[str] = None         # backward compat (single doc)
-    collection_names: Optional[List[str]] = None  # multi-doc RAG
+    collection_name: Optional[str] = None
+    collection_names: Optional[List[str]] = None
+
 
 class ChatMessage(Document):
     session_id: str

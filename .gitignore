@@ -5,3 +5,6 @@ collections
 __pycache__
 .vscode
 .deleted
+raft_state.json
+.qdrant_fs_check
+volumes

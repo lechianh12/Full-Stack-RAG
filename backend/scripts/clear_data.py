@@ -9,6 +9,7 @@ Cách chạy:
   python scripts/clear_data.py           # chỉ xóa documents
   python scripts/clear_data.py --all     # xóa cả chat history + sessions
 """
+
 import asyncio
 import argparse
 import sys
@@ -22,7 +23,7 @@ from config.config import QDRantConfig
 qdrant_config = QDRantConfig()
 
 MONGO_URL = os.getenv("MONGODB_URL", "mongodb://172.30.80.1:27017")
-MONGO_DB  = "rag_db"
+MONGO_DB = "rag_db"
 
 
 def clear_qdrant():
@@ -42,6 +43,7 @@ def clear_qdrant():
 
 async def clear_mongo(clear_history: bool):
     import motor.motor_asyncio
+
     client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URL)
     db = client[MONGO_DB]
 
@@ -62,8 +64,7 @@ async def clear_mongo(clear_history: bool):
 
 async def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--all", action="store_true",
-                        help="Also clear chat history and sessions")
+    parser.add_argument("--all", action="store_true", help="Also clear chat history and sessions")
     args = parser.parse_args()
 
     print("=" * 50)

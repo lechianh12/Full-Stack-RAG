@@ -4,7 +4,7 @@ import MessageList from './MessageList';
 import MessageInput from './MessageInput';
 import DocumentPanel from './DocumentPanel';
 
-export default function ChatWindow({ sessionId, userRole, onUnauthorized, onSessionNameUpdate }) {
+export default function ChatWindow({ sessionId, userRole, username, onUnauthorized, onSessionNameUpdate }) {
   const [messages, setMessages]                         = useState([]);
   const [documents, setDocuments]                       = useState([]);
   const [selectedCollections, setSelectedCollections]   = useState([]); // array of collection_names
@@ -143,6 +143,7 @@ export default function ChatWindow({ sessionId, userRole, onUnauthorized, onSess
         streamingText={streamingText}
         isStreaming={isStreaming}
         hasFirstChunk={hasFirstChunk}
+        username={username}
       />
 
       {/* ── Bottom: pill + input ── */}

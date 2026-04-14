@@ -23,12 +23,13 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__file__)
 
 
-@chat_router.post('/send_message/{session_id}')
-async def send_message(session_id: str, request: MessageRequest, current_user: Authen = Depends(get_current_user)):
-    
+@chat_router.post("/send_message/{session_id}")
+async def send_message(
+    session_id: str, request: MessageRequest, current_user: Authen = Depends(get_current_user)
+):
+
     session = await SessionRequest.find_one(
-        SessionRequest.session_id == session_id,
-        SessionRequest.username == current_user.username
+        SessionRequest.session_id == session_id, SessionRequest.username == current_user.username
     )
     if not session:
         raise HTTPException(status_code=404, detail="Session not found or not authorized")
@@ -37,16 +38,16 @@ async def send_message(session_id: str, request: MessageRequest, current_user: A
     message_content = request.message
     try:
         is_first_message = await ChatMessage.find(ChatMessage.session_id == session_id).count() == 0
-        
+
         if is_first_message and session.display_name == "New Session":
-            new_display_name = message_content[:50] + ('...' if len(message_content) > 50 else '')
+            new_display_name = message_content[:50] + ("..." if len(message_content) > 50 else "")
             session.display_name = new_display_name
             await session.save()
             session_updated = True
-            
+
     except Exception as e:
         logger.error(f"Error checking/updating session display name: {e}")
-        
+
     # Resolve collection list (hỗ trợ cả single và multi)
     collections_to_use = request.collection_names or (
         [request.collection_name] if request.collection_name else []
@@ -60,13 +61,17 @@ async def send_message(session_id: str, request: MessageRequest, current_user: A
                 DocumentMetadata.collection_name == cn,
                 Or(
                     (DocumentMetadata.is_global == True),
-                    (DocumentMetadata.session_id == session_id)
-                )
+                    (DocumentMetadata.session_id == session_id),
+                ),
             )
             if not doc:
-                raise HTTPException(status_code=403, detail=f"Not authorized to access collection: {cn}")
+                raise HTTPException(
+                    status_code=403, detail=f"Not authorized to access collection: {cn}"
+                )
 
-        logger.info(f"Calling RAG agent for {len(collections_to_use)} collection(s): {collections_to_use}")
+        logger.info(
+            f"Calling RAG agent for {len(collections_to_use)} collection(s): {collections_to_use}"
+        )
         try:
             history = await memory(session_id)
             agent = Agent()
@@ -83,27 +88,31 @@ async def send_message(session_id: str, request: MessageRequest, current_user: A
             response_text = "Lỗi khi truy cập tài liệu đã chọn."
     else:
         logger.info("No collection selected — returning guide message")
-        response_text = "Tôi là trợ lý RAG. Vui lòng chọn ít nhất một tài liệu để bắt đầu hội thoại."
+        response_text = (
+            "Tôi là trợ lý RAG. Vui lòng chọn ít nhất một tài liệu để bắt đầu hội thoại."
+        )
 
     chat = ChatMessage(
-        session_id=session.session_id,  
+        session_id=session.session_id,
         username=current_user.username,
         message=message_content,
         response=response_text,
-        timestamp=datetime.now()
+        timestamp=datetime.now(),
     )
     await chat.create()
 
     logger.info(f"Message sent: {message_content} | Response: {response_text}")
-    
+
     return {"chat": chat, "session_updated": session_updated}
 
-@chat_router.post('/send_message_stream/{session_id}')
-async def send_message_stream(session_id: str, request: MessageRequest, current_user: Authen = Depends(get_current_user)):
+
+@chat_router.post("/send_message_stream/{session_id}")
+async def send_message_stream(
+    session_id: str, request: MessageRequest, current_user: Authen = Depends(get_current_user)
+):
 
     session = await SessionRequest.find_one(
-        SessionRequest.session_id == session_id,
-        SessionRequest.username == current_user.username
+        SessionRequest.session_id == session_id, SessionRequest.username == current_user.username
     )
     if not session:
         raise HTTPException(status_code=404, detail="Session not found or not authorized")
@@ -113,14 +122,13 @@ async def send_message_stream(session_id: str, request: MessageRequest, current_
     try:
         is_first_message = await ChatMessage.find(ChatMessage.session_id == session_id).count() == 0
         if is_first_message and session.display_name == "New Session":
-            new_display_name = message_content[:50] + ('...' if len(message_content) > 50 else '')
+            new_display_name = message_content[:50] + ("..." if len(message_content) > 50 else "")
             session.display_name = new_display_name
             await session.save()
             session_updated = True
     except Exception as e:
         logger.error(f"Error checking/updating session display name: {e}")
 
-    # Resolve collection list
     collections_to_use = request.collection_names or (
         [request.collection_name] if request.collection_name else []
     )
@@ -128,13 +136,12 @@ async def send_message_stream(session_id: str, request: MessageRequest, current_
     for cn in collections_to_use:
         doc = await DocumentMetadata.find_one(
             DocumentMetadata.collection_name == cn,
-            Or(
-                (DocumentMetadata.is_global == True),
-                (DocumentMetadata.session_id == session_id)
-            )
+            Or((DocumentMetadata.is_global == True), (DocumentMetadata.session_id == session_id)),
         )
         if not doc:
-            raise HTTPException(status_code=403, detail=f"Not authorized to access collection: {cn}")
+            raise HTTPException(
+                status_code=403, detail=f"Not authorized to access collection: {cn}"
+            )
 
     history = await memory(session_id) if collections_to_use else ""
 
@@ -148,7 +155,9 @@ async def send_message_stream(session_id: str, request: MessageRequest, current_
                 agent = Agent()
                 if len(collections_to_use) == 1:
                     gen = agent.qa_agent_stream(
-                        query=message_content, collection_name=collections_to_use[0], history=history
+                        query=message_content,
+                        collection_name=collections_to_use[0],
+                        history=history,
                     )
                 else:
                     gen = agent.qa_agent_multi_stream(
@@ -158,7 +167,9 @@ async def send_message_stream(session_id: str, request: MessageRequest, current_
                     full_response += chunk
                     yield f"data: {json.dumps({'type': 'chunk', 'text': chunk})}\n\n"
             else:
-                full_response = "Tôi là trợ lý RAG. Vui lòng chọn ít nhất một tài liệu để bắt đầu hội thoại."
+                full_response = (
+                    "Tôi là trợ lý RAG. Vui lòng chọn ít nhất một tài liệu để bắt đầu hội thoại."
+                )
                 yield f"data: {json.dumps({'type': 'chunk', 'text': full_response})}\n\n"
 
         except Exception as e:
@@ -172,7 +183,7 @@ async def send_message_stream(session_id: str, request: MessageRequest, current_
             username=current_user.username,
             message=message_content,
             response=full_response,
-            timestamp=datetime.now()
+            timestamp=datetime.now(),
         )
         await chat.create()
 
@@ -185,15 +196,14 @@ async def send_message_stream(session_id: str, request: MessageRequest, current_
             "Cache-Control": "no-cache",
             "Connection": "keep-alive",
             "X-Accel-Buffering": "no",
-        }
+        },
     )
 
 
-@chat_router.get('/get_all_messages/{session_id}', response_model=List[ChatMessage])
+@chat_router.get("/get_all_messages/{session_id}", response_model=List[ChatMessage])
 async def get_all_messages(session_id: str, current_user: Authen = Depends(get_current_user)):
     session = await SessionRequest.find_one(
-        SessionRequest.session_id == session_id,
-        SessionRequest.username == current_user.username
+        SessionRequest.session_id == session_id, SessionRequest.username == current_user.username
     )
     if not session:
         raise HTTPException(status_code=404, detail="Session not found or not authorized")
@@ -202,13 +212,16 @@ async def get_all_messages(session_id: str, current_user: Authen = Depends(get_c
     logger.info(f"Retrieved {len(messages)} messages for session {session_id}")
     return messages
 
-@chat_router.delete('/delete_message/{message_id}', status_code=204)
-async def delete_message(message_id: PydanticObjectId, current_user: Authen = Depends(get_current_user)):
+
+@chat_router.delete("/delete_message/{message_id}", status_code=204)
+async def delete_message(
+    message_id: PydanticObjectId, current_user: Authen = Depends(get_current_user)
+):
     message = await ChatMessage.find_one(ChatMessage.id == message_id)
-    
+
     if not message:
         raise HTTPException(status_code=404, detail="Message not found")
-        
+
     if message.username != current_user.username:
         raise HTTPException(status_code=403, detail="Not authorized to delete this message")
 

@@ -129,6 +129,7 @@ function App() {
             key={activeSessionId}
             sessionId={activeSessionId}
             userRole={userInfo?.role}
+            username={userInfo?.username}
             onUnauthorized={handleLogout}
             onSessionNameUpdate={handleSessionNameUpdate}
           />

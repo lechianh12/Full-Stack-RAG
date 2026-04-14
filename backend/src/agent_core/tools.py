@@ -1,58 +1,48 @@
 import asyncio
 import json
 import logging
-
 import httpx
-from flashrank import Ranker, RerankRequest       # dùng trực tiếp, không qua LangChain wrapper
+from flashrank import Ranker, RerankRequest
 from langchain_ollama import OllamaEmbeddings
 from langchain_qdrant import FastEmbedSparse, QdrantVectorStore, RetrievalMode
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from qdrant_client import QdrantClient
-
 from config.config import QDRantConfig, OllamaConfig
 from module.chat_chema import ChatMessage
 from llm import llm
+from .prompt import TEMPLATE_RAG_TOOL, _RAG_SYSTEM
 
 logger = logging.getLogger(__name__)
 
 qdrant_config = QDRantConfig()
-ollama_config  = OllamaConfig()
+ollama_config = OllamaConfig()
 
-# Dùng chung một Ranker instance (model được load 1 lần)
+
 _ranker = Ranker()
 
 
 def _rerank(docs: list, query: str, top_n: int = 5) -> list:
-    """Rerank bằng flashrank trực tiếp — không qua LangChain wrapper."""
     if not docs:
         return docs
     passages = [{"id": i, "text": d.page_content} for i, d in enumerate(docs)]
-    results  = _ranker.rerank(RerankRequest(query=query, passages=passages))
-    # sort giảm dần theo score, lấy top_n
+    results = _ranker.rerank(RerankRequest(query=query, passages=passages))
     top = sorted(results, key=lambda r: r["score"], reverse=True)[:top_n]
     return [docs[r["id"]] for r in top]
 
 
-# ─── Memory ────────────────────────────────────────────────────────────────────
-
 async def memory(session_id: str) -> str:
     """Lấy 5 tin nhắn gần nhất làm lịch sử hội thoại."""
     records = await (
-        ChatMessage.find(ChatMessage.session_id == session_id)
-        .sort("-timestamp")
-        .limit(5)
-        .to_list()
+        ChatMessage.find(ChatMessage.session_id == session_id).sort("-timestamp").limit(5).to_list()
     )
     return "\n\n".join(f"Human: {r.message}\nAI: {r.response}" for r in records)
 
 
-# ─── Retriever helper ──────────────────────────────────────────────────────────
-
 def _build_retriever(collection_name: str, k: int = 10):
     embeddings = OllamaEmbeddings(
         model=ollama_config.OLLAMA_EMBEDDINGS_MODEL,
-        base_url=ollama_config.OLLAMA_BASE_URL,   # dùng host.docker.internal trong Docker
+        base_url=ollama_config.OLLAMA_BASE_URL,
     )
     client = QdrantClient(url=qdrant_config.QDRANT_URL, prefer_grpc=False)
     vectorstore = QdrantVectorStore(
@@ -73,27 +63,13 @@ def _fmt_docs(docs) -> str:
     return "\n\n---\n\n".join(parts)
 
 
-# ─── Sync RAG (non-streaming) ──────────────────────────────────────────────────
-
 def rag_tool(query: str, collection_name: str, history: str) -> str:
     """Single-doc RAG (sync) dùng LangChain chain."""
     raw_docs = _build_retriever(collection_name, k=10).invoke(query)
-    docs     = _rerank(raw_docs, query, top_n=5)
-
-    template = """Dựa trên các tài liệu sau đây, hãy trả lời câu hỏi chính xác và chi tiết.
-
-Lịch sử hội thoại:
-{history}
-
-Tài liệu:
-{context}
-
-Câu hỏi: {question}
-
-Câu trả lời:"""
+    docs = _rerank(raw_docs, query, top_n=5)
 
     context = _fmt_docs(docs)
-    chain   = ChatPromptTemplate.from_template(template) | llm | StrOutputParser()
+    chain = ChatPromptTemplate.from_template(TEMPLATE_RAG_TOOL) | llm | StrOutputParser()
     return chain.invoke({"context": context, "question": query, "history": history})
 
 
@@ -111,33 +87,14 @@ def rag_tool_multi(query: str, collection_names: list, history: str) -> str:
 
     reranked = _rerank(all_docs, query, top_n=min(5, len(all_docs)))
 
-    template = """Dựa trên các tài liệu sau (mỗi đoạn ghi rõ nguồn), trả lời chính xác và chi tiết.
-
-Lịch sử hội thoại:
-{history}
-
-Tài liệu:
-{context}
-
-Câu hỏi: {question}
-
-Câu trả lời:"""
-
-    chain = ChatPromptTemplate.from_template(template) | llm | StrOutputParser()
-    return chain.invoke({
-        "context": _fmt_docs(reranked),
-        "question": query,
-        "history": history,
-    })
-
-
-# ─── Direct Ollama streaming (bypass LangChain) ────────────────────────────────
-
-_RAG_SYSTEM = (
-    "Bạn là trợ lý RAG chuyên nghiệp. "
-    "Dựa hoàn toàn vào tài liệu được cung cấp để trả lời chính xác bằng tiếng Việt. "
-    "Nếu tài liệu không chứa thông tin liên quan, hãy nói rõ điều đó."
-)
+    chain = ChatPromptTemplate.from_template(TEMPLATE_RAG_TOOL) | llm | StrOutputParser()
+    return chain.invoke(
+        {
+            "context": _fmt_docs(reranked),
+            "question": query,
+            "history": history,
+        }
+    )
 
 
 async def _stream_ollama(messages: list, think: bool = False):
@@ -146,10 +103,10 @@ async def _stream_ollama(messages: list, think: bool = False):
     think=False tắt thinking mode của Qwen3 → token xuất hiện ngay.
     """
     payload = {
-        "model":    ollama_config.OLLAMA_CHAT_MODEL,
+        "model": ollama_config.OLLAMA_CHAT_MODEL,
         "messages": messages,
-        "stream":   True,
-        "think":    think,
+        "stream": True,
+        "think": think,
     }
     async with httpx.AsyncClient(timeout=httpx.Timeout(180.0)) as client:
         async with client.stream(
@@ -161,7 +118,7 @@ async def _stream_ollama(messages: list, think: bool = False):
                 if not line.strip():
                     continue
                 try:
-                    data    = json.loads(line)
+                    data = json.loads(line)
                     content = data.get("message", {}).get("content", "")
                     if content:
                         yield content
@@ -181,6 +138,7 @@ def _build_user_msg(history: str, docs, query: str) -> str:
 
 async def rag_tool_stream(query: str, collection_name: str, history: str):
     """Single-doc RAG stream: retrieve → rerank → Ollama trực tiếp."""
+
     def _retrieve():
         raw = _build_retriever(collection_name, k=10).invoke(query)
         return _rerank(raw, query, top_n=5)
@@ -188,7 +146,7 @@ async def rag_tool_stream(query: str, collection_name: str, history: str):
     docs = await asyncio.to_thread(_retrieve)
     messages = [
         {"role": "system", "content": _RAG_SYSTEM},
-        {"role": "user",   "content": _build_user_msg(history, docs, query)},
+        {"role": "user", "content": _build_user_msg(history, docs, query)},
     ]
     async for chunk in _stream_ollama(messages, think=False):
         yield chunk
@@ -196,6 +154,7 @@ async def rag_tool_stream(query: str, collection_name: str, history: str):
 
 async def rag_tool_multi_stream(query: str, collection_names: list, history: str):
     """Multi-doc RAG stream: query nhiều collections → rerank → Ollama trực tiếp."""
+
     def _retrieve_all():
         all_docs = []
         for cn in collection_names:
@@ -215,15 +174,13 @@ async def rag_tool_multi_stream(query: str, collection_names: list, history: str
 
     messages = [
         {"role": "system", "content": _RAG_SYSTEM},
-        {"role": "user",   "content": _build_user_msg(history, reranked, query)},
+        {"role": "user", "content": _build_user_msg(history, reranked, query)},
     ]
     async for chunk in _stream_ollama(messages, think=False):
         yield chunk
 
 
-# ─── Utility ───────────────────────────────────────────────────────────────────
-
 def list_collections() -> str:
     client = QdrantClient(url=qdrant_config.QDRANT_URL)
-    names  = [c.name for c in client.get_collections().collections]
+    names = [c.name for c in client.get_collections().collections]
     return "Các collection hiện có: " + ", ".join(names)

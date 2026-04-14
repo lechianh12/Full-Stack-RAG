@@ -4,6 +4,8 @@ import docx
 import PyPDF2
 from fastapi import UploadFile
 import io
+from pathlib import Path
+
 
 class DocumentExtractor:
     @staticmethod
@@ -43,15 +45,7 @@ class DocumentExtractor:
             raise ValueError(f"Unsupported file extension: {ext}")
 
 
-import csv
-import docx
-import PyPDF2
-import io
-from pathlib import Path
-
-
 class DocumentExtractor_2:
-    
     def extract_text_from_pdf(self, path: Union[str, Path]) -> str:
         text = ""
         with open(path, "rb") as f:
@@ -81,4 +75,3 @@ class DocumentExtractor_2:
             return self.extract_text_from_docx(path)
         else:
             raise ValueError(f"Unsupported file extension: {ext}")
-

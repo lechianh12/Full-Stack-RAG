@@ -14,6 +14,7 @@ log_config = setup_logging("./log/app.log")
 
 logger = logging.getLogger(__file__)
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info("Connecting to MongoDB...")
@@ -26,15 +27,15 @@ app = FastAPI(lifespan=lifespan)
 
 origins = [
     "http://localhost",
-    "http://localhost:3000", 
+    "http://localhost:3000",
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"], # Cho phép tất cả các method (GET, POST, etc.)
-    allow_headers=["*"], # Cho phép tất cả các header
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -45,5 +46,5 @@ app.include_router(authen_router, prefix="/api/auth", tags=["Authentication"])
 
 if __name__ == "__main__":
     import uvicorn
-    # uvicorn.run("src.api.app:app", host="0.0.0.0", port=8000, reload=True, log_config=log_config)
+
     uvicorn.run("src.api.app:app", host="0.0.0.0", port=8000, reload=True)
