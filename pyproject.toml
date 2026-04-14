@@ -4,7 +4,7 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
-ignore = ["E501", "B008"]  # B008: FastAPI Depends() pattern — false positive
+ignore = ["E501", "B008", "E712"]  # B008: FastAPI Depends(); E712: Beanie ORM query expressions
 
 [tool.ruff.format]
 quote-style = "double"
