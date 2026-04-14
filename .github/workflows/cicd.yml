@@ -44,6 +44,9 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Create empty .env for build
+        run: touch .env
+
       - name: Build images
         run: docker compose build backend frontend
 
