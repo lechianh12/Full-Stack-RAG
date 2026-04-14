@@ -59,7 +59,7 @@ jobs:
           context: ./backend
           file: ./backend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/rag-backend:latest
+          tags: rag-than/rag-backend:latest
 
   build-frontend:
     name: Build & push frontend image
@@ -84,6 +84,6 @@ jobs:
           context: ./frontend
           file: ./frontend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/rag-frontend:latest
+          tags: rag-than/rag-frontend:latest
           build-args: |
             REACT_APP_API_URL=/api
