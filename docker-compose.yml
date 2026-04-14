@@ -58,7 +58,7 @@ services:
 
 
   backend:
-    image: ${DOCKER_USERNAME:-}rag-than/rag-backend:latest   
+    image: ${DOCKER_USERNAME:-chianh12}/rag-backend:latest
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -85,7 +85,7 @@ services:
     
 
   frontend:
-    image: ${DOCKER_USERNAME:-}rag-than/rag-frontend:latest
+    image: ${DOCKER_USERNAME:-chianh12}/rag-frontend:latest
     build:
       context: ./frontend
       dockerfile: Dockerfile
