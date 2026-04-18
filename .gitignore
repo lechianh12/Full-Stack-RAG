@@ -9,3 +9,5 @@ raft_state.json
 .qdrant_fs_check
 volumes
 test_cicd/
+test_mineru/
+mineru_output/

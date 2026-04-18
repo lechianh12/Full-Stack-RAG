@@ -7,6 +7,7 @@ from src.api.routers.session_router import session_router
 from src.api.routers.authen_router import authen_router
 from db.mongo_db import init_db
 from log.logging_setup import setup_logging
+from module.authen_schema import Authen
 import logging
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -15,11 +16,19 @@ log_config = setup_logging("./log/app.log")
 logger = logging.getLogger(__file__)
 
 
+async def seed_admin() -> None:
+    exists = await Authen.find_one(Authen.username == "admin")
+    if not exists:
+        await Authen(username="admin", password="admin", email="admin@admin.com", role="admin").create()
+        logger.info("Đã tạo tài khoản admin mặc định.")
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info("Connecting to MongoDB...")
     await init_db()
     logger.info("Connected to MongoDB successfully.")
+    await seed_admin()
     yield
 
 
